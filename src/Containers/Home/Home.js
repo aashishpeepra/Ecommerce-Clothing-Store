@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import Products from "../../Components/UI/Products/Products";
 
 export default class Home extends Component{
     state={
@@ -7,7 +7,11 @@ export default class Home extends Component{
     }
     render(){
         return(
-            <h1>Home</h1>
+            <main>
+                <h1>Home</h1>
+            <Products/>
+            </main>
+            
         );
     }
 }
