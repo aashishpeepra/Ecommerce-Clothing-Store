@@ -1,0 +1,20 @@
+.Product{
+    display: inline-block;
+    height:300px;
+    width:200px;
+    padding:1%;
+}
+
+.Product-img-holder{
+    height:200px;
+    width:100%;
+
+}
+.Product-img-holder img{
+    height:100%;
+    width:100%;
+}
+
+.Product span{
+    font-weight: bold;
+}

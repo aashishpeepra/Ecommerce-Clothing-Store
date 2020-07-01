@@ -1,17 +1,17 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import Products from "../../Components/UI/Products/Products";
 
-export default class Home extends Component{
-    state={
+export default class Home extends Component {
+    state = {
 
     }
-    render(){
-        return(
+    render() {
+        return (
             <main>
                 <h1>Home</h1>
-            <Products/>
+                <Products type="listed" btn={true} />
             </main>
-            
+
         );
     }
 }
