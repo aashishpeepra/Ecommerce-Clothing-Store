@@ -8,8 +8,8 @@ export default (props) => {
                 <img itemProp="image" src="https://fluffandfoldlaundromat.com/wp-content/uploads/2019/12/blog-4-1080x675.jpg" alt="Some Mountains" />
             </div>
             <span className="title" itemProp="name">Latest Shirt</span>
-            <div className="rate" itemProp="offers" itemScope itemType="http://schema.org/Offer">
-                <span itemProp="priceCurrency" content="PKR">$</span>
+            <div style={{fontWeight:"bold"}} className="rate" itemProp="offers" itemScope itemType="http://schema.org/Offer">
+                <span  itemProp="priceCurrency" content="PKR">₹</span>
                 <span itemProp="price" content="230.00">230</span>
             </div>
             {

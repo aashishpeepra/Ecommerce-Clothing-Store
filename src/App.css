@@ -1,8 +1,15 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
 
 body{
   overflow-x:hidden;
-  font-family:sans-serif
+  font-family:sans-serif;
+  /* background:url("https://img.ltwebstatic.com/images3_pi/2020/03/04/15833061265aed4ce96d5a3639d175d1b61bab8637.webp") */
 }
+

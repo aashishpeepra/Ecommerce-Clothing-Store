@@ -1,9 +1,9 @@
 .Product{
     display: inline-block;
     height:auto;
-    width:200px;
+    width:250px;
     padding:1% 0%;
-    box-shadow: 5px 10px 20px #eee;
+    /* box-shadow: 5px 10px 20px #eee; */
     margin:1% 2%;
     cursor: pointer;
     transition: all ease 0.2s;
