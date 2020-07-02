@@ -1,20 +1,37 @@
 .Product{
     display: inline-block;
-    height:300px;
+    height:auto;
     width:200px;
-    padding:1%;
+    padding:1% 0%;
+    box-shadow: 5px 10px 20px #eee;
+    margin:1% 2%;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+.Product:hover{
+    box-shadow: 6px 12px 22px #ddd;
 }
 
 .Product-img-holder{
     height:200px;
     width:100%;
+    margin-bottom:15px;
 
 }
 .Product-img-holder img{
     height:100%;
     width:100%;
+    
 }
 
 .Product span{
-    font-weight: bold;
+    /* font-weight: bold; */
+}
+.Product .title{
+    font-weight: 300;
+    font-size: 120%;
+}
+.Product .rate {
+    font-weight: 100;
+    margin:5px
 }

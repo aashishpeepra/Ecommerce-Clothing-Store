@@ -5,10 +5,10 @@ export default (props) => {
     return (
         <div className="Product" itemProp="itemListElement" itemScope itemType="http://schema.org/Product" >
             <div className="Product-img-holder">
-                <img itemProp="image" src="https://review.chinabrands.com/chinabrands/seo/image/20180913/wholesale%20boutique%20clothing.jpg" alt="Some Mountains" />
+                <img itemProp="image" src="https://fluffandfoldlaundromat.com/wp-content/uploads/2019/12/blog-4-1080x675.jpg" alt="Some Mountains" />
             </div>
-            <span itemProp="name">Latest Shirt</span>
-            <div itemProp="offers" itemScope itemType="http://schema.org/Offer">
+            <span className="title" itemProp="name">Latest Shirt</span>
+            <div className="rate" itemProp="offers" itemScope itemType="http://schema.org/Offer">
                 <span itemProp="priceCurrency" content="PKR">$</span>
                 <span itemProp="price" content="230.00">230</span>
             </div>
