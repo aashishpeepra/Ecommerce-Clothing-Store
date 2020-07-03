@@ -9,7 +9,7 @@ export default (props) => {
             </div>
             <span className="title" itemProp="name">Latest Shirt</span>
             <div style={{fontWeight:"bold"}} className="rate" itemProp="offers" itemScope itemType="http://schema.org/Offer">
-                <span  itemProp="priceCurrency" content="PKR">₹</span>
+                <span  itemProp="priceCurrency" content="PKR">&#8377;</span>
                 <span itemProp="price" content="230.00">230</span>
             </div>
             {

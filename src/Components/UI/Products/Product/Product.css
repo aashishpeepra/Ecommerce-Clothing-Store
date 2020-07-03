@@ -1,7 +1,7 @@
 .Product{
     display: inline-block;
     height:auto;
-    width:250px;
+    width:150px;
     padding:1% 0%;
     /* box-shadow: 5px 10px 20px #eee; */
     margin:1% 2%;
@@ -11,7 +11,11 @@
 .Product:hover{
     box-shadow: 6px 12px 22px #ddd;
 }
-
+@media only screen and (min-width: 600px) {
+    .Product {
+      width:250px;
+    }
+  }
 .Product-img-holder{
     height:200px;
     width:100%;
