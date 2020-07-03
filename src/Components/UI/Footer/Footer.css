@@ -1,0 +1,83 @@
+.Footer {
+  background-color: rgb(0, 119, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Company__Name {
+  margin: 1rem;
+  font-weight: bold;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.Sections {
+  display: flex;
+  padding: 0 3px;
+}
+
+.Footer__Spacer {
+  flex: 1;
+}
+
+.Section__1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 55%;
+  padding-left: 3rem;
+}
+
+.Section__1 h2,
+.Section__1 p,
+.Section__2 h2 {
+  text-align: left;
+  color: white;
+}
+
+.Section__2 {
+  text-align: left;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 3rem;
+}
+
+.Section__2 ul {
+  margin-left: -2.5rem;
+}
+
+.Section__2 ul li {
+  display: flex;
+  align-items: center;
+}
+
+.Section__2 ul li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 769px) {
+  .Sections {
+    font-size: 12px !important;
+  }
+  .Section__1 h2,
+  .Section__2 h2 {
+    font-size: 16px;
+  }
+  .Sections > div:not(:first-child) {
+    margin-left: 1rem;
+  }
+
+  .Sections > div:last-child {
+    margin-right: 1rem;
+    padding-right: 0;
+  }
+
+  .Sections > div:first-child {
+    margin-left: 1rem;
+    margin-right: 0;
+    padding-left: 0;
+  }
+}
