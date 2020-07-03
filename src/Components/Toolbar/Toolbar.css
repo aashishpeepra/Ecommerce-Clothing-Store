@@ -1,0 +1,74 @@
+.Toolbar {
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(2555,0,0);
+    height: 60px;
+    z-index: 20;
+}
+
+.Toolbar__Navigation {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.Toolbar__Logo {
+    margin-left: 1rem;
+}
+
+.Spacer {
+    flex: 1;
+}
+
+.Toolbar__Navigation--Items a {
+    color: white;
+    text-decoration: none;
+}
+
+.Toolbar__Navigation--Items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.Toolbar__Navigation--Items li {
+    padding: 0 0.5rem;
+}
+
+.Toolbar__Navigation--Items a:hover,
+.Toolbar__Navigation--Items a:active {
+    color: orange;
+}
+
+.Toolbar__Logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.Searchbar__Component {
+    background-color: red;
+    outline: none;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .Toolbar__Navigation--Items {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .Toolbar__Toggle {
+        display: none;
+    }
+
+    .Toolbar__Logo {
+        margin-left: 0;
+    }
+}
