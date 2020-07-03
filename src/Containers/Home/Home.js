@@ -30,7 +30,7 @@ export default class Home extends Component {
         {/* <h1>Home</h1>
         <Products />
         <Footer /> */}
-        <Toolbar clicked={this.drawerToggleClickHandler} />
+        {/* <Toolbar clicked={this.drawerToggleClickHandler} /> */}
         {/* <SideDrawer show={this.state.sideDrawerOpen} />
         {backdrop} */}
       </main>
