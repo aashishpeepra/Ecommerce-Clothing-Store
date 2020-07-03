@@ -1,0 +1,12 @@
+.My-btn{
+    background-color:inherit;
+    border-radius:50px;
+    padding:4px 12px;
+    border:1px solid #0080ff;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+.My-btn:hover{
+    color:#fff;
+    background-color:#0080ff;
+}
