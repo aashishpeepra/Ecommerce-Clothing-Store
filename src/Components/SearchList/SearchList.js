@@ -34,6 +34,11 @@ export default class SearchList extends React.Component {
   onTextChanged = (e) => {
     const value = e.target.value;
     // let suggestions = [];
+    // console.log(value,this.state.value)
+    if(value.length==0 && this.state.text.length!=0)
+    {
+      this.setState({text:""})
+    }
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, "i");
       const suggestions = this.items.sort().filter((v) => regex.test(v));
@@ -49,10 +54,12 @@ export default class SearchList extends React.Component {
     if (suggestions.length === 0) {
       return null;
     }
+    console.log(suggestions)
     return (
+      
       <ul>
         {suggestions.map((item) => (
-          <li onClick={() => this.suggestionSelected(item)}>{item}</li>
+          <li key={item} onClick={() => this.suggestionSelected(item)}>{item}</li>
         ))}
       </ul>
     );
@@ -69,7 +76,7 @@ export default class SearchList extends React.Component {
     const { text } = this.state;
     return (
       <div className="SearchList">
-        <input value={text} type="text" onChange={this.onTextChanged} />
+        <input placeholder="Search Here" value={text} type="text" onChange={this.onTextChanged} />
         {this.renderSuggestions()}
       </div>
     );

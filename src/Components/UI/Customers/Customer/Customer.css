@@ -1,0 +1,44 @@
+.review{
+    display:inline-flex;
+    width:350px;
+    margin:0 6%;
+    margin-top:15px;
+    padding:0 15px;
+    padding-top:15px;
+    padding-bottom:10px;
+    box-sizing: border-box;
+    align-items: center;
+    background-color:#fff;
+    box-shadow: 10px 12px 14px rgb(8, 118, 228);
+    
+}
+.review-left{
+    /* width:20%; */
+}
+
+.review-img-holder{
+    height:80px;
+    width:80px;
+}
+
+.review-img-holder img{
+    height:100%;
+    width:100%;
+}
+.review-right{
+    text-align: left;
+    margin-left:5px;
+    margin-top:5px;
+    padding:0% 2%;
+    /* padding-top:12%; */
+    width:80%;
+}
+.review-right span{
+    color:#0080ff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.review-right-content{
+    color:#aaa;
+    font-size:80%;
+}

@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(2555,0,0);
+    background-color: #0080ff;
     height: 60px;
     z-index: 20;
 }
@@ -52,7 +52,7 @@
 }
 
 .Searchbar__Component {
-    background-color: red;
+    background-color: #0080ff;
     outline: none;
     border: none;
 }
