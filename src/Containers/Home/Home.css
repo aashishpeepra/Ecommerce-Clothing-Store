@@ -1,3 +1,16 @@
-main{
+.Home{
     margin-top:70px;
+}
+
+.Home-Trending{
+    margin:10px;
+    padding:50px 0px;
+    box-sizing: border-box;
+}
+.Home-Trending h3{
+    margin-bottom: 10px;
+}
+
+.Home h3{
+    font-size:140%;
 }

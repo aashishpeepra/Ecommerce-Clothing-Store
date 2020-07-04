@@ -9,7 +9,7 @@ export default class Products extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="Prds-wrapper">
                 <main className="Prd-input-holder">
 
                     <div class="wrapper"><ul class="main-menu">

@@ -10,16 +10,22 @@ export default class Home extends Component {
     
     render() {
         return (
-            <main>
+            <main className="Home">
                
                 
                 {/* <h1>Home</h1> */}
-                <h3>Trending Products</h3>
+                <section className="Home-Trending">
+                    <h3>Trending Products</h3>
                 <Products type="listed"  />
+                </section>
+                
                
                  <Category/>
-                <h3>Top Picks For you</h3>
+                 <section className="Home-Trending">
+                     <h3>Top Picks For you</h3>
                 <Products type="listed"  />
+                 </section>
+                
                  <Customers/>
                   
             </main>
@@ -28,21 +34,5 @@ export default class Home extends Component {
     }
 }
 
- class Home2 extends Component {
-  state = {
-    
-  };
 
- 
-  render() {
-   
-    return (
-      <main style={{ height: "100%" }}>
-        <h1>Home</h1>
-        <Products />
-        
-      </main>
-    );
-  }
-}
 

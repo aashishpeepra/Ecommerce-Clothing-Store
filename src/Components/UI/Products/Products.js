@@ -9,7 +9,7 @@ export default (props) => {
     return (
         <div className={classType} itemScope itemType="http://schema.org/ItemList">
             {/* <span itemProp="numberOfItems">2</span> */}
-            {temp.map(each=><Product btn={props.btn}/>)}
+            {temp.map(each=><Product btn={props.btn} key={new Date()}/>)}
         </div>
 
     );

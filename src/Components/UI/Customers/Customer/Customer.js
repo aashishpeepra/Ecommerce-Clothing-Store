@@ -9,12 +9,12 @@ export default (props)=>{
                 </div>
             </div>
             <div className="review-right">
-                <span>
+                <span id="review-head">
                     Aashish Peepra
                 </span>
                 <div className="review-right-content">
                     <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     </p>
                 </div>
             </div>

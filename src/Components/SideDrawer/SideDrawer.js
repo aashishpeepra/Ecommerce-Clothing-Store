@@ -23,9 +23,9 @@ const sideDrawer = (props) => {
       <div className="Options">
         <div className="Options__Home">HOME</div>
         <div className="Options__Shop">
-          <div class="dropdown">
-            <button class="dropbtn">SHOP</button>
-            <div class="dropdown-content">
+          <div className="dropdown">
+            <button className="dropbtn">SHOP</button>
+            <div className="dropdown-content">
               <a href="/">Link 1</a>
               <a href="/">Link 2</a>
               <a href="/">Link 3</a>
