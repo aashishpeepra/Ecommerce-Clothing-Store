@@ -37,3 +37,13 @@
 .big:active{
    box-shadow: 0px 0px 0px #eee;
 }
+.white{
+    background-color: #fff;
+    color:#0080ff;
+    padding:8px 2rem;
+    box-shadow: 0px 0px 0px #fff;
+}
+.white:hover{
+    background-color: #fff;
+    color:#0080ff
+}

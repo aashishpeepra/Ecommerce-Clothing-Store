@@ -49,7 +49,7 @@ export default class Cart extends React.Component {
                             </tr>
                             </tbody>
                         </table>
-                        <div onClick={this.moveToCheckout} className="Cart-btn-holder" >
+                        <div  className="Cart-btn-holder" >
                             
                             <Button click={this.moveToCheckout.bind(this)} history={this.props.history} link="/checkout"  text="PLACE ORDER" big={true} />
                            

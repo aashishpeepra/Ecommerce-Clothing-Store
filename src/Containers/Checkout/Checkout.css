@@ -1,0 +1,109 @@
+.Checkout{
+    margin-top:90px;
+}
+.logValues{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+    margin-top:20px;
+    align-content: center;
+}
+.logDiv{
+    background-color:#0080ff;
+    transition: all ease 0.2s;
+    color:#fff;
+    width:250px;
+    margin-bottom:20px;
+    padding:20px 20px;
+    cursor: pointer;
+}
+.logDiv a{
+    color:#fff;
+    display: block;
+    text-decoration: none;
+}
+.logDiv:hover{
+    box-shadow: 10px 20px 30px #eee;
+}
+.logDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+.logValues div h4{
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.log-img-holder{
+    height:50px;
+    width:50px;
+    margin-right:50px
+}
+.log-img-holder img{
+    height: 100%;
+    width: 100%;
+}
+.Checkout{
+    
+    margin:auto;
+    margin-top: 90px;
+    display:inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: #0080ff; */
+    border:1px solid #858282;
+    color:#111;
+    padding:20px 40px;
+    border-radius: 20px;
+    min-width: 300px;
+    margin-top:90px;
+}
+
+
+.Checkout fieldset{
+    border:0;
+}
+.Checkout fieldset{
+    margin-top:20px;
+    display:block;
+    height:30px;
+}
+.Checkout label{
+    /* margin-right: 20px; */
+    color: #858282;
+    font-size:120%;
+    display:none;
+}
+.Checkout input{
+    border:0;
+    border-bottom:1px solid #0080ff;
+    background-color: rgba(192, 192, 192, 0.067);
+    padding:10px 20px;
+    color:#111;
+    
+}
+.Checkout input::placeholder{
+    font-size:120%;
+}
+
+.Checkout input:hover , .Checkout input:active, .Checkout input:focus{
+    border-bottom:2px solid #0080ff
+}
+.Checkout input:focus{
+    outline: none;
+}
+.Checkout-Password{
+    margin-top:20px;
+    
+}
+.Checkout-Password a{
+    color:rgb(250, 243, 243);
+    text-decoration: none;
+     font-weight: bold;
+}
+.Checkout-Password a:hover{
+   
+}
