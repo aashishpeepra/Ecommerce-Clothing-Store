@@ -1,0 +1,47 @@
+.login-signup-holder{
+    margin-top:90px;
+}
+.logValues{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+    margin-top:20px;
+    align-content: center;
+}
+.logDiv{
+    background-color:#0080ff;
+    transition: all ease 0.2s;
+    color:#fff;
+    width:250px;
+    margin-bottom:20px;
+    padding:20px 20px;
+    cursor: pointer;
+}
+.logDiv a{
+    color:#fff;
+    display: block;
+    text-decoration: none;
+}
+.logDiv:hover{
+    box-shadow: 10px 20px 30px #eee;
+}
+.logDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+.logValues div h4{
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.log-img-holder{
+    height:50px;
+    width:50px;
+    margin-right:50px
+}
+.log-img-holder img{
+    height: 100%;
+    width: 100%;
+}

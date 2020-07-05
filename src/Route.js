@@ -5,7 +5,9 @@ import Cart from "./Containers/Cart/Cart";
 import Checkout from "./Containers/Checkout/Checkout";
 import SingleProduct from "./Containers/Single-Product/SingleProduct";
 import Products from "./Containers/Products/Products";
-
+import LogIn from "./Containers/LogIn/LogIn";
+import Signup from "./Containers/Signup/Signup";
+import LoginSignup from "./Containers/LoginSignup/LoginSignup";
 export default class Router extends Component{
     state={
 
@@ -14,6 +16,9 @@ export default class Router extends Component{
     render(){
         return(
             <Switch>
+                <Route path="/login-signup" component={LoginSignup}/>
+                <Route path="/signup" component={Signup}/>
+                <Route path="/login" component={LogIn}/>
                 <Route path="/cart" component={Cart}/>
                 <Route path="/checkout" component={Checkout}/>
                 <Route path="/cloth" component={SingleProduct}/>

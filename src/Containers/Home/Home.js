@@ -6,18 +6,35 @@ import Slider from "../../Components/Slider/Slider";
 
 import "./Home.css";
 export default class Home extends Component {
-  render() {
-    return (
-      <main>
-        {/* <h1>Home</h1> */}
-        <Slider />
-        <h3>Trending Products</h3>
-        <Products type="listed" />
-        <Category />
-        <h3>Top Picks For you</h3>
-        <Products type="listed" />
-        <Customers />
-      </main>
-    );
-  }
+
+    
+    
+    render() {
+        return (
+            <main className="Home">
+               
+                
+                {/* <h1>Home</h1> */}
+                <section className="Home-Trending">
+                    <h3>Trending Products</h3>
+                <Products type="listed"  />
+                </section>
+                
+               
+                 <Category/>
+                 <section className="Home-Trending">
+                     <h3>Top Picks For you</h3>
+                <Products type="listed"  />
+                 </section>
+                
+                 <Customers/>
+                  
+            </main>
+
+        );
+    }
 }
+
+
+
+

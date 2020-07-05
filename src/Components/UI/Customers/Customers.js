@@ -4,13 +4,17 @@ import "./Customers.css";
 
 export default (props)=>{
     return (
-        <div className="reviews">
+        <div className="reviews-wrapper">
+            <h3>Our Happy customers</h3>
+             <div className="reviews">
             <Customer/>
             <Customer/>
             <Customer/>
             <Customer/>
 
         </div>
+        </div>
+       
         
     );
 }

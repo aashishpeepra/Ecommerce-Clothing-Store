@@ -2,7 +2,8 @@
     display: inline-block;
     height:auto;
     width:150px;
-    padding:1% 0%;
+    padding-bottom:1%;
+    /* text-align: left; */
     /* box-shadow: 5px 10px 20px #eee; */
     margin:1% 2%;
     cursor: pointer;
@@ -41,5 +42,20 @@
 }
 .Product .rate {
     font-weight: 100;
-    margin:5px
+    margin:5px;
+    font-size:95%;
+}
+.Product-content{
+    padding:0px 6px;
+    text-align: left;
+}
+.Product-offer{
+    color: red;
+    font-weight: 100;
+margin-left: 10px;
+font-size: 90%;
+}
+.Product-btn-holder{
+    margin:auto;
+    margin-top:15px;
 }

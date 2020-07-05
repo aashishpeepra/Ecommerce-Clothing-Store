@@ -1,0 +1,59 @@
+.Login{
+    
+    margin:auto;
+    margin-top: 90px;
+    display:inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    background-color: #0080ff;
+    color:#fff;
+    padding:20px 40px;
+    border-radius: 20px;
+    min-width: 300px;
+
+}
+
+.Login fieldset{
+    border:0;
+}
+.Login fieldset{
+    margin-top:20px;
+    display:block;
+    height:30px;
+}
+.Login label{
+    /* margin-right: 20px; */
+    color: #858282;
+    font-size:120%;
+    display:none;
+}
+.Login input{
+    border:0;
+    border-bottom:1px solid #0080ff;
+    background-color: #fff;
+    padding:10px 20px;
+    
+}
+.Login input::placeholder{
+    font-size:120%;
+}
+
+.Login input:hover , .Login input:active, .Login input:focus{
+    border-bottom:2px solid #0080ff
+}
+.Login input:focus{
+    outline: none;
+}
+.Login-Password{
+    margin-top:20px;
+    
+}
+.Login-Password a{
+    color:rgb(250, 243, 243);
+    text-decoration: none;
+     font-weight: bold;
+}
+.Login-Password a:hover{
+   
+}
