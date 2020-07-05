@@ -2,8 +2,8 @@ import React from "react";
 import "./Products.css";
 import Prds from "../../Components/UI/Products/Products";
 
-
 export default class Products extends React.Component {
+
     state = {
 
     }
@@ -46,9 +46,10 @@ export default class Products extends React.Component {
                         </li>
                     </ul></div>
 
-                </main>
-                <Prds type="stacked" btn={true} />
-            </div>
-        );
-    }
+            
+        </main>
+        <Prds type="stacked" btn={true} />
+      </div>
+    );
+  }
 }

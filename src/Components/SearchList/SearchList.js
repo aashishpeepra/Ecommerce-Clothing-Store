@@ -1,5 +1,5 @@
 import React from "react";
-import './SearchList.css';
+import "./SearchList.css";
 
 export default class SearchList extends React.Component {
   constructor(props) {
@@ -35,9 +35,9 @@ export default class SearchList extends React.Component {
     const value = e.target.value;
     // let suggestions = [];
     // console.log(value,this.state.value)
-    if(value.length===0 && this.state.text.length!==0)
-    {
-      this.setState({text:""})
+
+    if (value.length === 0 && this.state.text.length !== 0) {
+      this.setState({ text: "" });
     }
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, "i");
@@ -54,12 +54,13 @@ export default class SearchList extends React.Component {
     if (suggestions.length === 0) {
       return null;
     }
-    console.log(suggestions)
+    console.log(suggestions);
     return (
-      
       <ul>
         {suggestions.map((item) => (
-          <li key={item} onClick={() => this.suggestionSelected(item)}>{item}</li>
+          <li key={item} onClick={() => this.suggestionSelected(item)}>
+            {item}
+          </li>
         ))}
       </ul>
     );
@@ -76,7 +77,12 @@ export default class SearchList extends React.Component {
     const { text } = this.state;
     return (
       <div className="SearchList">
-        <input placeholder="Search Here" value={text} type="text" onChange={this.onTextChanged} />
+        <input
+          placeholder="Search Here"
+          value={text}
+          type="text"
+          onChange={this.onTextChanged}
+        />
         {this.renderSuggestions()}
       </div>
     );
