@@ -4,10 +4,12 @@ import Customers from "../../Components/UI/Customers/Customers";
 import Category from "../../Components/UI/Categorize/Categorize";
 import Slider from "../../Components/Slider/Slider";
 import Carousel from "../../Components/Slider/Slider";
-
+import {connect} from 'react-redux';
+import { bindActionCreators } from "redux";
 import "./Home.css";
 import {db} from "../../firebase";
-export default class Home extends Component {
+import {getAllData} from "../actions/index";
+class Home extends Component {
     state={
         data:[]
     }
@@ -47,5 +49,11 @@ export default class Home extends Component {
 }
 
 
-
+function mapStateToProps(state){
+    return {data:state.data}
+}
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({getAllData},dispatch);
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Home);
 

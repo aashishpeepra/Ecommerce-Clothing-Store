@@ -2,6 +2,7 @@ import React from 'react';
 import "./Signup.css";
 import Button from "../../Components/Navigation/Buttons/Button";
 import { Link } from "react-router-dom";
+import { db } from "../../firebase";
 export default class SignUn extends React.Component {
     state = {
         stage:1,
@@ -48,7 +49,7 @@ export default class SignUn extends React.Component {
         this.setState({stage:2});
     }
     signup=()=>{
-        console.log(this.state)
+        console.log(this.state);
     }
     render() {
         return (
