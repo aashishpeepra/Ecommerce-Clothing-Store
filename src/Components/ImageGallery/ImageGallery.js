@@ -3,7 +3,7 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./ImageGallery.css";
 
-import defaultImage from "../../assets/logo/twitter.png";
+import defaultImage from "../../Assets/Icons/login.png";
 
 class Gallery extends React.Component {
 

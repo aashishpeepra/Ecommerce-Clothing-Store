@@ -32,7 +32,7 @@ const toolbar = (props) => (
             <NavLink to="/cart" >Cart</NavLink>
           </li>
           <li>
-            <a href="/">Login/Signup</a>
+          <NavLink to="/login-signup" >Login / Signup</NavLink>
           </li>
         </ul>
       </div>

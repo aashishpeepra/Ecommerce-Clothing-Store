@@ -1,11 +1,17 @@
 import React from "react";
 import "./Products.css";
 import Prds from "../../Components/UI/Products/Products";
-
+import { db } from "../../firebase";
 export default class Products extends React.Component {
 
     state = {
-
+        data:[]
+    }
+    componentDidMount(){
+        db.collection("Clothes").get().then(querySnapshot=>{
+            const data=querySnapshot.docs.map(doc=>doc.data());
+            this.setState({data:data});
+        })
     }
     render() {
         return (
@@ -48,7 +54,8 @@ export default class Products extends React.Component {
 
             
         </main>
-        <Prds type="stacked" btn={true} />
+        {this.state.data.length==0?<div>Loading</div>:<Prds type="stacked" btn={true} data={this.state.data} />}
+        
       </div>
     );
   }

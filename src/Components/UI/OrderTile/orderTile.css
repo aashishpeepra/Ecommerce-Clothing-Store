@@ -1,0 +1,26 @@
+.orderTile{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 10px 20px 30px #eee;
+    padding:10px 20px;
+    margin-bottom:30px;
+}
+.order-img-holder{
+    height:80px;
+    width:80px;
+}
+.order-img-holder img{
+    height:100%;
+    width:100%;
+}
+.order-info{
+    margin-left:20px;
+}
+.orderTile span{
+    color:rgb(93, 92, 92);
+    font-weight: bold;
+}
