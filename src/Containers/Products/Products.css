@@ -57,13 +57,17 @@
     display:inline-block;
     margin-left:3px;
 } */
-
+.Prds-wrapper{
+    margin-top:80px;
+}
 .wrapper {
     width: 100%;
     height: auto;
     background-color: #0080ff;
     text-align: center;
-    padding:20px 18px;
+    padding:8px 18px;
+    text-align: left;
+    margin-bottom: 20px;;
 }
 
 .main-menu {

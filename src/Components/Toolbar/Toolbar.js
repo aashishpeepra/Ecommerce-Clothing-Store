@@ -2,6 +2,7 @@ import React from "react";
 import "./Toolbar.css";
 import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
 import SearchBar from "../SearchList/SearchList";
+import {NavLink} from "react-router-dom";
 
 const toolbar = (props) => (
   <header className="Toolbar">
@@ -19,7 +20,7 @@ const toolbar = (props) => (
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/">Shop</a>
+          <NavLink to="/clothings" >Shop</NavLink>
           </li>
           <li>
             <a href="/">My Orders</a>
@@ -28,10 +29,10 @@ const toolbar = (props) => (
             <SearchBar />
           </div>
           <li>
-            <a href="/">Cart</a>
+            <NavLink to="/cart" >Cart</NavLink>
           </li>
           <li>
-            <a href="/">Login/Signup</a>
+          <NavLink to="/login-signup" >Login / Signup</NavLink>
           </li>
         </ul>
       </div>

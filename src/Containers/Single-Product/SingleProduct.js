@@ -114,7 +114,7 @@ class SizeSelection extends React.Component {
             <div className="ProductDescription__Dynamic">
               <div>Cotton</div>
               <div>12-05-2020</div>
-              <div>F</div>
+              <div>M</div>
             </div>
           </div>
         </div>

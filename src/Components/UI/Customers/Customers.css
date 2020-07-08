@@ -3,7 +3,15 @@
     flex-wrap: wrap;
     justify-content: center;
     width:100vw;
-    background-color:#0080ff;
+    
     /* background: inherit; */
     padding:20px 0px;
+}
+.reviews-wrapper{
+    background-color:#0080ff;
+    padding:40px 0px;
+}
+.reviews-wrapper h3{
+    font-size: 130%;
+    color:#fff;
 }

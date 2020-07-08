@@ -46,7 +46,8 @@
 
 .Toolbar__Navigation--Items a:hover,
 .Toolbar__Navigation--Items a:active {
-    color: orange;
+    color:#fff;
+    font-weight: bold;
 }
 
 .Toolbar__Logo a {

@@ -1,6 +1,8 @@
 .review{
     display:inline-flex;
-    width:350px;
+    width:35%;
+    height:auto;
+    min-height: 68px;
     margin:0 6%;
     margin-top:15px;
     padding:0 15px;
@@ -17,8 +19,8 @@
 }
 
 .review-img-holder{
-    height:80px;
-    width:80px;
+    height:4rem;
+    width:4rem;
 }
 
 .review-img-holder img{
@@ -28,15 +30,18 @@
 .review-right{
     text-align: left;
     margin-left:5px;
-    margin-top:5px;
+    /* margin-top:5px; */
     padding:0% 2%;
     /* padding-top:12%; */
     width:80%;
+    font-size: 90%;
 }
 .review-right span{
     color:#0080ff;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
+    display:inline-block;
+    margin-bottom:5px;
 }
 .review-right-content{
     color:#aaa;

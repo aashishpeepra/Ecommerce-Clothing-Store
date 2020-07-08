@@ -1,5 +1,6 @@
 import React from "react";
 import "./SideDrawer.css";
+import {NavLink} from "react-router-dom";
 
 const sideDrawer = (props) => {
   let classes = ["Sidedrawer"];
@@ -13,10 +14,14 @@ const sideDrawer = (props) => {
         <div className="Email__Box">Email ID of User</div>
       </div>
       <div className="Options">
-        <div className="Options__Home">HOME</div>
+        <div className="Options__Home">
+          <NavLink to="/">Home</NavLink>
+        </div>
         <div className="Options__Shop">
           <div className="dropdown">
-            <button className="dropbtn">SHOP</button>
+            <button className="dropbtn">
+            <NavLink to="/clothings">Shop</NavLink>
+            </button>
             <div className="dropdown-content">
               <a href="/">Link 1</a>
               <a href="/">Link 2</a>
@@ -25,10 +30,18 @@ const sideDrawer = (props) => {
             </div>
           </div>
         </div>
-        <div className="Options__Cart">CART</div>
-        <div className="Options__Orders">MY ORDERS</div>
-        <div className="Options__Account">MY ACCOUNT</div>
-        <div className="Options__Log">SIGN OUT</div>
+        <div className="Options__Cart">
+        <NavLink to="/cart">Cart</NavLink>
+        </div>
+        <div className="Options__Orders">
+        <NavLink to="/orders">My Orders</NavLink>
+        </div>
+        <div className="Options__Account">
+        <NavLink to="/user">My Account</NavLink>
+        </div>
+        <div className="Options__Log">
+        <NavLink to="logout">Logout</NavLink>
+        </div>
       </div>
     </nav>
   );
