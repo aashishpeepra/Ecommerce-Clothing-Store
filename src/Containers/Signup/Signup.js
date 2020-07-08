@@ -2,6 +2,7 @@ import React from 'react';
 import "./Signup.css";
 import Button from "../../Components/Navigation/Buttons/Button";
 import { Link } from "react-router-dom";
+import { db } from "../../firebase";
 export default class SignUn extends React.Component {
     state = {
         stage:1,
@@ -47,6 +48,9 @@ export default class SignUn extends React.Component {
     shiftNext(){
         this.setState({stage:2});
     }
+    signup=()=>{
+        console.log(this.state);
+    }
     render() {
         return (
             <div className="Login">
@@ -84,7 +88,7 @@ export default class SignUn extends React.Component {
                             </div>
                         )}
                     <div style={{ marginTop: "20px" }}>
-                        <Button color={"white"} disable={!this.checkVerifyFirst()} click={this.state.stage==1?()=>{this.setState({stage:2});alert("Clicked")}:()=>this.props.history.push("/cart")} text={this.state.stage==1?"Next":"Sign up"} big={true} />
+                        <Button color={"blue"} disable={!this.checkVerifyFirst()} click={this.state.stage==1?()=>{this.setState({stage:2});}:()=>{this.signup();}} text={this.state.stage==1?"Next":"Sign up"} big={true} />
                     </div>
                     <div className="Login-Password">
                         <Link to="/login">Already Have Account? Login</Link>

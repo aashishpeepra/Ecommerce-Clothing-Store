@@ -21,7 +21,7 @@ export default class LogIn extends React.Component{
                         <input type="password" name="password" id="password" placeholder="Password"/>
                     </fieldset>
                     <div style={{marginTop:"20px"}}>
-                        <Button color={"white"} click={()=>this.props.history.push("/cart")} text="Login" big={true}/>
+                        <Button color={"blue"} click={()=>this.props.history.push("/cart")} text="Login" big={true}/>
                     </div>
                     <div className="Login-Password">
                         <Link to="/forgot-password">Forgot Password?</Link>

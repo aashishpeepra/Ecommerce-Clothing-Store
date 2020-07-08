@@ -8,11 +8,14 @@ export default class SingleProduct extends Component {
   state = {};
   render() {
     return (
-      <React.Fragment>
+      <div style={{marginTop:"90px"}}>
+        <React.Fragment>
         <Gallery />
         <SizeSelector />
         <Description />
       </React.Fragment>
+      </div>
+      
     );
   }
 }
