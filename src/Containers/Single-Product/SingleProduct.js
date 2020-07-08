@@ -71,13 +71,7 @@ class SizeSelection extends React.Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div style={{marginTop:"90px"}}>
-        <React.Fragment>
-        <Gallery />
-        <SizeSelector />
-        <Description />
-=======
+      
       <React.Fragment>
         <div className="Gallery__Container">
           <ImageGallery
@@ -125,9 +119,7 @@ class SizeSelection extends React.Component {
             </div>
           </div>
         </div>
->>>>>>> developer2
       </React.Fragment>
-      </div>
       
     );
   }
