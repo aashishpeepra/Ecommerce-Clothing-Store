@@ -40,6 +40,10 @@
     padding: 0 0.5rem;
 }
 
+.Toolbar__Navigation--Items li:nth-child(3) {
+    margin-right: 1rem;
+}
+
 .Toolbar__Navigation--Items a:hover,
 .Toolbar__Navigation--Items a:active {
     color:#fff;
@@ -56,6 +60,27 @@
     background-color: #0080ff;
     outline: none;
     border: none;
+    margin-right: 1rem;
+}
+
+.Toolbar__Mobile {
+    display: flex;
+}
+
+.Toolbar__Mobile--Cart {
+    color: white;
+    font-size: inherit;
+}
+
+@media (min-width: 768px) {
+    .Toolbar__Mobile {
+        display: none;
+    }
+
+    .Toolbar__Mobile .Searchbar__Component {
+        margin-right: 0;
+    }
+
 }
 
 @media (max-width: 768px) {

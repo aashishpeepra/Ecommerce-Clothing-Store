@@ -91,8 +91,8 @@
   outline: none;
 }
 
-@media (min-width: 700px) {
+@media (max-width: 768px) {
   .Sidedrawer {
-    display: none;
+    display: visible;
   }
 }
