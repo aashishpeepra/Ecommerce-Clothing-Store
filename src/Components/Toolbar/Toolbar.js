@@ -35,6 +35,14 @@ const toolbar = (props) => (
           </li>
         </ul>
       </div>
+      <div className="Toolbar__Mobile">
+        <div className="Searchbar__Component">
+          <SearchBar />
+        </div>
+        <div className="Toolbar__Mobile--Cart">
+          Cart
+        </div>
+      </div>
     </nav>
   </header>
 );

@@ -33,8 +33,6 @@ export default class SearchList extends React.Component {
 
   onTextChanged = (e) => {
     const value = e.target.value;
-    // let suggestions = [];
-    // console.log(value,this.state.value)
     if (value.length === 0 && this.state.text.length !== 0) {
       this.setState({ text: "" });
     }
