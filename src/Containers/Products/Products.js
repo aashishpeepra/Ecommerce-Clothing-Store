@@ -54,7 +54,7 @@ export default class Products extends React.Component {
 
             
         </main>
-        {this.state.data.length==0?<div>Loading</div>:<Prds type="stacked" btn={true} data={this.state.data} />}
+        {this.state.data.length===0?<div>Loading</div>:<Prds type="stacked" btn={true} data={this.state.data} />}
         
       </div>
     );

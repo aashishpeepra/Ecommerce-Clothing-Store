@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Products from "../../Components/UI/Products/Products";
 import Customers from "../../Components/UI/Customers/Customers";
 import Category from "../../Components/UI/Categorize/Categorize";
-import Slider from "../../Components/Slider/Slider";
 import Carousel from "../../Components/Slider/Slider";
 import {connect} from 'react-redux';
 import { bindActionCreators } from "redux";
@@ -22,7 +21,6 @@ class Home extends Component {
         
     }
     
-    
     render() {
         return (
             <main className="Home">
@@ -35,7 +33,7 @@ class Home extends Component {
                 <Products type="listed" data={this.state.data} />
                 </section>
                 
-               
+                
                  <Category/>
                  <section className="Home-Trending">
                      <h3>Top Picks For you</h3>

@@ -9,11 +9,11 @@ export default (props) => {
         title:"",
         price:""
     }:props.data;
-    console.log("--->",data);
+    // console.log("--->",data);
     return (
        
         <div className="Product" itemProp="itemListElement" itemScope itemType="http://schema.org/Product" >
-             <Link to="/cloth/product-name">
+             {/* <Link to="/cloth/product-name"> */}
             <div className="Product-img-holder">
                 <img itemProp="image" src={data["images"][0]} alt={data["title"]} />
             </div>
@@ -27,11 +27,11 @@ export default (props) => {
             {
                 props.btn?
                 <div className="Product-btn-holder">
-                <Button text="Add to Cart" big={true}/>
+                <Button text="Add to Cart" big={true} click={props.clicker}/>
                 </div>:null
             }
             </div>
-            </Link>
+            {/* </Link> */}
         </div>
         
     );
