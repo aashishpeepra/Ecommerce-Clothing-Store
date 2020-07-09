@@ -1,0 +1,142 @@
+.Gallery__Container {
+  transform: translateY(-1rem);
+}
+
+.SizeSelection__Div {
+  background-color: black;
+  padding: 2rem 0;
+}
+
+.SizeSelection__Container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.SizeSelection__H1 {
+  font-size: 2rem;
+  text-align: left;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.SizeSelection__Helper {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.SizeSelection__Size1,
+.SizeSelection__Size2,
+.SizeSelection__Size3,
+.SizeSelection__Size4 {
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.SizeSelection__Size1:hover,
+.SizeSelection__Size2:hover,
+.SizeSelection__Size3:hover,
+.SizeSelection__Size4:hover {
+  background-color: white;
+  color: black;
+}
+
+.SizeSelection__Size1 span,
+.SizeSelection__Size2 span,
+.SizeSelection__Size3 span,
+.SizeSelection__Size4 span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.SizeSelection__P {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.SizeSelection__Button {
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  outline: none;
+  cursor: pointer;
+}
+
+.SizeSelection__Button:hover,
+.SizeSelection__Button:active {
+  background-color: white;
+  color: black;
+}
+
+.SizeSelection__Description {
+  color: white;
+  background-color: blue;
+}
+
+@media (max-width: 968px) {
+  .SizeSelection__Helper {
+    width: 50%;
+  }
+}
+
+.ProductDescription {
+  padding: 2rem 0;
+  background-color: brown;
+  color: white;
+}
+
+.ProductDescription__Heading {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.ProductDescription__Para {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.ProductDescription__Table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.ProductDescription__Fixed,
+.ProductDescription__Dynamic {
+  display: flex;
+}
+
+.ProductDescription__Fixed > div,
+.ProductDescription__Dynamic > div {
+  width: 33.33%;
+  padding: 1rem;
+}
+
+.ProductDescription__Fixed {
+  border-bottom: 1px solid white;
+}
+
+.ProductDescription__Fixed > div:not(:last-child),
+.ProductDescription__Dynamic > div:not(:last-child) {
+  border-right: 1px solid white;
+}
