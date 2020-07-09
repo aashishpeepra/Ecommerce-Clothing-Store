@@ -71,7 +71,7 @@ class SizeSelection extends React.Component {
 
   render() {
     return (
-      
+
       <React.Fragment>
         <div className="Gallery__Container">
           <ImageGallery
@@ -115,12 +115,12 @@ class SizeSelection extends React.Component {
             <div className="ProductDescription__Dynamic">
               <div>Cotton</div>
               <div>12-05-2020</div>
-              <div>F</div>
+              <div>M</div>
             </div>
           </div>
         </div>
       </React.Fragment>
-      
+
     );
   }
 }
