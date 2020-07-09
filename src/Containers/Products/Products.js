@@ -2,6 +2,7 @@ import React from "react";
 import "./Products.css";
 import Prds from "../../Components/UI/Products/Products";
 import { db } from "../../firebase";
+
 export default class Products extends React.Component {
 
     state = {
@@ -14,6 +15,7 @@ export default class Products extends React.Component {
         })
     }
     render() {
+        
         return (
             <div className="Prds-wrapper">
                 <main className="Prd-input-holder">
