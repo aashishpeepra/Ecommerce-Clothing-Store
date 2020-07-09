@@ -17,6 +17,8 @@ class Home extends Component {
             const data=querySnapshot.docs.map(doc=>doc.data());
             this.setState({data:data});
         })
+        // this.props.getAllData();
+        
     }
     
     render() {

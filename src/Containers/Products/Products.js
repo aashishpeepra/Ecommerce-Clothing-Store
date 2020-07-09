@@ -2,7 +2,11 @@ import React from "react";
 import "./Products.css";
 import Prds from "../../Components/UI/Products/Products";
 import { db } from "../../firebase";
+<<<<<<< HEAD
 import {initialState} from "../../store/reducer";
+=======
+
+>>>>>>> 9fa47d0b52cddec3d80aa10b5c3286e66647ebe4
 export default class Products extends React.Component {
 
     state = {
@@ -15,6 +19,7 @@ export default class Products extends React.Component {
         })
     }
     render() {
+        
         return (
             <div className="Prds-wrapper">
                 <main className="Prd-input-holder">

@@ -71,6 +71,7 @@ class SizeSelection extends React.Component {
 
   render() {
     return (
+
       <React.Fragment>
         <div className="Gallery__Container">
           <ImageGallery
@@ -119,6 +120,7 @@ class SizeSelection extends React.Component {
           </div>
         </div>
       </React.Fragment>
+
     );
   }
 }
