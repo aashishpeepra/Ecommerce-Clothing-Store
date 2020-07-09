@@ -3,6 +3,7 @@ import "./Cart.css";
 import CartEach from "../../Components/UI/CartEach/cartEach";
 import Button from "../../Components/Navigation/Buttons/Button";
 import {NavLink} from "react-router-dom";
+
 export default class Cart extends React.Component {
     state = {
         total:0
@@ -18,6 +19,7 @@ export default class Cart extends React.Component {
                 <h1>My Shopping Bag</h1>
                 <div className="Cart-Holder">
                     <div>
+                        
                         <CartEach />
                         <CartEach />
                         <CartEach />

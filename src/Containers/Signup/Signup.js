@@ -2,14 +2,15 @@ import React from 'react';
 import "./Signup.css";
 import Button from "../../Components/Navigation/Buttons/Button";
 import { Link } from "react-router-dom";
-import { db } from "../../firebase";
+import { db, signupUser } from "../../firebase";
+
 export default class SignUn extends React.Component {
     state = {
         stage:1,
         verify:true,
         userData:{
             name:"",
-            phone:100000,
+            email:'johndoe@gmail.com',
             password:"",
             location:{
                 city:"",
@@ -21,8 +22,8 @@ export default class SignUn extends React.Component {
     checkVerifyFirst(){
         let name=this.state.userData.name.length>5;
         let password=this.state.userData.password.length>8;
-        let phone= String(this.state.userData.phone).length>=10;
-        return name || password || phone ;
+        let email= String(this.state.userData.email).length>=10;
+        return name || password || email ;
         
     }
     checkVerifySecond(){
@@ -49,7 +50,7 @@ export default class SignUn extends React.Component {
         this.setState({stage:2});
     }
     signup=()=>{
-        console.log(this.state);
+        signupUser(this.state.userData.email,this.state.userData.password,this.state.userData);
     }
     render() {
         return (
@@ -63,8 +64,8 @@ export default class SignUn extends React.Component {
                             <input onChange={this.onChanger1} value={this.state.userData.name} type="text" name="name" id="name" placeholder="Name" />
                         </fieldset>
                         <fieldset>
-                            <label htmlFor="phone">phone</label>
-                            <input onChange={this.onChanger1} value={this.state.userData.phone}  type="number" name="phone"  id="phone" placeholder="Phone" />
+                            <label htmlFor="email">Email</label>
+                            <input onChange={this.onChanger1} value={this.state.userData.email}  type="email" name="email"  id="email" placeholder="Email" />
                         </fieldset>
                         <fieldset>
                             <label htmlFor="password">Password</label>

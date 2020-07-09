@@ -2,18 +2,20 @@ import React from "react";
 import "./Products.css";
 import Prds from "../../Components/UI/Products/Products";
 import { db } from "../../firebase";
+
 export default class Products extends React.Component {
 
     state = {
         data:[]
     }
     componentDidMount(){
-        // db.collection("Clothes").get().then(querySnapshot=>{
-        //     const data=querySnapshot.docs.map(doc=>doc.data());
-        //     this.setState({data:data});
-        // })
+        db.collection("Clothes").get().then(querySnapshot=>{
+            const data=querySnapshot.docs.map(doc=>doc.data());
+            this.setState({data:data});
+        })
     }
     render() {
+        
         return (
             <div className="Prds-wrapper">
                 <main className="Prd-input-holder">

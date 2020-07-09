@@ -9,14 +9,14 @@ import "./Home.css";
 import {db} from "../../firebase";
 import {getAllData} from "../actions/index";
 class Home extends Component {
-    // state={
-    //     data:[]
-    // }
+    state={
+        data:[]
+    }
     componentDidMount(){
-        // db.collection("Clothes").get().then(querySnapshot=>{
-        //     const data=querySnapshot.docs.map(doc=>doc.data());
-        //     this.setState({data:data});
-        // })
+        db.collection("Clothes").get().then(querySnapshot=>{
+            const data=querySnapshot.docs.map(doc=>doc.data());
+            this.setState({data:data});
+        })
         // this.props.getAllData();
         
     }
