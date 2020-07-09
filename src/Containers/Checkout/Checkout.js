@@ -1,8 +1,8 @@
 import React from "react";
 import "./Checkout.css";
 import LogIn from '../LogIn/LogIn';
-import signin from "../../Assets/Icons/login.png";
-import signup from "../../Assets/Icons/outbox.png";
+import signin from "../../assets/Icons/login.png";
+import signup from "../../assets/Icons/outbox.png";
 import { Link } from "react-router-dom";
 import Button from "../../Components/Navigation/Buttons/Button";
 

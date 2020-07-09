@@ -8,10 +8,10 @@ export default class Products extends React.Component {
         data:[]
     }
     componentDidMount(){
-        db.collection("Clothes").get().then(querySnapshot=>{
-            const data=querySnapshot.docs.map(doc=>doc.data());
-            this.setState({data:data});
-        })
+        // db.collection("Clothes").get().then(querySnapshot=>{
+        //     const data=querySnapshot.docs.map(doc=>doc.data());
+        //     this.setState({data:data});
+        // })
     }
     render() {
         return (

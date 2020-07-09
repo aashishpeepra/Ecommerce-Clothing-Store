@@ -1,7 +1,7 @@
 import React from "react";
 import "./LoginSignup.css";
-import signin from "../../Assets/Icons/login.png";
-import signup from "../../Assets/Icons/outbox.png";
+import signin from "../../assets/Icons/login.png";
+import signup from "../../assets/Icons/outbox.png";
 
 export default class LoginSignup extends React.Component{
     state={
