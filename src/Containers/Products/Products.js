@@ -2,6 +2,7 @@ import React from "react";
 import "./Products.css";
 import Prds from "../../Components/UI/Products/Products";
 import { db } from "../../firebase";
+import {initialState} from "../../store/reducer";
 export default class Products extends React.Component {
 
     state = {

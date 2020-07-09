@@ -4,10 +4,6 @@ import "./Products.css";
 import * as actionTypes from "../../../store/actions";
 import { connect } from "react-redux";
 
-function fnc(obj) {
-  console.log(obj);
-}
-
 class Products extends React.Component {
 
   render() {
