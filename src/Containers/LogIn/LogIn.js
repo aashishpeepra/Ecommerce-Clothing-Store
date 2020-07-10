@@ -3,13 +3,19 @@ import "./LogIn.css";
 import Button from "../../Components/Navigation/Buttons/Button";
 import {Link} from "react-router-dom";
 import {loginUser} from '../../firebase';
-export default class LogIn extends React.Component{
+import {connect} from 'react-redux';
+
+class LogIn extends React.Component{
     state={
         userData:{
             email:"",
             password:""
         }
         
+    }
+    componentWillMount(){
+        if(this.props.loggedIn)
+        this.props.history.push("/user");
     }
     onChanger1=(e)=>{
         let value=e.target.value;
@@ -54,3 +60,12 @@ export default class LogIn extends React.Component{
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+      loggedIn: state.loggedIn,
+      userInfo: state.userInfo
+    };
+  };
+  
+  
+  export default connect(mapStateToProps)(LogIn);

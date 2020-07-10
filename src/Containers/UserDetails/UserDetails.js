@@ -12,7 +12,7 @@ import {logout} from "../../firebase";
         
     }
     
-    componentWillReceiveProps(){
+    componentWillMount(){
         console.log(this.props.loggedIn)
         const val=this.props.loggedIn?null:this.props.history.push("/login-signup");
         
@@ -56,7 +56,7 @@ import {logout} from "../../firebase";
 
                     <Button text="Update Details" big={true}/>
                     <div style={{display:"inline-block",marginLeft:"20px"}}>
-                         <Button click={logout} text="Logout" big={true}/>
+                         <Button click={()=>{logout();this.props.history.push("/");}} text="Logout" big={true}/>
                     </div>
                    
                 </div>
