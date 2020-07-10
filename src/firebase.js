@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-export { db };
+export { db };    
 
 
 function loginUser(email, password) {
