@@ -25,7 +25,7 @@ class Products extends React.Component {
             data={each}
             btn={this.props.btn}
             key={each.id}
-            clicker={() => this.props.onAddToCart(each)}
+            clicker={() => this.props.onAddToCart({qty:1,data:each,size:each.desc.sizes[0]})}
           />
         ))}
       </div>
