@@ -4,25 +4,21 @@ import LogIn from '../LogIn/LogIn';
 import signin from "../../assets/Icons/login.png";
 import signup from "../../assets/Icons/outbox.png";
 import { Link } from "react-router-dom";
+import {connect} from 'react-redux';
+import * as actionTypes from "../../store/actions";
 import Button from "../../Components/Navigation/Buttons/Button";
 
-export default class Checkout extends React.Component{
+class Checkout extends React.Component{
     state={
-        logged:true,
-        phone:918318530887,
-        address:"hello",
-        location:{
-            city:"Ladakkh",
-            address:"7/M/19 Dabouli",
-            pincode:208022
-        }
+        logged:this.props.loggedIn,
+        userInfo:this.props.userInfo
     }
     onChanger1=(e)=>{
         let value=e.target.value;
         let name=e.target.name;
-        let temp={...this.state.location};
-        temp[name]=value;
-        this.setState({userData:temp});
+        let temp={...this.state.userInfo};
+        temp["location"][name]=value;
+        this.setState({userInfo:temp});
     }
     render(){
         let ifNotLogged=(
@@ -58,15 +54,15 @@ export default class Checkout extends React.Component{
                             <form>
                             <fieldset>
                                 <label htmlFor="city">City</label>
-                                <input onChange={this.onChanger1} value={this.state.location.city}  type="text" name="city" id="city" placeholder="City" />
+                                <input onChange={this.onChanger1} value={this.state.userInfo.location.city}  type="text" name="city" id="city" placeholder="City" />
                             </fieldset>
                             <fieldset>
                                 <label htmlFor="address">Address</label>
-                                <input onChange={this.onChanger1} value={this.state.location.address} type="text" name="address" id="address" placeholder="Address" />
+                                <input onChange={this.onChanger1} value={this.state.userInfo.location.address} type="text" name="address" id="address" placeholder="Address" />
                             </fieldset>
                             <fieldset>
                                 <label htmlFor="pin">Pincode</label>
-                                <input onChange={this.onChanger1} value={this.state.location.pincode} type="number" name="pin" id="pin" placeholder="Pincode" />
+                                <input onChange={this.onChanger1} value={this.state.userInfo.location.pincode} type="number" name="pincode" id="pin" placeholder="Pincode" />
                             </fieldset>
                             </form>
                             <div style={{marginTop:"30px"}}>
@@ -85,3 +81,12 @@ export default class Checkout extends React.Component{
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+      loggedIn:state.loggedIn,
+      userInfo:state.userInfo
+    };
+  };
+  
+  export default connect(mapStateToProps)(Checkout);
+  
