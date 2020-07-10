@@ -1,6 +1,9 @@
 import React from "react";
 import "./SideDrawer.css";
 import {NavLink} from "react-router-dom";
+import { connect } from "react-redux";
+import * as actionTypes from "../../store/actions";
+import {logout} from "../../firebase";
 
 const sideDrawer = (props) => {
   let classes = ["Sidedrawer"];
@@ -10,8 +13,8 @@ const sideDrawer = (props) => {
   return (
     <nav className={classes.join(" ")}>
       <div className="Info__Box">
-        <div className="Name__Box">Name of User</div>
-        <div className="Email__Box">Email ID of User</div>
+  <div className="Name__Box">{!props.loggedIn ? "Name": props.userInfo.name}</div>
+  <div className="Email__Box">{!props.loggedIn?"Email": props.userInfo.email}</div>
       </div>
       <div className="Options">
         <div className="Options__Home">
@@ -34,17 +37,26 @@ const sideDrawer = (props) => {
         <NavLink to="/cart">Cart</NavLink>
         </div>
         <div className="Options__Orders">
-        <NavLink to="/orders">My Orders</NavLink>
+        <NavLink to="/user">My Orders</NavLink>
         </div>
         <div className="Options__Account">
         <NavLink to="/user">My Account</NavLink>
         </div>
         <div className="Options__Log">
-        <NavLink to="logout">Logout</NavLink>
+        <NavLink onClick={props.loggedIn?logout:()=>{}} to={props.loggedIn?"logout":"login"}>{props.loggedIn?"Log out":"Log in"}</NavLink>
         </div>
       </div>
     </nav>
   );
 };
 
-export default sideDrawer;
+const mapStateToProps = (state) => {
+  return {
+    loggedIn:state.loggedIn,
+    userInfo:state.userInfo
+  };
+};
+
+
+export default connect(mapStateToProps)(sideDrawer);
+

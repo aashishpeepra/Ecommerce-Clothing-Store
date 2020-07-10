@@ -18,9 +18,13 @@ class Home extends Component {
             this.setState({data:data});
         })
         // this.props.getAllData();
-        
     }
-    
+    navigator=(obj)=>{
+        this.props.history.push({
+            pathname:`/clothing/${obj.title}`,
+            state:obj
+        })
+    }
     render() {
         return (
             <main className="Home">
@@ -30,14 +34,14 @@ class Home extends Component {
                 <Carousel/>
                 <section className="Home-Trending">
                     <h3>Trending Products</h3>
-                <Products type="listed" data={this.state.data} />
+                <Products nav={this.navigator} type="listed" data={this.state.data} />
                 </section>
                 
                 
                  <Category/>
                  <section className="Home-Trending">
                      <h3>Top Picks For you</h3>
-                <Products type="listed" data={this.state.data} />
+                <Products nav={this.navigator} type="listed" data={this.state.data} />
                  </section>
                 
                  <Customers/>
