@@ -2,7 +2,10 @@ import React from "react";
 import "./Toolbar.css";
 import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
 import SearchBar from "../SearchList/SearchList";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import {connect} from 'react-redux';
+import * as actionTypes from "../../store/actions";
+import { logout } from "../../firebase";
 
 const toolbar = (props) => (
   <header className="Toolbar">
@@ -11,19 +14,19 @@ const toolbar = (props) => (
         <DrawerToggleButton click={props.clicked} />
       </div>
       <div className="Toolbar__Logo">
-        <a href="/">THE LOGO</a>
+        <NavLink to="/">Logo</NavLink>
       </div>
       <div className="Spacer"></div>
       <div className="Toolbar__Navigation--Items">
         <ul>
           <li>
-            <a href="/">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-          <NavLink to="/clothings" >Shop</NavLink>
+            <NavLink to="/clothings" >Shop</NavLink>
           </li>
           <li>
-            <a href="/">My Orders</a>
+            <NavLink to="/user">My Orders</NavLink>
           </li>
           <div className="Searchbar__Component">
             <SearchBar />
@@ -32,7 +35,7 @@ const toolbar = (props) => (
             <NavLink to="/cart" >Cart</NavLink>
           </li>
           <li>
-          <NavLink to="/login-signup" >Login / Signup</NavLink>
+            <NavLink to="/login-signup" >{props.loggedIn?props.userInfo.name:"Login/Signup"}</NavLink>
           </li>
         </ul>
       </div>
@@ -40,12 +43,20 @@ const toolbar = (props) => (
         <div className="Searchbar__Component">
           <SearchBar />
         </div>
-        <div className="Toolbar__Mobile--Cart">
-          Cart
+        <div className="Toolbar__Mobile--Cart" >
+          <NavLink  to="/cart">Cart</NavLink>
         </div>
       </div>
     </nav>
   </header>
 );
 
-export default toolbar;
+const mapStateToProps = (state) => {
+  return {
+    loggedIn: state.loggedIn,
+    userInfo: state.userInfo
+  };
+};
+
+
+export default connect(mapStateToProps)(toolbar);

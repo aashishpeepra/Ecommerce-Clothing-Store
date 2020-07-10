@@ -14,7 +14,7 @@ export default (props) => {
        
         <div className="Product" itemProp="itemListElement" itemScope itemType="http://schema.org/Product" >
              {/* <Link to="/cloth/product-name"> */}
-            <div className="Product-img-holder">
+            <div className="Product-img-holder" onClick={()=>props.nav(data)}>
                 <img itemProp="image" src={data["images"][0]} alt={data["title"]} />
             </div>
             <div className="Product-content">

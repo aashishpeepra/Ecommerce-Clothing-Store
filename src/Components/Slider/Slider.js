@@ -31,19 +31,19 @@ class Slider extends React.Component {
       data: [
         {
           image:
-            "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/aurora.jpg",
+            "https://i.ytimg.com/vi/_xftI5rqCJ8/maxresdefault.jpg",
           head: "Slide1",
           para: "Para1",
         },
         {
           image:
-            "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/desert.jpg",
+            "https://i.pinimg.com/originals/3c/6e/db/3c6edbec33cb5ed160476517a42129d7.jpg",
           head: "Slide2",
           para: "Para2",
         },
         {
           image:
-            "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/sandy-shores.jpg",
+            "https://images.creativemarket.com/0.1.0/ps/5532777/1820/1214/m1/fpnw/wm0/horizontal-fashion-flyer-.png?1544451625&s=fdc03175e9eb3a9ce6561da8d4540280",
           head: "Slide3",
           para: "Para3",
         },
