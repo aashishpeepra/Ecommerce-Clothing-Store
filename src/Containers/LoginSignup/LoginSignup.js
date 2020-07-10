@@ -2,10 +2,14 @@ import React from "react";
 import "./LoginSignup.css";
 import signin from "../../assets/Icons/login.png";
 import signup from "../../assets/Icons/outbox.png";
-
-export default class LoginSignup extends React.Component{
+import {connect} from 'react-redux';
+import * as actionTypes from "../../store/actions";
+class LoginSignup extends React.Component{
     state={
 
+    }
+    componentWillMount(){
+        const temp=this.props.loggedIn?this.props.history.push("/user"):null;
     }
     render(){
         return (
@@ -34,3 +38,14 @@ export default class LoginSignup extends React.Component{
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+      loggedIn: state.loggedIn,
+      userInfo: state.userInfo
+    };
+  };
+  
+  
+  export default connect(mapStateToProps)(LoginSignup);
+  

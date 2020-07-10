@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import {store} from "./index";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDincVmK_2eK_cCYcvk1IMXOfFbNqyXY_k",
@@ -21,12 +22,7 @@ function loginUser(email, password) {
   auth.signInWithEmailAndPassword(email, password)
     .then(res => {
       console.log("Logged -> ", res);
-      db.collection("Users").doc(res.user.uid).get().then(querySnapshot => {
-        console.log(querySnapshot.data());
-      })
-        .catch(err => {
-          console.log(err);
-        })
+
     })
     .catch(err => {
       console.log(err.message);
@@ -45,11 +41,27 @@ function signupUser(email, password, data) {
       console.log(err);
     })
 }
-
+function logout(){
+  firebase.auth().signOut().then(res=>{
+    store.dispatch({type:"AUTH_OUT"})
+  })
+}
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if (firebaseUser) {
-    console.log(firebaseUser);
+    console.log("From Auth",firebaseUser);
+    db.collection("Users").doc(firebaseUser.uid).get().then(querySnapshot => {
+      console.log("Got Data",querySnapshot.data());
+      // initialState.loggedIn = true;
+      // initialState.userInfo = { ...querySnapshot.data() }
+      console.log(store.dispatch({type:"AUTH_IN",obj:querySnapshot.data()}));
+      console.log(store.getState())
+      // console.log(initialState);
+    })
+      .catch(err => {
+        console.log(err);
+      })
+
   }
   else {
     console.log("Not logged in");
@@ -59,5 +71,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
 export { loginUser };
 export { signupUser };
+export {logout};
 // const databaseRef=firebase.database().ref();
 // export const cloths=databaseRef.child("clothes");

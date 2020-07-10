@@ -14,6 +14,7 @@ class Cart extends React.Component {
     console.log("Pushed");
   };
   render() {
+      
     return (
       <section className="Cart">
         <h1>My Shopping Bag</h1>

@@ -21,6 +21,7 @@ class Products extends React.Component {
         {/* <span itemProp="numberOfItems">2</span> */}
         {this.props.data.map((each) => (
           <Product
+            nav={this.props.nav}
             data={each}
             btn={this.props.btn}
             key={each.id}

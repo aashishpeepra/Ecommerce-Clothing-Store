@@ -2,6 +2,7 @@ import React from "react";
 import "./Products.css";
 import Prds from "../../Components/UI/Products/Products";
 import { db } from "../../firebase";
+
 export default class Products extends React.Component {
 
     state = {
@@ -12,6 +13,10 @@ export default class Products extends React.Component {
             const data=querySnapshot.docs.map(doc=>doc.data());
             this.setState({data:data});
         })
+    }
+    navigator=(obj)=>{
+        console.log(this.props)
+        this.props.history.push({pathname:`/clothing/`+obj.title,state:obj});
     }
     render() {
         
@@ -55,7 +60,7 @@ export default class Products extends React.Component {
 
             
         </main>
-        {this.state.data.length===0?<div>Loading</div>:<Prds type="stacked" btn={true} data={this.state.data} />}
+        {this.state.data.length===0?<div>Loading</div>:<Prds type="stacked" btn={true} data={this.state.data} nav={this.navigator} />}
         
       </div>
     );

@@ -1,6 +1,8 @@
 import * as actionTypes from './actions';
 
 const initialState = {
+    loggedIn:false,
+    userInfo:{},
     cart: [],
 };
 
@@ -16,9 +18,22 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 cart: state.cart.filter((_,i) => i !== action.index),
             }
+        case actionTypes.AUTH_IN:
+            return {
+                ...state,
+                loggedIn:true,
+                userInfo:{...action.obj}
+            }
+            case actionTypes.AUTH_OUT:
+                return {
+                    ...state,
+                    loggedIn:false,
+                    userInfo:{}
+                }
         default:
             return state;
     }
 };
 
-export default reducer;
+=======
+
