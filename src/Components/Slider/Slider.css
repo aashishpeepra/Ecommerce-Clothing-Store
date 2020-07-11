@@ -86,6 +86,11 @@
   color: #fff;
 }
 
+.Slider__More {
+  text-decoration: none;
+  color: white;
+}
+
 #vids {
   display: flex;
   flex-direction: column;

@@ -1,102 +1,190 @@
 .Toolbar {
-    text-align: left;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #0080ff;
-    height: 60px;
-    z-index: 20;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0080ff;
+  height: 60px;
+  z-index: 20;
 }
 
 .Toolbar__Navigation {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 .Toolbar__Logo {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .Spacer {
-    flex: 1;
+  flex: 1;
 }
 
 .Toolbar__Navigation--Items a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .Toolbar__Navigation--Items ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .Toolbar__Navigation--Items li {
-    padding: 0 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.Toolbar__Navigation--Items li:not(:last-child) {
+  margin-right: 3rem;
 }
 
 .Toolbar__Navigation--Items li:nth-child(3) {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .Toolbar__Navigation--Items a:hover,
 .Toolbar__Navigation--Items a:active {
-    color:#fff;
-    font-weight: bold;
+  color: #fff;
+  font-weight: bold;
 }
 .Toolbar__Navigation--Items li:not(:last-child) {
     margin-right: 3rem;
 }
 .Toolbar__Logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
 .Searchbar__Component {
-    background-color: #0080ff;
-    outline: none;
-    border: none;
-    margin-right: 1rem;
+  background-color: #0080ff;
+  outline: none;
+  border: none;
+  margin-right: 1rem;
 }
 
 .Toolbar__Mobile {
-    display: flex;
+  display: flex;
+}
+
+.Toolbar__dropbtn--1 {
+  background-color: inherit;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.Toolbar__dropdown--1 {
+  position: relative;
+  display: inline-block;
+}
+
+.Toolbar__dropdown-content--1 {
+  display: none;
+  position: absolute;
+  background-color: rgb(0, 102, 255);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.Toolbar__dropdown-content--1 a {
+  color: white;
+  padding: 6px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.Toolbar__dropdown-content--1 a:hover {
+  background-color: #1b1a1a;
+}
+
+.Toolbar__dropdown--1:hover .Toolbar__dropdown-content--1 {
+  display: block;
+}
+
+.Toolbar__dropdown--1:hover .Toolbar__dropbtn--1 {
+  outline: none;
+}
+
+.Toolbar__dropbtn--2 {
+  background-color: inherit;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.Toolbar__dropdown--2 {
+  position: relative;
+  display: inline-block;
+}
+
+.Toolbar__dropdown-content--2 {
+  display: none;
+  position: absolute;
+  background-color: rgb(0, 102, 255);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transform: translate(144px, -20px);
+}
+
+.Toolbar__dropdown-content--2 p {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.Toolbar__dropdown-content--2 p:hover {
+  background-color: #1b1a1a;
+}
+
+.Toolbar__dropdown--2:hover .Toolbar__dropdown-content--2 {
+  display: block;
+}
+
+.Toolbar__dropdown--2:hover .Toolbar__dropbtn--2 {
+  outline: none;
 }
 
 .Toolbar__Mobile--Cart {
-    color: white;
-    font-size: inherit;
+  color: white;
+  font-size: inherit;
 }
 
 @media (min-width: 768px) {
-    .Toolbar__Mobile {
-        display: none;
-    }
+  .Toolbar__Mobile {
+    display: none;
+  }
 
-    .Toolbar__Mobile .Searchbar__Component {
-        margin-right: 0;
-    }
-
+  .Toolbar__Mobile .Searchbar__Component {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 768px) {
-    .Toolbar__Navigation--Items {
-        display: none;
-    }
+  .Toolbar__Navigation--Items {
+    display: none;
+  }
 }
 
 @media (min-width: 769px) {
-    .Toolbar__Toggle {
-        display: none;
-    }
+  .Toolbar__Toggle {
+    display: none;
+  }
 
-    .Toolbar__Logo {
-        margin-left: 0;
-    }
+  .Toolbar__Logo {
+    margin-left: 0;
+  }
 }

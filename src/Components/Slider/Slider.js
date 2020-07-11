@@ -17,7 +17,7 @@ const Slide = (props) => {
           <p>{props.para}</p>
         </div>
         <button type="button" className="Slider__Button">
-          <NavLink to="/shop">Show More</NavLink>
+          <NavLink to="/shop" className="Slider__More">Show More</NavLink>
         </button>
       </div>
     </div>
