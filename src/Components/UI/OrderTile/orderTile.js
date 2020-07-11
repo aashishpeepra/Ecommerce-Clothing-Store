@@ -2,20 +2,25 @@ import React from 'react';
 import "./orderTile.css";
 import Button from "../../Navigation/Buttons/Button";
 
+function convertToDate(timestamp){
+    var d = new Date(timestamp);
+    return (d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear());
+}
+
 export default (props)=>{
     return (
         <div className="orderTile">
             <div className="order-img-holder">
-                <img src="https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt=""/>
+                <img src={props.data.img} alt="Cart Bag"/>
             </div>
             
                 <span>
-                    27/03/2001
+                    {convertToDate(props.data.time)}
                 </span>
                 <span>
-                    Rs 2001
+                    Rs {props.data.total}
                 </span>
-                <Button text="View" big={true}/>
+                <Button click={()=>props.func(props.data)} text="View" big={true}/>
         </div>
     )
 }

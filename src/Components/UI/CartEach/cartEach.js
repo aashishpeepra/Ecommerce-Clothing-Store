@@ -9,6 +9,8 @@ const cartEach = (props) => {
   let temp=props.qty;
   const checkVal = (e,index) => {
     let a = e.target.value;
+    if(props.fixed)
+      return null
     if(a=="")
       temp="";
     if (a > 0 && a < 100)
@@ -35,16 +37,26 @@ const cartEach = (props) => {
         </div>
         <div className="CartEach-G">
           <div className="CartEach-left">
-            <select onChange={(e)=>props.onChangeSize(e.target.value,props.index)} defaultValue={props.defSize}>
+            {
+              props.fixed?<p>{props.defSize}</p>:(
+                <select onChange={(e)=>props.onChangeSize(e.target.value,props.index)} defaultValue={props.defSize}>
               {props.variants.map((each) => (
                 <option value={each}>{each}</option>
               ))}
             </select>
+              )
+            }
+            
           </div>
-          <div className="CartEach-in">
+          {
+            props.fixed?<p>{props.qty}</p>:(
+              <div className="CartEach-in">
             <label htmlFor="quantity">Quantity</label>
             <input onChange={(e)=>checkVal(e,props.index)} value={temp} type="number" id="quantity" placeholder="Quantity" />
           </div>
+            )
+          }
+          
         </div>
         <div className="CartEach-G">
           <div className="CartEach-left">
@@ -55,11 +67,15 @@ const cartEach = (props) => {
           </div>
         </div>
         <div className="CartEach-G">
-          <Button
+          {
+            !props.fixed?<Button
             text="Remove"
             color="red"
             click={() => props.onRemoveItem(props.index)}
-          />
+          />:null
+
+          }
+          
         </div>
       </div>
     </div>

@@ -17,6 +17,14 @@ import {logout} from "../../firebase";
         const val=this.props.loggedIn?null:this.props.history.push("/login-signup");
         
     }
+    navToEachOrder=(data)=>{
+        this.props.history.push({
+            pathname:"/user/"+data.orderId,
+            state:{
+                data:data
+            }
+        })
+    }
     render() {
         return (
             <div className="User Login">
@@ -54,7 +62,7 @@ import {logout} from "../../firebase";
                 </div>
                 <div style={{marginTop:"20px"}}>
 
-                    <Button text="Update Details" big={true}/>
+                    
                     <div style={{display:"inline-block",marginLeft:"20px"}}>
                          <Button click={()=>{logout();this.props.history.push("/");}} text="Logout" big={true}/>
                     </div>
@@ -65,10 +73,9 @@ import {logout} from "../../firebase";
                 </h3>
                 <div className="User-info-container">
                     {
-                        this.props.userInfo.orders? this.props.userInfo.orders.map(each=><OrderTile/>) :null   
+                        this.props.userInfo.orders? this.props.userInfo.orders.map(each=><OrderTile func={this.navToEachOrder} data={each}/>) :null   
                     }
-                    <OrderTile/>
-                    <OrderTile/>
+                    
                 </div>
             </div>
 
