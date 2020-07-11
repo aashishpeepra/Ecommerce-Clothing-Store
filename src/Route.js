@@ -10,6 +10,7 @@ import Signup from "./Containers/Signup/Signup";
 import LoginSignup from "./Containers/LoginSignup/LoginSignup";
 import User from "./Containers/UserDetails/UserDetails";
 import Temp from "./Components/UI/UserEachOrder/UserEachOrder";
+import EachOrder from "./Containers/UserDetails/EachOrder/EachOrder";
 export default class Router extends Component{
     state={
 
@@ -19,6 +20,7 @@ export default class Router extends Component{
         return(
             <Switch>
                 <Route path="/temp" component={Temp}/>
+                <Route path="/user/:id" component={EachOrder}/>
                 <Route path="/user" component={User}/>
                 <Route path="/login-signup" component={LoginSignup}/>
                 <Route path="/signup" component={Signup}/>

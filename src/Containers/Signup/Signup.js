@@ -84,7 +84,7 @@ export default class SignUn extends React.Component {
                             </fieldset>
                             <fieldset>
                                 <label htmlFor="pin">Pincode</label>
-                                <input onChange={this.onChanger2} value={this.state.userData.location.pincode} type="number" name="pin" id="pin" placeholder="Pincode" />
+                                <input onChange={this.onChanger2} value={this.state.userData.location.pincode} type="number" name="pincode" id="pin" placeholder="Pincode" />
                             </fieldset>
                             </div>
                         )}

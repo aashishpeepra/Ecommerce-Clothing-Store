@@ -27,7 +27,7 @@ const toolbar = (props) => (
           </li>
           {
             props.loggedIn?(
-               <li>
+               <li >
             <NavLink to="/user">My Orders</NavLink>
           </li>
             ):null

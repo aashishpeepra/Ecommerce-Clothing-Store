@@ -53,6 +53,10 @@ class LogIn extends React.Component{
                     </div>
                     <div className="Login-Password">
                         <Link to="/forgot-password">Forgot Password?</Link>
+                        <div style={{marginTop:"8px"}}>
+                            <Link to="/signup">Create a new Account?</Link>
+                        </div>
+                        
                     </div>
                     
                 </form>

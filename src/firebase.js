@@ -35,6 +35,8 @@ function signupUser(email, password, data) {
     .then(res => {
       console.log(res);
       console.log(res.user.uid)
+      store.dispatch({type:"AUTH_IN",obj:{ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }})
+      console.log({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" })
       db.collection("Users/").doc(res.user.uid).set({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }).then(res => console.log(res)).catch(err => console.log(err))
     })
     .catch(err => {
@@ -47,6 +49,24 @@ function logout(){
   })
 }
 
+function submitOrder(data,previousOrders){
+  if(firebase.auth().currentUser!==null)
+  {
+    console.log("Data->",data)
+    console.log("Previous ",previousOrders)
+    console.log("Attached",[...previousOrders,data.order]);
+    db.collection("Orders/").doc(firebase.auth().currentUser.uid).set(data)
+    .then(res=>{
+      console.log(res);
+    })
+    .catch(err=>{
+      console.log(err.message);
+    })
+    db.collection("Users/").doc(firebase.auth().currentUser.uid).update({orders:data.orders});
+  }
+  
+}
+
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if (firebaseUser) {
     console.log("From Auth",firebaseUser);
@@ -54,8 +74,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       console.log("Got Data",querySnapshot.data());
       // initialState.loggedIn = true;
       // initialState.userInfo = { ...querySnapshot.data() }
-      console.log(store.dispatch({type:"AUTH_IN",obj:querySnapshot.data()}));
-      console.log(store.getState())
+      if(querySnapshot.data()!==undefined)
+        store.dispatch({type:"AUTH_IN",obj:querySnapshot.data()})
       // console.log(initialState);
     })
       .catch(err => {
@@ -64,7 +84,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
   }
   else {
-    console.log("Not logged in");
+    store.dispatch({type:"AUTH_OUT"})
   }
 })
 
@@ -72,5 +92,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 export { loginUser };
 export { signupUser };
 export {logout};
+export {submitOrder};
 // const databaseRef=firebase.database().ref();
 // export const cloths=databaseRef.child("clothes");
