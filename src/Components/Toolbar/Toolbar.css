@@ -40,6 +40,10 @@
     padding: 0 0.5rem;
 }
 
+.Toolbar__Navigation--Items li:not(:last-child) {
+    margin-right: 3rem;
+}
+
 .Toolbar__Navigation--Items li:nth-child(3) {
     margin-right: 1rem;
 }
