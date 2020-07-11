@@ -19,17 +19,54 @@ const toolbar = (props) => (
       <div className="Spacer"></div>
       <div className="Toolbar__Navigation--Items">
         <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li className="Toolbar__dropdown--1">
+            <button className="Toolbar__dropbtn--1">
               <NavLink to="/clothings">Shop</NavLink>
+            </button>
+            <div className="Toolbar__dropdown-content--1">
+              <a href="/" className="Toolbar__dropdown--2">
+                <button className="Toolbar__dropbtn--2">
+                  <NavLink to="/">Boys</NavLink>
+                </button>
+                <div className="Toolbar__dropdown-content--2">
+                  <p>Boys-Shirts</p>
+                  <p>Boys-T-Shirts</p>
+                  <p>Boys-Jeans</p>
+                  <p>Boys-Pants</p>
+                </div>
+              </a>
+              <a href="/" className="Toolbar__dropdown--2">
+                <button className="Toolbar__dropbtn--2">
+                  <NavLink to="/">Girls</NavLink>
+                </button>
+                <div className="Toolbar__dropdown-content--2">
+                  <p>Shirts</p>
+                  <p>T-Shirts</p>
+                  <p>Jeans</p>
+                  <p>Pants</p>
+                </div>
+              </a>
+              <a href="/" className="Toolbar__dropdown--2">
+                <button className="Toolbar__dropbtn--2">
+                  <NavLink to="/">Infants</NavLink>
+                </button>
+                <div className="Toolbar__dropdown-content--2">
+                  <p>Shirts</p>
+                  <p>T-Shirts</p>
+                  <p>Jeans</p>
+                  <p>Pants</p>
+                </div>
+              </a>
+            </div>
+          </li>
+          {props.loggedIn ? (
+            <li>
+              <NavLink to="/user">My Orders</NavLink>
             </li>
-            {props.loggedIn ? (
-              <li>
-                <NavLink to="/user">My Orders</NavLink>
-              </li>
-            ) : null}
+          ) : null}
 
           <div className="Searchbar__Component">
             <SearchBar />

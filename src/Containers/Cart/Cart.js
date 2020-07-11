@@ -9,6 +9,12 @@ class Cart extends React.Component {
   state = {
     total: 0,
   };
+  calcSum=(arr)=>{
+    let sum=0;
+    for(let i=0;i<arr.length;i++)
+      sum+=arr[i].qty*arr[i].data.price;
+    return sum;
+  }
   moveToCheckout = () => {
     this.props.history.push("/checkout");
     console.log("Pushed");
@@ -22,11 +28,12 @@ class Cart extends React.Component {
           <div>
             {this.props.cart.map((each, i) => (
               <CartEach
-                image={each.images[0]}
-                title={each.title}
-                price={each.price}
-                defSize={each.desc.sizes[0]}
-                variants={each.desc.sizes}
+                image={each.data.images[0]}
+                title={each.data.title}
+                price={each.data.price}
+                defSize={each.data.desc.sizes[0]}
+                variants={each.data.desc.sizes}
+                qty={each.qty}
                 index={i}
               />
             ))}
@@ -37,19 +44,19 @@ class Cart extends React.Component {
               <tbody>
                 <tr>
                   <th className="lefter">Bag value</th>
-                  <th>&#8377;25</th>
+            <th>&#8377;{this.calcSum(this.props.cart)}</th>
                 </tr>
                 <tr>
                   <th className="lefter">Shipping</th>
-                  <th>&#8377;30</th>
+                  <th>&#8377;{this.props.cart.length==0?0:25}</th>
                 </tr>
                 <tr>
                   <th className="lefter">Packing</th>
-                  <th>&#8377;3</th>
+                  <th>&#8377;{this.props.cart.length==0?0:25}</th>
                 </tr>
                 <tr>
                   <th className="lefter">Tax</th>
-                  <th>&#8377;25</th>
+                  <th>&#8377;{this.props.cart.length==0?0:25}</th>
                 </tr>
                 <hr />
                 <tr className="tota2">
@@ -60,7 +67,7 @@ class Cart extends React.Component {
                     Total
                   </th>
                   <th style={{ fontWeight: "bold", fontSize: "100%" }}>
-                    &#8377;240
+                    &#8377;{this.props.cart.length==0?0:this.calcSum(this.props.cart)+25+25+25}
                   </th>
                 </tr>
               </tbody>
@@ -70,8 +77,9 @@ class Cart extends React.Component {
                 click={this.moveToCheckout.bind(this)}
                 history={this.props.history}
                 link="/checkout"
-                text="PLACE ORDER"
+                text={this.props.cart.length==0?"Add Something":"Place Order"}
                 big={true}
+                disable={!this.props.cart.length>0}
               />
             </div>
           </div>

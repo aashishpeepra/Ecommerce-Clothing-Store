@@ -4,6 +4,8 @@
   flex-direction: column;
   margin-top: 20px;
   justify-content: center;
+  bottom:0;
+  position: relative;
 }
 
 .Company__Name {

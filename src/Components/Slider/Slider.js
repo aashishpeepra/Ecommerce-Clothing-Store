@@ -1,5 +1,6 @@
 import React from "react";
 import "./Slider.css";
+import {NavLink} from 'react-router-dom';
 
 const Slide = (props) => {
   const styles = {
@@ -16,7 +17,7 @@ const Slide = (props) => {
           <p>{props.para}</p>
         </div>
         <button type="button" className="Slider__Button">
-          Show More
+          <NavLink to="/shop">Show More</NavLink>
         </button>
       </div>
     </div>

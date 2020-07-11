@@ -3,7 +3,22 @@ import "./cartEach.css";
 import Button from "../../Navigation/Buttons/Button";
 import { connect } from "react-redux";
 import * as actionTypes from "../../../store/actions";
+
+
 const cartEach = (props) => {
+  let temp=props.qty;
+  const checkVal = (e,index) => {
+    let a = e.target.value;
+    if(a=="")
+      temp="";
+    if (a > 0 && a < 100)
+    {
+      props.onChangeQty(a,index);
+      temp=a;
+    }
+      
+      return 1;
+  }
   return (
     <div className="CartEach">
       <div className="CartEach-img-holder">
@@ -20,7 +35,7 @@ const cartEach = (props) => {
         </div>
         <div className="CartEach-G">
           <div className="CartEach-left">
-            <select defaultValue={props.defSize}>
+            <select onChange={(e)=>props.onChangeSize(e.target.value,props.index)} defaultValue={props.defSize}>
               {props.variants.map((each) => (
                 <option value={each}>{each}</option>
               ))}
@@ -28,7 +43,7 @@ const cartEach = (props) => {
           </div>
           <div className="CartEach-in">
             <label htmlFor="quantity">Quantity</label>
-            <input type="number" id="quantity" placeholder="Quantity" />
+            <input onChange={(e)=>checkVal(e,props.index)} value={temp} type="number" id="quantity" placeholder="Quantity" />
           </div>
         </div>
         <div className="CartEach-G">
@@ -36,7 +51,7 @@ const cartEach = (props) => {
             <h5>Total</h5>
           </div>
           <div className="CartEach-right">
-            <span className="CartEach-price">$ {props.price}</span>
+            <span className="CartEach-price">Rs. {props.price*props.qty}</span>
           </div>
         </div>
         <div className="CartEach-G">
@@ -61,7 +76,14 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onRemoveItem: (index) =>
       dispatch({ type: actionTypes.DELETE_ITEM_CART, index: index }),
-  };
+    onChangeQty: (q, index) => {
+      dispatch({ type: actionTypes.EDIT_QTY, obj: { q, index } })
+    },
+    onChangeSize:(size,index)=>{
+      dispatch({type:actionTypes.EDIT_SIZE,obj:{size,index}})
+    }
+  }
+    ;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(cartEach);
