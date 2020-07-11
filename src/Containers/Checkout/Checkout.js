@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import {connect} from 'react-redux';
 import * as actionTypes from "../../store/actions";
 import Button from "../../Components/Navigation/Buttons/Button";
+import {submitOrder} from "../../firebase";
 
 class Checkout extends React.Component{
     state={
@@ -19,6 +20,44 @@ class Checkout extends React.Component{
         let temp={...this.state.userInfo};
         temp["location"][name]=value;
         this.setState({userInfo:temp});
+    }
+    submitOrder=()=>{
+        let location={...this.state.userInfo};
+        let cartData=[...this.props.cart];
+        let userBasic={...this.props.userInfo};
+        userBasic['location']=location.location;
+        let previousOrders;
+        if(userBasic.orders==undefined)
+            previousOrders=[]
+        else
+            previousOrders=[...userBasic.orders];
+        let sum=0;
+        for(let i=0;i<cartData.length;i++)
+            sum+=cartData[i].data.price;
+        
+        let totalOrders=userBasic["orders"];
+        
+        delete userBasic.orders;
+        console.log(cartData,previousOrders);
+        let image=totalOrders.length==0?cartData[0].data.images[0]:totalOrders[0].items[0].data.images[0];
+        let currentOrder={
+            time:(new Date()).getTime(),
+            img:image,
+            total:sum,
+            items:cartData,
+            location:location.location,
+            orderId:Math.floor(Math.random()*1000000+100)
+        }
+        totalOrders.push(currentOrder);
+        let OrderData={
+            userData:userBasic,
+            orders:totalOrders
+        };
+        submitOrder(OrderData,previousOrders);
+
+        
+
+
     }
     render(){
         let ifNotLogged=(
@@ -71,7 +110,7 @@ class Checkout extends React.Component{
                                 </h3>
                             </div>
                             <div style={{marginTop:"20px"}}>
-                            <Button text="Place Order" color="blue" big={true}/>
+                            <Button text="Place Order" color="blue" big={true} click={this.submitOrder}/>
                             </div>
                             
                         </div>
@@ -84,7 +123,8 @@ class Checkout extends React.Component{
 const mapStateToProps = (state) => {
     return {
       loggedIn:state.loggedIn,
-      userInfo:state.userInfo
+      userInfo:state.userInfo,
+      cart:state.cart
     };
   };
   
