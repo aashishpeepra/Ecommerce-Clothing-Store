@@ -5,8 +5,8 @@ import Button from "../../../../Components/Navigation/Buttons/Button";
 import { storage, db } from '../../../../firebase';
 class CreateProduct extends React.Component {
     state = {
-        title:"",
-        price:0,
+        title: "",
+        price: 0,
         sizes: [],
         gender: "m",
         category: "",
@@ -19,8 +19,43 @@ class CreateProduct extends React.Component {
         file: undefined,
         progress: 0,
         uploadImage: "",
-        material:"",
-        offer:""
+        material: "",
+        offer: "",
+        old: false,
+        oldTitle: "",
+        clicked: false
+    }
+    UNSAFE_componentWillMount() {
+        console.log(this.props.location);
+        if (this.props.location.state.desc !== undefined) {
+            let temp = this.props.location.state;
+            this.setState({
+                title: temp.title,
+                price: temp.price,
+                offer: temp.offer,
+                id: temp.id,
+                images: temp.images,
+                age: temp.desc.age,
+                sizes: temp.desc.sizes,
+                gender: temp.desc.gender,
+                category: temp.desc.category,
+                material: temp.desc.material,
+                old: true,
+                oldTitle: temp.title
+            })
+        }
+    }
+    onTitleChange = (e) => {
+        this.setState({ title: e.target.value });
+    }
+    onPrice = (e) => {
+        this.setState({ price: e.target.value });
+    }
+    onOffer = (e) => {
+        this.setState({ offer: e.target.value });
+    }
+    onMaterial = (e) => {
+        this.setState({ material: e.target.value });
     }
     onCheckBoxChange = (e) => {
         let check = false;
@@ -63,8 +98,9 @@ class CreateProduct extends React.Component {
         if (this.state.file === undefined)
             alert("Please select an image");
         else {
-            let storageRef=storage.ref();
+            let storageRef = storage.ref();
             const upload = storageRef.child(`images/${this.state.file.name}`).put(this.state.file);
+            
             const temp = upload.on('state_changed',
                 (snapshot) => {
                     let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -77,38 +113,96 @@ class CreateProduct extends React.Component {
                 },
                 () => {
                     console.log(upload.snapshot);
-                    upload.snapshot.ref.getDownloadURL().then( (downloadURL)=> {
+                    upload.snapshot.ref.getDownloadURL().then((downloadURL) => {
                         let copy = [...this.state.images];
                         copy.push(downloadURL);
-                        this.setState({ images: copy, uploadImage: downloadURL });
+                        this.setState({ images: copy, uploadImage: downloadURL});
                     })
                 })
         }
     }
-    uploadProductToFirebase=()=>{
-       const data={
-           title:this.state.title,
-           price:this.state.price,
-           offer:this.state.offer,
-           images:this.state.images,
-           offer:this.state.offer,
-           desc:{
-               material:this.state.material,
-               age:this.state.age,
-               category:this.state.category,
-               gender:this.state.gender,
-               sizes:this.state.sizes,
-           },
-           id:Math.floor(Math.random()*100000+100)
-       }
-       db.collection("Clothes").doc(data.title).set(data)
-       .then(res=>console.log(res))
-       .catch(err=>console.log(err));
+    deleteProduct = () => {
+        let val = prompt("Are you sure you want to delete?");
+        if (val) {
+            this.setState({ clicked: true })
+            db.collection("Clothes").doc(this.state.title).delete()
+                .then((res) => {
+                    this.setState({ clicked: false });
+                    alert("Deleted Successfully");
+
+                    this.props.history.push("/admin/products")
+                })
+                .catch(err => {
+                    console.log("Some Error Occured");
+                })
+
+        }
+    }
+    editProduct = () => {
+        const data = {
+            title: this.state.title,
+            price: this.state.price,
+            offer: this.state.offer,
+            images: this.state.images,
+            offer: this.state.offer,
+            desc: {
+                material: this.state.material,
+                age: this.state.age,
+                category: this.state.category,
+                gender: this.state.gender,
+                sizes: this.state.sizes,
+            },
+            id: this.state.id
+        }
+        this.setState({ clicked: true });
+        if (this.state.title === this.state.oldTitle) {
+            db.collection("Clothes").doc(this.state.title).update(data).then(() => this.setState({ clicked: false }));
+        }
+        else {
+            db.collection("Clothes").doc(this.state.oldTitle).delete();
+            db.collection("Clothes").doc(this.state.title).set(data).then(() => this.setState({ clicked: false }));
+        }
+
+    }
+    uploadProductToFirebase = () => {
+        const data = {
+            title: this.state.title,
+            price: this.state.price,
+            offer: this.state.offer,
+            images: this.state.images,
+            offer: this.state.offer,
+            desc: {
+                material: this.state.material,
+                age: this.state.age,
+                category: this.state.category,
+                gender: this.state.gender,
+                sizes: this.state.sizes,
+            },
+            id: Math.floor(Math.random() * 100000 + 100)
+        }
+        this.setState({clicked:true});
+        db.collection("Clothes").doc(data.title).set(data)
+            .then(res => this.setState({clicked:false}))
+            .catch(err => console.log(err));
     }
     render() {
         console.log(this.state);
         return (
             <div className="User Login">
+                {
+                    this.state.clicked?(
+                        <div className="spinner">
+                <div className="sk-chase">
+                    <div className="sk-chase-dot"></div>
+                    <div className="sk-chase-dot"></div>
+                    <div className="sk-chase-dot"></div>
+                    <div className="sk-chase-dot"></div>
+                    <div className="sk-chase-dot"></div>
+                    <div className="sk-chase-dot"></div>
+                </div>
+                </div>
+                    ):null
+                }
                 <h1>{this.props.userInfo.name}</h1>
                 <div className="User-info-container">
                     <h4>General Information</h4>
@@ -116,26 +210,26 @@ class CreateProduct extends React.Component {
 
                         <fieldset>
                             <label htmlFor="number">Title</label>
-                            <input value={this.props.loggedIn ? this.state.title : ""} text="text" name="text" id="text" placeholder="Black Cotton Tshirt" />
+                            <input onChange={this.onTitleChange} value={this.state.title} type="text" name="title" id="text" placeholder="Black Cotton Tshirt" />
                         </fieldset>
                         <fieldset>
                             <label htmlFor="email">Price</label>
-                            <input value={this.props.loggedIn ? this.state.price : 0} text="number" name="phone" id="phone" placeholder="250" />
+                            <input onChange={this.onPrice} value={this.state.price} type="number" name="price" id="phone" placeholder="250" />
                         </fieldset>
                         <fieldset>
                             <label htmlFor="email">Offer</label>
-                            <input value={this.props.loggedIn ? this.state.offer : 0} text="text" name="offer" id="offer" placeholder="30% Off" />
+                            <input onChange={this.onOffer} value={this.state.offer} type="text" name="offer" id="offer" placeholder="30% Off" />
                         </fieldset>
                         <fieldset className="special">
                             <h5>Select Available Sizes</h5>
                             <label htmlFor="S">S</label>
-                            <input onChange={this.onCheckBoxChange} type="checkbox" name="S" id="S" />
+                            <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('S') || this.state.sizes.includes('s')} type="checkbox" name="S" id="S" />
                             <label htmlFor="S">M</label>
-                            <input onChange={this.onCheckBoxChange} type="checkbox" name="M" id="M" />
+                            <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('M') || this.state.sizes.includes('m')} type="checkbox" name="M" id="M" />
                             <label htmlFor="S">L</label>
-                            <input onChange={this.onCheckBoxChange} type="checkbox" name="L" id="L" />
+                            <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('L') || this.state.sizes.includes('l')} type="checkbox" name="L" id="L" />
                             <label htmlFor="S">X</label>
-                            <input onChange={this.onCheckBoxChange} type="checkbox" name="X" id="X" />
+                            <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('X') || this.state.sizes.includes('X')} type="checkbox" name="X" id="X" />
 
                         </fieldset>
                     </form>
@@ -145,7 +239,7 @@ class CreateProduct extends React.Component {
                     <form>
                         <fieldset>
                             <label htmlFor="city">Material</label>
-                            <input value={this.props.loggedIn ? this.state.props : ""} type="text" name="material" id="material" placeholder="Material" />
+                            <input onChange={this.onMaterial} value={this.state.material} type="text" name="material" id="material" placeholder="Material" />
                         </fieldset>
                         <fieldset className="special">
                             <h5>Select Gender</h5>
@@ -204,10 +298,24 @@ class CreateProduct extends React.Component {
 
                 <div style={{ marginTop: "20px" }}>
 
+                    {
+                        this.state.old ? (
+                            <React.Fragment>
+                                <div style={{ display: "inline-block", marginLeft: "20px" }}>
+                                    <Button click={this.uploadProductToFirebase} text="Save Changes" big={true} />
+                                </div>
+                                <div style={{ display: "inline-block", marginLeft: "20px" }}>
+                                    <Button click={this.deleteProduct} text="Delete Product" big={true} />
+                                </div>
+                            </React.Fragment>
+                        ) : (
+                                <div style={{ display: "inline-block", marginLeft: "20px" }}>
+                                    <Button click={this.uploadProductToFirebase} text="Add Product" big={true} />
+                                </div>
+                            )
+                    }
 
-                    <div style={{ display: "inline-block", marginLeft: "20px" }}>
-                        <Button text="Add Product" big={true} />
-                    </div>
+
 
                 </div>
 

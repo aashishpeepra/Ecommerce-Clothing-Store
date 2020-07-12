@@ -25,6 +25,7 @@ class Cart extends React.Component {
     total: 0,
     data: this.props.location.state.data.items,
     orderInfo: this.props.location.state.data,
+    orderInf:this.props.location.state.userInf,
     complete: this.props.location.state.complete
   };
   calcSum = (arr) => {
@@ -43,7 +44,7 @@ class Cart extends React.Component {
       this.props.history.push("/");
   }
   render() {
-    console.log(this.props.location)
+    console.log(this.props.locatio)
     return (
       <section className="Cart">
         <h1>Order {this.state.orderInfo.orderId}</h1>
@@ -89,15 +90,15 @@ class Cart extends React.Component {
                 </tr>
                 <tr>
                   <th className="lefter">Name</th>
-                  <th>{this.state.orderInfo.name}</th>
+                  <th>{this.state.orderInf.name}</th>
                 </tr>
                 <tr>
                   <th className="lefter">Email</th>
-                  <th>{this.state.orderInfo.email}</th>
+                  <th>{this.state.orderInf.email}</th>
                 </tr>
                 <tr>
                   <th className="lefter">Phone</th>
-                  <th>{this.state.orderInfo.phone}</th>
+                  <th>{this.state.orderInf.phone}</th>
                 </tr>
 
                 <tr>

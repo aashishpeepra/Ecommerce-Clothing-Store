@@ -22,6 +22,9 @@ class AdminProducts extends React.Component{
             }
         })
     }
+    navigator = (obj) => {
+        this.props.history.push({ pathname: `/admin/products/` + obj.title, state: obj });
+    }
     
     render(){
         return (
@@ -31,7 +34,7 @@ class AdminProducts extends React.Component{
                     <Button text="Add new Product" big={true} click={()=>this.navToPath("new",{})} />
                 </div>
                 {/* Add nav={this.navigator} for opening */}
-                <Products nav={()=>{}} type="listed" data={this.state.data} />
+                <Products nav={this.navigator} type="listed" data={this.state.data} />
             </section>
             
         )
