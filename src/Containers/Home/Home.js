@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from "redux";
 import "./Home.css";
 import {db} from "../../firebase";
-import {getAllData} from "../actions/index";
+
 class Home extends Component {
     state={
         data:[]
@@ -56,8 +56,6 @@ class Home extends Component {
 function mapStateToProps(state){
     return {data:state.data}
 }
-function mapDispatchToProps(dispatch){
-    return bindActionCreators({getAllData},dispatch);
-}
-export default connect(mapStateToProps,mapDispatchToProps)(Home);
+
+export default connect(mapStateToProps)(Home);
 

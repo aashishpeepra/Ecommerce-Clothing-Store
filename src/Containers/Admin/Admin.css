@@ -1,0 +1,25 @@
+.Admin{
+    margin-top:90px;
+}
+.Admin-btn-holder{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px;
+    flex-direction: column;
+}
+.Admin-btn-holder button{
+    margin-top:20px;
+}
+.Admin-head{
+    text-align: center;
+}
+.Admin-head p{
+    margin-top:10px;
+    color:rgb(87, 86, 86);
+    letter-spacing: 1px;
+    width:50%;
+    display: inline-block;
+    
+}
