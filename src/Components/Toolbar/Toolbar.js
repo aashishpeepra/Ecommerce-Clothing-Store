@@ -27,7 +27,7 @@ const toolbar = (props) => (
               <NavLink to="/clothings">Shop</NavLink>
             </button>
             <div className="Toolbar__dropdown-content--1">
-              <a href="/" className="Toolbar__dropdown--2">
+              <NavLink to="\" className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
                   <NavLink to="/">Boys</NavLink>
                 </button>
@@ -37,8 +37,8 @@ const toolbar = (props) => (
                   <p>Boys-Jeans</p>
                   <p>Boys-Pants</p>
                 </div>
-              </a>
-              <a href="/" className="Toolbar__dropdown--2">
+              </NavLink>
+              <NavLink to="\" className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
                   <NavLink to="/">Girls</NavLink>
                 </button>
@@ -48,8 +48,8 @@ const toolbar = (props) => (
                   <p>Jeans</p>
                   <p>Pants</p>
                 </div>
-              </a>
-              <a href="/" className="Toolbar__dropdown--2">
+              </NavLink>
+              <NavLink to="\" className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
                   <NavLink to="/">Infants</NavLink>
                 </button>
@@ -59,7 +59,7 @@ const toolbar = (props) => (
                   <p>Jeans</p>
                   <p>Pants</p>
                 </div>
-              </a>
+              </NavLink>
             </div>
           </li>
           {props.loggedIn ? (

@@ -54,7 +54,7 @@
   font-weight: bold;
 }
 .Toolbar__Navigation--Items li:not(:last-child) {
-    margin-right: 3rem;
+  margin-right: 3rem;
 }
 .Toolbar__Logo a {
   color: white;
@@ -67,6 +67,12 @@
   outline: none;
   border: none;
   margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .Toolbar__Navigation--Items li:not(:last-child) {
+    margin-right: 1.5rem;
+  }
 }
 
 .Toolbar__Mobile {
