@@ -1,10 +1,20 @@
 import React from "react";
 import "./EachOrder.css";
-import CartEach from "../../../Components/UI/CartEach/cartEach";
-import Button from "../../../Components/Navigation/Buttons/Button";
+import CartEach from "../../../../Components/UI/CartEach/cartEach";
+import Button from "../../../../Components/Navigation/Buttons/Button";
 
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
+function pad(num) { 
+    return ("0"+num).slice(-2);
+  }
+  function getTimeFromDate(timestamp) {
+    var date = new Date(timestamp );
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    return pad(hours)+":"+pad(minutes)+":"+pad(seconds)
+  }
 function convertToDate(timestamp) {
   var d = new Date(timestamp);
   return (d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear());
@@ -33,7 +43,7 @@ class Cart extends React.Component {
       this.props.history.push("/");
   }
   render() {
-
+    console.log(this.props.location)
     return (
       <section className="Cart">
         <h1>Order {this.state.orderInfo.orderId}</h1>
@@ -56,10 +66,13 @@ class Cart extends React.Component {
             <h5>Order Details</h5>
             <table>
               <tbody>
-
                 <tr>
                   <th className="lefter">Date</th>
                   <th>{convertToDate(this.state.orderInfo.time)}</th>
+                </tr>
+                <tr>
+                  <th className="lefter">Time</th>
+                  <th>{getTimeFromDate(this.state.orderInfo.time)}</th>
                 </tr>
                 <tr>
                   <th className="lefter">Address</th>
@@ -73,6 +86,18 @@ class Cart extends React.Component {
                 <tr>
                   <th className="lefter">Pincode</th>
                   <th>{this.state.orderInfo.location.pincode}</th>
+                </tr>
+                <tr>
+                  <th className="lefter">Name</th>
+                  <th>{this.state.orderInfo.name}</th>
+                </tr>
+                <tr>
+                  <th className="lefter">Email</th>
+                  <th>{this.state.orderInfo.email}</th>
+                </tr>
+                <tr>
+                  <th className="lefter">Phone</th>
+                  <th>{this.state.orderInfo.phone}</th>
                 </tr>
 
                 <tr>

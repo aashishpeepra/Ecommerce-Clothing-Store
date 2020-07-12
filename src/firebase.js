@@ -28,16 +28,19 @@ function loginUser(email, password) {
       console.log(err.message);
     })
 }
-
+let checkIfSignup=false;
+let dataStorage={}
 function signupUser(email, password, data) {
   const auth = firebase.auth();
   auth.createUserWithEmailAndPassword(email, password)
     .then(res => {
       console.log(res);
       console.log(res.user.uid)
-      store.dispatch({type:"AUTH_IN",obj:{ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }})
-      console.log({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" })
-      db.collection("Users/").doc(res.user.uid).set({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }).then(res => console.log(res)).catch(err => console.log(err))
+      // store.dispatch({type:"AUTH_IN",obj:{ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }})
+      dataStorage={ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }
+      alert("Signed Up");
+      checkIfSignup=true;
+      db.collection("Users").doc(res.user.uid).set({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }).then(res => console.log(res)).catch(err => console.log(err))
     })
     .catch(err => {
       console.log(err);
@@ -55,14 +58,14 @@ function submitOrder(data,previousOrders){
     console.log("Data->",data)
     console.log("Previous ",previousOrders)
     console.log("Attached",[...previousOrders,data.order]);
-    db.collection("Orders/").doc(firebase.auth().currentUser.uid).set(data)
+    db.collection("Orders").doc(firebase.auth().currentUser.uid).set(data)
     .then(res=>{
       console.log(res);
     })
     .catch(err=>{
       console.log(err.message);
     })
-    db.collection("Users/").doc(firebase.auth().currentUser.uid).update({orders:data.orders});
+    db.collection("Users").doc(firebase.auth().currentUser.uid).update({orders:data.orders});
   }
   
 }
@@ -76,6 +79,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
       // initialState.userInfo = { ...querySnapshot.data() }
       if(querySnapshot.data()!==undefined)
         store.dispatch({type:"AUTH_IN",obj:querySnapshot.data()})
+      else if(checkIfSignup)
+        store.dispatch({type:"AUTH_IN",obj:dataStorage});
+      else
+        console.log("In auth state, neither first nor second",checkIfSignup,dataStorage);
       // console.log(initialState);
     })
       .catch(err => {
@@ -88,10 +95,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   }
 })
 
-
+const storage=firebase.storage();
+export {storage};
 export { loginUser };
 export { signupUser };
 export {logout};
 export {submitOrder};
 // const databaseRef=firebase.database().ref();
 // export const cloths=databaseRef.child("clothes");
+// thissitesecretid85923@site.com
+// skfbwgub<!@$%35424>/2874skjdvb!#28ohf

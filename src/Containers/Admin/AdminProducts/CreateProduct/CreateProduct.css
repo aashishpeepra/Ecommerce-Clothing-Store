@@ -1,3 +1,6 @@
+.CreateProducts{
+    margin-top:90px;
+}
 .User{
     margin-top:90px;
     text-align: left;
@@ -116,4 +119,49 @@
     .Login input::placeholder{
         color:#111;
     }
+  }
+  .special{
+      margin-left:10%;
+  }
+  .special label{
+    display:inline;
+    font-size:100%;
+  }
+  .special input{
+      display:inline
+  }
+  .special2{
+      margin-left:10%;
+  }
+  .special2 select{
+      height:30px;
+      width:100px;
+      font-size:95%;
+  }
+  .CreateProducts-images{
+      display:flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-right:20px;
+  }
+  .CreateProducts-images-holder{
+      height:150px;
+      
+      width:150px;
+  }
+  .CreateProducts-images-holder img{
+      height:100%;
+      width:100%;
+  }
+  .CreateProducts-current-images{
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .special3 progress{
+      margin:10px;
+      width:100%;
+  }
+  .special3 button{
+      margin-top:10px
   }
