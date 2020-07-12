@@ -188,3 +188,6 @@
     margin-left: 0;
   }
 }
+.Toolbar .active{
+    font-weight: bold;
+}

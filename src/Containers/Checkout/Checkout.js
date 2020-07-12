@@ -21,6 +21,14 @@ class Checkout extends React.Component{
         temp["location"][name]=value;
         this.setState({userInfo:temp});
     }
+    calcSum=()=>{
+        let cartData=this.props.cart;
+        let sum=0;
+        for(let i=0;i<cartData.length;i++)
+            sum+=cartData[i].data.price * cartData[i].qty;
+        return sum;
+
+    }
     submitOrder=()=>{
         let location={...this.state.userInfo};
         let cartData=[...this.props.cart];
@@ -33,7 +41,7 @@ class Checkout extends React.Component{
             previousOrders=[...userBasic.orders];
         let sum=0;
         for(let i=0;i<cartData.length;i++)
-            sum+=cartData[i].data.price;
+            sum+=cartData[i].data.price * cartData[i].qty;
         
         let totalOrders=userBasic["orders"];
         
@@ -106,7 +114,7 @@ class Checkout extends React.Component{
                             </form>
                             <div style={{marginTop:"30px"}}>
                                 <h3>
-                                    Total : Rs3400
+                                    Total : Rs {this.calcSum()}
                                 </h3>
                             </div>
                             <div style={{marginTop:"20px"}}>
