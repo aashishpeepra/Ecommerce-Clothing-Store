@@ -1,6 +1,6 @@
 .review{
     display:inline-flex;
-    width:35%;
+    width:50%;
     height:auto;
     min-height: 68px;
     margin:0 6%;
@@ -11,16 +11,21 @@
     box-sizing: border-box;
     align-items: center;
     background-color:#fff;
-    box-shadow: 10px 12px 14px rgb(8, 118, 228);
+    box-shadow: 10px 12px 14px #ebb9b9;
     
+}
+@media only screen and (min-width: 769px) {
+    .review{
+        width:35%;
+    }
 }
 .review-left{
     /* width:20%; */
 }
 
 .review-img-holder{
-    height:4rem;
-    width:4rem;
+    height:40px;
+    width:40px;
 }
 
 .review-img-holder img{
@@ -37,13 +42,13 @@
     font-size: 90%;
 }
 .review-right span{
-    color:#0080ff;
+    color:#6f6c67;
     font-weight: bold;
     letter-spacing: 0.8px;
     display:inline-block;
     margin-bottom:5px;
 }
 .review-right-content{
-    color:#aaa;
+    color:#a0a7a5;
     font-size:80%;
 }
