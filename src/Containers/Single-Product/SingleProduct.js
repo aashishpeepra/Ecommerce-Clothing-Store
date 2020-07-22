@@ -32,7 +32,7 @@ class SingleProduct extends React.Component {
         `.SizeSelection__Size${i + 1}`
       ).style.backgroundColor = "transparent";
       document.querySelector(`.SizeSelection__Size${i + 1}`).style.color =
-        "white";
+        "#7f7f7f";
     }
     for (let i = 0; i < this.state.variants.length; i++) {
       if (
@@ -46,7 +46,9 @@ class SingleProduct extends React.Component {
           `.SizeSelection__Size${i + 1}`
         ).style.backgroundColor = "white";
         document.querySelector(`.SizeSelection__Size${i + 1}`).style.color =
-          "black";
+          "#fff";
+          document.querySelector(`.SizeSelection__Size${i + 1}`).style.backgroundColor =
+          "#7f7f7f";
       }
     }
     this.setState({

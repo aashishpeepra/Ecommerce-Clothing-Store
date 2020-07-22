@@ -39,18 +39,20 @@
 .Product .title{
     font-weight: 300;
     font-size: 120%;
+    color:#6f6c67;
 }
 .Product .rate {
-    font-weight: 100;
+    font-weight: 0;
     margin:5px;
     font-size:95%;
+    color:#7b86a4;
 }
 .Product-content{
     padding:0px 6px;
     text-align: left;
 }
 .Product-offer{
-    color: red;
+    color: #f6a9be;
     font-weight: 100;
 margin-left: 10px;
 font-size: 90%;

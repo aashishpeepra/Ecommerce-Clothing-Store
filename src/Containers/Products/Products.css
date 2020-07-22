@@ -223,7 +223,7 @@ a, .sub-menu, .menu-item {
 .Prd-input-holder{
     display:flex;
     flex-wrap: wrap;
-    background-color: #0080ff;
+    background-color: #ecf7f7;
     padding:10px;
 }
 /* Reset Select */
@@ -237,7 +237,7 @@ select {
     box-shadow: none;
     border: 0 !important;
     background: #fff;
-    color:#0080ff;
+    color:#add3b2;
     text-align: center;
     background-image: none;
   }
@@ -253,7 +253,7 @@ select {
     height: 30px;
     line-height: 3;
     background: #fff;
-    color:#0080ff;
+    color:#add3b2;
     overflow: hidden;
     border-radius: .25em;
     margin-left:20px;
@@ -263,7 +263,7 @@ select {
   select {
     flex: 1;
     padding: 0 10px;
-    color: #0080ff;
+    color:#add3b2;
     cursor: pointer;
   }
   /* Arrow */

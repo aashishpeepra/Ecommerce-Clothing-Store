@@ -4,8 +4,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #0080ff;
+  background-color: #fff;
   height: 60px;
+  color:#5b6b6a;
   z-index: 20;
 }
 
@@ -25,7 +26,7 @@
 }
 
 .Toolbar__Navigation--Items a {
-  color: white;
+  color:#5b6b6a;
   text-decoration: none;
 }
 
@@ -50,20 +51,20 @@
 
 .Toolbar__Navigation--Items a:hover,
 .Toolbar__Navigation--Items a:active {
-  color: #fff;
+  color:#5b6b6a;
   font-weight: bold;
 }
 .Toolbar__Navigation--Items li:not(:last-child) {
   margin-right: 3rem;
 }
 .Toolbar__Logo a {
-  color: white;
+  color:#5b6b6a;
   text-decoration: none;
   font-size: 1.5rem;
 }
 
 .Searchbar__Component {
-  background-color: #0080ff;
+  background-color: #fff;
   outline: none;
   border: none;
   margin-right: 1rem;
@@ -81,7 +82,7 @@
 
 .Toolbar__dropbtn--1 {
   background-color: inherit;
-  color: white;
+  color:#5b6b6a;
   font-size: 1.2rem;
   border: none;
   cursor: pointer;
@@ -96,21 +97,21 @@
 .Toolbar__dropdown-content--1 {
   display: none;
   position: absolute;
-  background-color: rgb(0, 102, 255);
+  background-color: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 .Toolbar__dropdown-content--1 a {
-  color: white;
+  color:#5b6b6a;
   padding: 6px 8px;
   text-decoration: none;
   display: block;
 }
 
 .Toolbar__dropdown-content--1 a:hover {
-  background-color: #1b1a1a;
+  background-color: #fff;
 }
 
 .Toolbar__dropdown--1:hover .Toolbar__dropdown-content--1 {
@@ -123,7 +124,7 @@
 
 .Toolbar__dropbtn--2 {
   background-color: inherit;
-  color: white;
+  color:#5b6b6a;
   font-size: 1.2rem;
   border: none;
   cursor: pointer;
@@ -138,7 +139,7 @@
 .Toolbar__dropdown-content--2 {
   display: none;
   position: absolute;
-  background-color: rgb(0, 102, 255);
+  background-color: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -146,14 +147,14 @@
 }
 
 .Toolbar__dropdown-content--2 p {
-  color: white;
+  color:#5b6b6a;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .Toolbar__dropdown-content--2 p:hover {
-  background-color: #1b1a1a;
+  background-color: #fff;
 }
 
 .Toolbar__dropdown--2:hover .Toolbar__dropdown-content--2 {
@@ -165,7 +166,7 @@
 }
 
 .Toolbar__Mobile--Cart {
-  color: white;
+  color:#5b6b6a;
   font-size: inherit;
 }
 

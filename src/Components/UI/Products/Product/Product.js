@@ -27,7 +27,7 @@ export default (props) => {
             {
                 props.btn?
                 <div className="Product-btn-holder">
-                <Button text="Add to Cart" big={true} click={props.clicker}/>
+                <Button color={data["desc"]["gender"].toLowerCase()==="m"?"boys-color":"girls-color"} text="Add to Cart" big={true} click={props.clicker}/>
                 </div>:null
             }
             </div>

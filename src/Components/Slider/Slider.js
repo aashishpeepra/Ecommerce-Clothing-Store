@@ -32,19 +32,19 @@ class Slider extends React.Component {
       data: [
         {
           image:
-            "https://i.ytimg.com/vi/_xftI5rqCJ8/maxresdefault.jpg",
+            "https://images.vexels.com/media/users/3/152061/raw/17c7a23a045e30cbd8a8b7afd4c89d9b-shopping-discount-poster-design.jpg",
           head: "Slide1",
           para: "Para1",
         },
         {
           image:
-            "https://i.pinimg.com/originals/3c/6e/db/3c6edbec33cb5ed160476517a42129d7.jpg",
+            "https://i.pinimg.com/736x/36/89/69/3689696b4c3134364cda98a83be6b395.jpg",
           head: "Slide2",
           para: "Para2",
         },
         {
           image:
-            "https://images.creativemarket.com/0.1.0/ps/5532777/1820/1214/m1/fpnw/wm0/horizontal-fashion-flyer-.png?1544451625&s=fdc03175e9eb3a9ce6561da8d4540280",
+            "https://img.freepik.com/free-vector/woman-touching-add-cart-button-desktop-screen-with-trolley-carry-bags-parcel-boxes-blue-background-online-shopping-concept_1302-22611.jpg?size=626&ext=jpg",
           head: "Slide3",
           para: "Para3",
         },

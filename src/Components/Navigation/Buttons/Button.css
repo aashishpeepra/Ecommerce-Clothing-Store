@@ -3,7 +3,7 @@
     /* border-radius:50px; */
     padding:4px 12px;
     /* border:1px solid #0080ff; */
-    background-color: #0080ff;
+    background-color: #95c9e2;
     border:0;
     cursor: pointer;
     color:#fff;
@@ -11,7 +11,13 @@
 }
 .My-btn:hover{
     color:#fff;
-    background-color:#0080ff;
+    background-color:#95c9e2;
+}
+.boys-color{
+    background-color:#95c9e2;
+}
+.girls-color{
+    background-color: #f6a9be;
 }
 .My-btn:focus{
     outline: none;
@@ -31,7 +37,7 @@
     font-size:110%;
     letter-spacing: 1px;
     color:#fff;
-    background-color: #0080ff;
+    background-color: #95c9e2;
     box-shadow: 10px 20px 30px #eee;
 }
 .big:active{
