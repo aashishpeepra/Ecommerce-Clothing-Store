@@ -1,107 +1,36 @@
-.categorize{
+.Category__Heading {
     display: flex;
-    height:60vh;
-    width:100%;
-    flex-wrap: wrap;
     justify-content: center;
-    padding:2%;
-    
-}
-.categorize-container{
-    background-color: #f6e0e0;
-    /* background: inherit; */
-    width:100vw;
-    
-    padding:30px;
-    
-}
-.categorize-container h3{
-    color:#fff;
-    font-size:150%;
+    align-items: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 20px 0;
 }
 
-.categorize-left,.categorize-right{
-    height:100%;
-    width:40%;
-    max-width:400px;
-    padding:0 1%;
-    display:inline-block;
-    
-    
+.Categorize {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #fff;
 }
-.categorize-right{
-    text-align: center;
+
+.Categorize__Card {
+    margin: 2rem;
+    height: 50vh;
+    background-color: #0080ff;   
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
 }
-.categorize-left-img-holder{
-    background-color: black;
-    margin-bottom: 10px;
+
+.Categorize__Card--Image {
+    padding: 5%;
+    height: 92%;
 }
-.categorize-left-img-holder{
-    height:49%;
-    width:100%;
-}
-.categorize-right-img-holder{
-    height:100%;
-    width:100%;
-    
-}
- .categorize-right-img-holder{
-    background-color: blueviolet;
-    background-image:linear-gradient(to bottom right, rgb(255,255,0,0.3),rgb(255,255,1,0.5)), url("https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11859916/2020/5/22/fda1f4d4-eab5-485b-898d-723bf8e000dd1590152277762MVMTWomenBlackAnalogueWatch1.jpg");
-}
-.categorize-right-img-holder:hover, .categorize-right-img-holder:active{
-    background-image:linear-gradient(to bottom right, rgb(0,0,0,0.3),rgb(1,1,1,0.5)), url("https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11859916/2020/5/22/fda1f4d4-eab5-485b-898d-723bf8e000dd1590152277762MVMTWomenBlackAnalogueWatch1.jpg");
-}
-.one{
-    background-image:linear-gradient(to bottom right, rgb(255,255,0,0.3),rgb(255,255,1,0.5)), url("https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11756960/2020/6/8/b9047199-71cb-487d-838e-c8fcfb2357651591605027219-Marks--Spencer-Boys-Tshirts-4931591605026388-2.jpg");
-}
-.one:hover{
-    background-image:linear-gradient(to bottom right, rgb(0,0,0,0.3),rgb(0,0,1,0.5)), url("https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11756960/2020/6/8/b9047199-71cb-487d-838e-c8fcfb2357651591605027219-Marks--Spencer-Boys-Tshirts-4931591605026388-2.jpg");
-    
-}
-.two{
-    background-image: linear-gradient(to bottom right, rgb(255,255,0,0.3),rgb(255,255,1,0.5)),url("https://img.ltwebstatic.com/images3_pi/2020/03/04/15833061265aed4ce96d5a3639d175d1b61bab8637.webp");
-}
-.two:hover{
-    background-image: linear-gradient(to bottom right, rgb(0,0,0,0.3),rgb(0,0,1,0.5)),url("https://img.ltwebstatic.com/images3_pi/2020/03/04/15833061265aed4ce96d5a3639d175d1b61bab8637.webp");
-}
-.one , .two,.categorize-right-img-holder{
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    cursor: pointer;
-}
-.categorize-left-img-holder img{
-    height:100%;
-    width:100%;
-}
-.categorize-right-img-holder img{
-    height:100%;
-    width:100%;
-    
-}
-.overText,.overText2{
-    position: absolute;
-    margin-top:10rem;
-    margin-left:8rem;
-    /* display: none; */
-}
-.overText2{
-    margin-left: 10rem;
-}
-.overText2{
-    margin-top:5rem;
-}
-.show1{
-    display:none;
-}
-.show2{
-    display: none;
-}
-.categorize-right:hover .show1{
-    display:block;
-}
-.categorize-left:hover .show2 {
-    display:block;
+
+.Categorize__Image {
+    height: 100%;
 }

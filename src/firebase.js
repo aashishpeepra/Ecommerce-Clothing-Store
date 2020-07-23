@@ -30,17 +30,22 @@ function loginUser(email, password) {
 }
 let checkIfSignup=false;
 let dataStorage={}
+const workItOut=(res,data)=>{
+  db.collection("Users").doc(res.user.uid).set({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" })
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+}
 function signupUser(email, password, data) {
   const auth = firebase.auth();
   auth.createUserWithEmailAndPassword(email, password)
     .then(res => {
-      console.log(res);
-      console.log(res.user.uid)
+      // console.log(res);
+      // console.log(res.user.uid)
       // store.dispatch({type:"AUTH_IN",obj:{ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }})
-      dataStorage={ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }
-      alert("Signed Up");
-      checkIfSignup=true;
-      db.collection("Users").doc(res.user.uid).set({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }).then(res => console.log(res)).catch(err => console.log(err))
+      // dataStorage={ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }
+      // alert("Signed Up");
+      // checkIfSignup=true;
+      workItOut(res,data);
     })
     .catch(err => {
       console.log(err);
@@ -72,17 +77,20 @@ function submitOrder(data,previousOrders){
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if (firebaseUser) {
-    console.log("From Auth",firebaseUser);
+    // db.collection("Users").doc(firebaseUser.uid).set({ name: "Admin", email:"thissiteadmin753654@admin.com" , location: {city:"Pak",address:"Unknown",pincode:"205874"}, orders: [], phone: "" })
+    //   .then(res => console.log(res))
+    //   .catch(err => console.log(err))
+    console.log("From Auth",firebaseUser.uid);
     db.collection("Users").doc(firebaseUser.uid).get().then(querySnapshot => {
       console.log("Got Data",querySnapshot.data());
       // initialState.loggedIn = true;
       // initialState.userInfo = { ...querySnapshot.data() }
-      if(querySnapshot.data()!==undefined)
+      // if(querySnapshot.data()!==undefined)
         store.dispatch({type:"AUTH_IN",obj:querySnapshot.data()})
-      else if(checkIfSignup)
-        store.dispatch({type:"AUTH_IN",obj:dataStorage});
-      else
-        console.log("In auth state, neither first nor second",checkIfSignup,dataStorage);
+      // else if(checkIfSignup)
+      //   store.dispatch({type:"AUTH_IN",obj:dataStorage});
+      // else
+      //   console.log("In auth state, neither first nor second",checkIfSignup,dataStorage);
       // console.log(initialState);
     })
       .catch(err => {
@@ -105,3 +113,6 @@ export {submitOrder};
 // export const cloths=databaseRef.child("clothes");
 // thissitesecretid85923@site.com
 // skfbwgub<!@$%35424>/2874skjdvb!#28ohf
+// thissiteadmin753654@admin.com
+// <sbsfo##$%694!31sjvna/ajnw$3546w/>
+// ElIc4x7DuBTKO0xFaKCy3kHATV53
