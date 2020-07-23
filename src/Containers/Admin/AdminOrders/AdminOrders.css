@@ -1,3 +1,29 @@
 .AdminOrders{
     margin-top:90px;
 }
+.AdminOrders-data{
+    
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+   width:50%;
+   margin:auto;
+}
+.User{
+    margin-top:90px;
+    text-align: left;
+    display:flex;
+    width:80%;
+    align-items: center;
+}
+.User-info-container{
+    /* border:1px solid rgb(170, 168, 168); */
+    padding:10px 20px;
+    margin:10px;
+    width:100%;
+}
+.User h1{
+    margin-bottom: 10px;;
+}

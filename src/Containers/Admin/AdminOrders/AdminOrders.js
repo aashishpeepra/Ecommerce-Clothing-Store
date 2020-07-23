@@ -7,34 +7,35 @@ class AdminOrders extends React.Component {
   state = {
     orders: [],
   };
-  navToEachOrder = (data) => {
-    this.props.history.push({
-      pathname: "/admin/orders/" + data.orderId,
-      state: {
-        data: data,
-      },
-    });
-  };
-
-  render() {
-    console.log(this.props);
-    return (
-      <section className="AdminOrders">
-        {this.props.userInfo.orders
-          ? this.props.userInfo.orders.map((each) => (
-              <OrderTile func={this.navToEachOrder} data={each} />
-            ))
-          : null}
-      </section>
-    );
-  }
+ 
+    navToEachOrder=(data)=>{
+        this.props.history.push({
+            pathname:"/admin/orders/"+data.orderId,
+            state:{
+                data:data
+            }
+        })
+    }
+    render(){
+        return (
+            <section className="AdminOrders">
+                <h1>AdminOrders</h1>
+                <div className="AdminOrders-data">
+                    {
+                        this.props.userInfo.orders? this.props.userInfo.orders.map(each=><OrderTile complete={true} func={()=>this.navToEachOrder(each)} data={each}/>) :null   
+                }
+                </div>
+            </section>
+            
+        )
+    }
 }
-
 const mapStateToProps = (state) => {
-  return {
-    loggedIn: state.loggedIn,
-    userInfo: state.userInfo,
+    return {
+      loggedIn: state.loggedIn,
+      userInfo: state.userInfo
+    };
   };
-};
-
-export default connect(mapStateToProps)(AdminOrders);
+  
+  
+  export default connect(mapStateToProps)(AdminOrders);
