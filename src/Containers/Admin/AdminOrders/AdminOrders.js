@@ -1,6 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
 import "./AdminOrders.css";
-import {connect} from 'react-redux';
 import OrderTile from "../../../Components/UI/OrderTile/orderTile";
 import {db} from "../../../firebase";
 

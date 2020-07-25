@@ -1,9 +1,9 @@
 import React from "react";
 import "./SideDrawer.css";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionTypes from "../../store/actions";
-import {logout} from "../../firebase";
+import { logout } from "../../firebase";
 
 const sideDrawer = (props) => {
   let classes = ["Sidedrawer"];
@@ -13,37 +13,45 @@ const sideDrawer = (props) => {
   return (
     <nav className={classes.join(" ")}>
       <div className="Info__Box">
-  <div className="Name__Box">{!props.loggedIn ? "Name": props.userInfo.name}</div>
-  <div className="Email__Box">{!props.loggedIn?"Email": props.userInfo.email}</div>
+        <div className="Name__Box">
+          {!props.loggedIn ? "Name" : props.userInfo.name}
+        </div>
+        <div className="Email__Box">
+          {!props.loggedIn ? "Email" : props.userInfo.email}
+        </div>
       </div>
       <div className="Options">
         <div className="Options__Home">
           <NavLink to="/">Home</NavLink>
         </div>
-        <div className="Options__Shop">
-          <div className="dropdown">
-            <button className="dropbtn">
-            <NavLink to="/clothings">Shop</NavLink>
-            </button>
-            <div className="dropdown-content">
-              <a href="/">Link 1</a>
-              <a href="/">Link 2</a>
-              <a href="/">Link 3</a>
-              <a href="/">Link 4</a>
-            </div>
-          </div>
+        <div className="Options__Home">
+          <NavLink to="/">Boys</NavLink>
+        </div>
+        <div className="Options__Home">
+          <NavLink to="/">Girls</NavLink>
+        </div>
+        <div className="Options__Home">
+          <NavLink to="/">Baby Boys</NavLink>
+        </div>
+        <div className="Options__Home">
+          <NavLink to="/">Baby Girls</NavLink>
         </div>
         <div className="Options__Cart">
-        <NavLink to="/cart">Cart</NavLink>
+          <NavLink to="/cart">Cart</NavLink>
         </div>
         <div className="Options__Orders">
-        <NavLink to="/user">My Orders</NavLink>
+          <NavLink to="/user">My Orders</NavLink>
         </div>
         <div className="Options__Account">
-        <NavLink to="/user">My Account</NavLink>
+          <NavLink to="/user">My Account</NavLink>
         </div>
         <div className="Options__Log">
-        <NavLink onClick={props.loggedIn?logout:()=>{}} to={props.loggedIn?"logout":"login"}>{props.loggedIn?"Log out":"Log in"}</NavLink>
+          <NavLink
+            onClick={props.loggedIn ? logout : () => {}}
+            to={props.loggedIn ? "logout" : "login"}
+          >
+            {props.loggedIn ? "Log out" : "Log in"}
+          </NavLink>
         </div>
       </div>
     </nav>
@@ -52,11 +60,9 @@ const sideDrawer = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    loggedIn:state.loggedIn,
-    userInfo:state.userInfo
+    loggedIn: state.loggedIn,
+    userInfo: state.userInfo,
   };
 };
 
-
 export default connect(mapStateToProps)(sideDrawer);
-
