@@ -1,24 +1,20 @@
 .review{
     display:inline-flex;
-    width:50%;
+    width:80%;
     height:auto;
     min-height: 68px;
     margin:0 6%;
     margin-top:15px;
     padding:0 15px;
     padding-top:15px;
-    padding-bottom:10px;
+    padding-bottom:15px;
     box-sizing: border-box;
     align-items: center;
     background-color:#fff;
     box-shadow: 10px 12px 14px #ebb9b9;
     
 }
-@media only screen and (min-width: 769px) {
-    .review{
-        width:35%;
-    }
-}
+
 .review-left{
     /* width:20%; */
 }
@@ -51,4 +47,14 @@
 .review-right-content{
     color:#a0a7a5;
     font-size:80%;
+}
+@media only screen and (min-width: 769px) {
+    .review{
+        width:30%;
+        padding:20px 15px;
+    }
+    .review-img-holder{
+        height:60px;
+        width:60px;
+    }
 }

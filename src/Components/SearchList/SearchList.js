@@ -75,8 +75,9 @@ export default class SearchList extends React.Component {
     const { text } = this.state;
     return (
       <div className="SearchList">
+        {/* <i class="fa fa-search" aria-hidden="true"></i> */}
         <input
-          placeholder="Search Here"
+          placeholder="Search"
           value={text}
           type="text"
           onChange={this.onTextChanged}

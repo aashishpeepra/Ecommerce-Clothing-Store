@@ -12,6 +12,80 @@ export default class Products extends React.Component {
         category:"",
         data:[]
     }
+    componentWillMount(){
+        if(this.props.location.state)
+        {
+            const data=this.props.location.state;
+            this.setState(data);
+        }
+        else{
+            this.setState({gender:"",category:"",age:-1})
+        }
+        console.log(this.props)
+    }
+    shouldComponentUpdate(nextProps,nextState){
+        if(nextProps.location.state)
+        {
+            let data=nextProps.location.state;
+            let temp=Object.keys(data);
+            let check=false;
+            for(let i=0;i<temp.length;i++)
+            {
+                if(nextState[temp[i]]!=data[temp[i]])
+                {
+                    check=true;
+                    break;
+                }
+            }
+            console.log(check,data,nextState)
+            return !check;
+        }
+        return true;
+    }
+    componentWillReceiveProps(){
+        if(this.props.location.state)
+        {
+            const data=this.props.location.state;
+            this.setState(data);
+        }
+    }
+    // componentWillMount(){
+    //     if(this.props.location.state)
+    //     {
+    //         let data=this.props.location.state;
+    //         let temp=Object.keys(data);
+    //         let check=true;
+    //         for(let i=0;i<temp.length;i++)
+    //         {
+    //             if(this.state[temp[i]]!=data[temp[i]])
+    //             {
+    //                 check=false;
+    //                 break;
+    //             }
+    //         }
+    //         console.log(check,data)
+    //         // if(!check)
+    //         this.setState(data);
+    //         console.log("Will")
+    //     }
+    //     else{
+    //         this.setState({age:-1,category:"",gender:""});
+    //     }
+        
+    // }
+    // componentWillReceiveProps(){
+    //     console.log("props")
+    //     if(this.props.location.state)
+    //     {
+    //         let data=this.props.location.state;
+    //         console.log("SetState Props",data)
+    //         this.setState({gender:data.gender,category:data['category'],age:data.age});
+    //     }
+    //     else{
+    //         this.setState({age:-1,category:"",gender:""});
+    //     }
+        
+    // }
     componentDidMount() {
         db.collection("Clothes").get().then(querySnapshot => {
             const data = querySnapshot.docs.map(doc => doc.data());
@@ -76,7 +150,6 @@ export default class Products extends React.Component {
             }
             return dt;
         }
-        console.log(data,this.state.sort);
         switch(this.state.sort){
             case "0":
                 return data;
@@ -89,7 +162,7 @@ export default class Products extends React.Component {
         }
     }
     render() {
-
+        console.log(this.props.location);
         return (
             <div className="Prds-wrapper">
                 <main className="Prd-input-holder">

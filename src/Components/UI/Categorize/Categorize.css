@@ -2,9 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    margin: 20px 0;
+    /* font-size: 2.5rem; */
+    text-transform: capitalize;
+    
+    margin: 5px 0;
+    color:#5b6b6a;
 }
 
 .Categorize {
@@ -19,8 +21,8 @@
 .Categorize__Card {
     margin: 2rem;
     height: 50vh;
-    background-color: #0080ff;   
-    width: 14rem;
+    /* background-color: #0080ff;    */
+    width: 350px;
     display: flex;
     flex-direction: column;
     border-radius: 3px;
@@ -33,4 +35,9 @@
 
 .Categorize__Image {
     height: 100%;
+    width:auto;
+}
+.Categorize a{
+    color: inherit;
+    text-decoration: none;
 }

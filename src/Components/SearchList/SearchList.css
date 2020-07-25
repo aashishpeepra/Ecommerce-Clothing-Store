@@ -8,7 +8,7 @@
 }
 
 .SearchList input {
-  width: 80%;
+  width: 60%;
   border: none;
   font-size: 14px;
   color:#5b6b6a;
@@ -80,3 +80,27 @@
     background-color: #0080ff;
     color:#fff;
 }
+/* .input-icons i { 
+  position: absolute; 
+} 
+
+.input-icons { 
+  width: 100%;
+  margin-left:10px; 
+  margin-bottom: 10px; 
+} 
+
+.icon {
+   
+  padding: 10px; 
+  
+  color: green; 
+  min-width: 50px; 
+  text-align: center; 
+} 
+
+.input-field { 
+  width: 100%; 
+  padding: 10px; 
+  text-align: center; 
+} */

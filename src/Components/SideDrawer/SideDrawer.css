@@ -21,15 +21,16 @@
   height: 15%;
   padding: 1.5rem;
   font-size: 1.5rem;
-  color: white;
-  background-color: rgb(0, 102, 255);
+  color: #5b6b6a;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
 .Options {
-  background-color: blue;
+  color: #5b6b6a;
+  background-color: #fff;
   height: 85%;
   display: flex;
   flex-direction: column;
@@ -38,12 +39,19 @@
 }
 
 .Options > * {
-  color: white;
+  /* color: white; */
   font-size: 1.2rem;
 }
 .Options a{
-  color:#fff;
+  display: inline-block;
+  padding:5px 20px;
+  color:inherit;
   text-decoration: none;
+}
+.Options a:hover, .Options a:active{
+  background-color: #fff;
+  color:#5b6b6a;
+  box-shadow: 5px 10px 15px #ddd;
 }
 .Options > div:not(:last-child) {
   margin-bottom: 1.5rem;

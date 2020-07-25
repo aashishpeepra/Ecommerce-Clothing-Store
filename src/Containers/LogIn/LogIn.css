@@ -30,7 +30,7 @@
 }
 .Login input{
     border:0;
-    border-bottom:1px solid #0080ff;
+    border-bottom:1px solid #95c9e2;
     background-color: #fff;
     padding:10px 20px;
     
@@ -41,7 +41,7 @@
 }
 
 .Login input:hover , .Login input:active, .Login input:focus{
-    border-bottom:2px solid #0080ff
+    border-bottom:2px solid #95c9e2;
 }
 .Login input:focus{
     outline: none;
