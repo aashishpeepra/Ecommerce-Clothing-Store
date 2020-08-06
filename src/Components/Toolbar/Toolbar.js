@@ -7,6 +7,8 @@ import { connect } from "react-redux";
 import * as actionTypes from "../../store/actions";
 import { logout } from "../../firebase";
 import shoppingCart from "../../assets/Icons/shopping-cart.png";
+import sukainah from "../../assets/logo/sukainah-mart.png";
+
 const toolbar = (props) => (
   <header className="Toolbar">
     <nav className="Toolbar__Navigation">
@@ -14,7 +16,11 @@ const toolbar = (props) => (
         <DrawerToggleButton click={props.clicked} />
       </div>
       <div className="Toolbar__Logo">
-        <NavLink to="/">Logo</NavLink>
+        <NavLink to="/">
+          <div className="Toolbar-img-container">
+            <img src={sukainah} alt="Sukainah Mart Lofo"/>
+          </div>
+        </NavLink>
       </div>
       <div className="Spacer"></div>
       <div className="Toolbar__Navigation--Items">
@@ -29,12 +35,12 @@ const toolbar = (props) => (
             <div className="Toolbar__dropdown-content--1">
               <NavLink to="\" className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
-                  <NavLink to="/">Boys</NavLink>
+                  <NavLink to="/clothings">Boys</NavLink>
                 </button>
               </NavLink>
               <NavLink to="\" className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
-                  <NavLink to="/">Girls</NavLink>
+                  <NavLink to="/clothings">Girls</NavLink>
                 </button>
               </NavLink>
             </div>
@@ -61,7 +67,7 @@ const toolbar = (props) => (
             <div className="Toolbar__dropdown-content--1">
               <NavLink to="\" className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
-                  <NavLink to="/">Tops</NavLink>
+                  <NavLink to="/clothings">Tops</NavLink>
                 </button>
                 <div className="Toolbar__dropdown-content--2">
                   <NavLink to={{pathname:"/clothings/mshirts",state:{gender:"m",category:"shirts",age:-1}}}>Shirts</NavLink>
@@ -71,7 +77,7 @@ const toolbar = (props) => (
               </NavLink>
               <NavLink to="\" className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
-                  <NavLink to="/">Bottoms</NavLink>
+                  <NavLink to="/clothings">Bottoms</NavLink>
                 </button>
                 <div className="Toolbar__dropdown-content--2">
                   <NavLink to={{pathname:"/clothings/mjeans",state:{gender:"m",category:"jeans",age:-1}}}>Trousers/PJ/Jeans</NavLink>

@@ -145,7 +145,7 @@
 }
 
 .Toolbar__dropdown-content a:hover {
-  background-color: #5b6b6a;
+  background-color: #fff;
   color: #fff;
 }
 
@@ -192,21 +192,21 @@
 .Toolbar__dropdown-content--1 {
   display: none;
   position: absolute;
-  background-color: rgb(0, 102, 255);
+  background-color: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 .Toolbar__dropdown-content--1 a {
-  color: white;
+  color: #5b6b6a;
   padding: 6px 8px;
   text-decoration: none;
   display: block;
 }
 
 .Toolbar__dropdown-content--1 a:hover {
-  background-color: #1b1a1a;
+  background-color: #ddd;
 }
 
 .Toolbar__dropdown--1:hover .Toolbar__dropdown-content--1 {
@@ -234,7 +234,7 @@
 .Toolbar__dropdown-content--2 {
   display: none;
   position: absolute;
-  background-color: rgb(0, 102, 255);
+  background-color: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -242,14 +242,14 @@
 }
 
 .Toolbar__dropdown-content--2 a {
-  color: white;
+  color: #5b6b6a;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
 .Toolbar__dropdown-content--2 a:hover {
-  background-color: #1b1a1a;
+  background-color: #ddd;
 }
 
 .Toolbar__dropdown--2:hover .Toolbar__dropdown-content--2 {
@@ -258,4 +258,12 @@
 
 .Toolbar__dropdown--2:hover .Toolbar__dropbtn--2 {
   outline: none;
+}
+.Toolbar-img-container{
+  height:60px;
+  width:60px;
+}
+.Toolbar-img-container img{
+  height:100%;
+  width:100%;
 }
