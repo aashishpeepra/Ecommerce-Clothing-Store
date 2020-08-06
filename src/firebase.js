@@ -31,7 +31,7 @@ function loginUser(email, password) {
 let checkIfSignup=false;
 let dataStorage={}
 const workItOut=(res,data)=>{
-  db.collection("Users").doc(res.user.uid).set({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" })
+  db.collection("Users").doc(res.user.uid).set({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: data["phone"] })
       .then(res => console.log(res))
       .catch(err => console.log(err))
 }

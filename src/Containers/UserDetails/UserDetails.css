@@ -1,5 +1,6 @@
 .User{
-    margin-top:90px;
+    padding-top:10rem;
+    min-height:100vh;
     text-align: left;
     display:flex;
     width:80%;
@@ -116,4 +117,5 @@
     .Login input::placeholder{
         color:#111;
     }
+    
   }

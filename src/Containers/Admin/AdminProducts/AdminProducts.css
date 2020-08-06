@@ -1,6 +1,7 @@
 .AdminProducts{
-    margin-top:90px;
+    margin-top:5rem;
+    min-height:100vh;
 }
 .AdminProducts-btn-holder{
-    margin:20px;
+    margin:40px;
 }

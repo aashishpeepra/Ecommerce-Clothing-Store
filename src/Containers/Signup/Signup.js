@@ -10,12 +10,13 @@ export default class SignUn extends React.Component {
         verify:true,
         userData:{
             name:"",
-            email:'johndoe@gmail.com',
+            email:'',
             password:"",
+            phone:"",
             location:{
                 city:"",
                 address:"",
-                pincode:1000000
+                pincode:""
             }
         }
     }
@@ -23,7 +24,8 @@ export default class SignUn extends React.Component {
         let name=this.state.userData.name.length>5;
         let password=this.state.userData.password.length>8;
         let email= String(this.state.userData.email).length>=10;
-        return name || password || email ;
+        let phone = this.state.userData.phone.length>=10;
+        return name || password || email || phone ;
         
     }
     checkVerifySecond(){
@@ -54,6 +56,7 @@ export default class SignUn extends React.Component {
     }
     render() {
         return (
+            <div style={{minHeight: "100vh",paddingTop: "10rem"}}>
             <div className="Login">
                 <h2>Sign up</h2>
                 <form>
@@ -70,6 +73,10 @@ export default class SignUn extends React.Component {
                         <fieldset>
                             <label htmlFor="password">Password</label>
                             <input onChange={this.onChanger1} value={this.state.userData.password}  type="password" name="password" id="password" placeholder="Password" />
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="password">Phone</label>
+                            <input onChange={this.onChanger1} value={this.state.userData.phone}  type="text" name="phone" id="phone" placeholder="Phone" />
                         </fieldset>
                         </div>
                         ) : (
@@ -96,6 +103,7 @@ export default class SignUn extends React.Component {
                     </div>
 
                 </form>
+            </div>
             </div>
         )
     }

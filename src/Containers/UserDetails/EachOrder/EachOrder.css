@@ -1,5 +1,6 @@
 .Cart{
     margin-top:90px;
+    min-height: 100vh;
 }
 .Cart h1{
     margin-bottom:30px;

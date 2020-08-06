@@ -36,6 +36,7 @@ class LogIn extends React.Component{
     }
     render(){
         return (
+            <div style={{minHeight: "100vh",paddingTop: "10rem"}}>
             <div className="Login">
                 <h2>Log in</h2>
                 <form>
@@ -60,6 +61,7 @@ class LogIn extends React.Component{
                     </div>
                     
                 </form>
+            </div>
             </div>
         )
     }

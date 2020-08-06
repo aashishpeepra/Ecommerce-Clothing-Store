@@ -203,7 +203,7 @@ class CreateProduct extends React.Component {
                 </div>
                     ):null
                 }
-                <h1>{this.props.userInfo.name}</h1>
+                <h1>Product Editing</h1>
                 <div className="User-info-container">
                     <h4>General Information</h4>
                     <form>
@@ -251,11 +251,19 @@ class CreateProduct extends React.Component {
                         <fieldset className="special2">
                             <label htmlFor="category">Cetegory</label>
                             <select onChange={this.onSelectChange} id="category">
-                                <option value="tshirt">T shirt</option>
-                                <option value="shirt">Shirt</option>
+                                <option value="tshirts">T shirt</option>
+                                <option value="shirts">Shirt</option>
                                 <option value="skirts">Skirts</option>
                                 <option value="jeans">Jeans</option>
-                                <option value="jacket">JAckets</option>
+                                <option value="jacket">Jackets</option>
+                                <option value="shorts">Shorts</option>
+                                <option value="2pc">2 PC</option>
+                                <option value="3pc">3 PC</option>
+                                <option value="dungaree">Dungarees</option>
+                                <option value="denim">Denim</option>
+                                <option value="tights">Tights</option>
+                                <option value="kurtis">Kurtis</option>
+                                <option value="frocks">Frocks</option>
                             </select>
                         </fieldset>
                         <fieldset className="special2">

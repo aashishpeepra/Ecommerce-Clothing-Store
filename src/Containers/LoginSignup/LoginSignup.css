@@ -1,5 +1,6 @@
 .login-signup-holder{
-    margin-top:90px;
+    padding-top:20rem;
+    min-height:100vh;
 }
 .logValues{
     display:flex;

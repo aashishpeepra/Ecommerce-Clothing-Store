@@ -1,5 +1,6 @@
 import React from "react";
-
+import "./Wrapper.css";
+import whatsapp from "../assets/Icons/whatsapp-green.png";
 import Toolbar from "../Components/Toolbar/Toolbar";
 // import Products from "../../Components/UI/Products/Products";
 import Footer from "../Components/UI/Footer/Footer";
@@ -31,6 +32,13 @@ export default class Aux extends React.Component {
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backdrop}
         {this.props.children}
+        <div className="sticky-whatsapp">
+          <a href="https://wa.me/8318530887?text=I'm%20Interested%20In%20Your%20Website ">
+          <div className="Wrapper_holder">
+            <img src={whatsapp} alt="Whatsapp Icon"/>
+          </div>
+          </a>
+        </div>
         <Footer />
       </main>
     );

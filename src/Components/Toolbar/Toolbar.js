@@ -86,8 +86,11 @@ const toolbar = (props) => (
           </div>
           <li>
             <NavLink to="/cart">
+              <div className="Toolbar_cart">
               <div className="Toolbar_icon">
                 <img src={shoppingCart} alt="Cart"/>
+              </div>
+              <span>{props.cartLen}</span>
               </div>
             </NavLink>
           </li>
@@ -103,7 +106,14 @@ const toolbar = (props) => (
           <SearchBar />
         </div>
         <div className="Toolbar__Mobile--Cart">
-          <NavLink to="/cart">Cart</NavLink>
+          <NavLink to="/cart">
+          <div className="Toolbar_cart">
+              <div className="Toolbar_icon">
+                <img src={shoppingCart} alt="Cart"/>
+              </div>
+              <span>{props.cartLen}</span>
+              </div>
+          </NavLink>
         </div>
       </div>
     </nav>
@@ -114,6 +124,7 @@ const mapStateToProps = (state) => {
   return {
     loggedIn: state.loggedIn,
     userInfo: state.userInfo,
+    cartLen:state.cart.length
   };
 };
 

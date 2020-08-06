@@ -119,7 +119,7 @@ class SingleProduct extends React.Component {
             </div>
             <div className="ProductDescription__Dynamic">
               <div>{data.desc.material}</div>
-              <div>12-05-2020</div>
+              <div>2020</div>
               <div>{data.desc.gender.toUpperCase()}</div>
             </div>
           </div>

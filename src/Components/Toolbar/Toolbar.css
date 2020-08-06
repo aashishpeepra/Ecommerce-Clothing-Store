@@ -137,14 +137,14 @@
   z-index: 1;
 }
 
-.Toolbar__dropdown-content p {
+.Toolbar__dropdown-content a {
   color: #5b6b6a;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.Toolbar__dropdown-content p:hover {
+.Toolbar__dropdown-content a:hover {
   background-color: #5b6b6a;
   color: #fff;
 }
@@ -163,4 +163,11 @@
 .Toolbar_icon img{
   height:100%;
   width:100%;
+}
+.Toolbar_cart{
+  display:inline-flex;
+  align-items: initial;
+}
+.Toolbar_cart span{
+  margin-left:5px;
 }

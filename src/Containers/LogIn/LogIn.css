@@ -1,8 +1,8 @@
 .Login{
     
     margin:auto;
-    margin-top: 90px;
-    display:inline-flex;
+    
+    display:flex;
     flex-wrap: wrap;
     align-items: center;
     flex-direction: column;
@@ -11,7 +11,7 @@
     padding:20px 40px;
     border-radius: 20px;
     min-width: 300px;
-
+    
 }
 
 .Login fieldset{

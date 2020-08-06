@@ -24,6 +24,12 @@ export default class Products extends React.Component {
         console.log(this.props)
     }
     shouldComponentUpdate(nextProps,nextState){
+        
+        let st= (
+            this.state.age!=nextState.age || this.state.category!=nextState.category || this.state.gender!=nextState.gender || this.state.data!=nextState.data || this.state.sort != nextState.sort
+        )
+        if(st)
+            return st;
         if(nextProps.location.state)
         {
             let data=nextProps.location.state;
@@ -169,7 +175,7 @@ export default class Products extends React.Component {
 
                     <div class="select">
                         <select name="slct" onChange={this.onChangeAge} id="slct">
-                            <option selected disabled>Age</option>
+                            <option disabled>Age</option>
                             <option value="0">Infants</option>
                             <option value="1">0-6 years</option>
                             <option value="2">6-12 years</option>
@@ -178,7 +184,7 @@ export default class Products extends React.Component {
                     </div>
                     <div class="select" onChange={this.onChangeGender}>
                         <select name="slct" id="slct">
-                            <option selected disabled>Gender</option>
+                            <option disabled>Gender</option>
                             <option value="M">Boys</option>
                             <option value="F">Girls</option>
                             <option value="">Both</option>
@@ -186,7 +192,7 @@ export default class Products extends React.Component {
                     </div>
                     <div class="select" onChange={this.onChangeCategory}>
                         <select name="slct" id="slct">
-                            <option selected disabled>Category</option>
+                            <option  disabled>Category</option>
                             <option value="Tshirt">Tshirts</option>
                             <option value="Shirt">Shirts</option>
                             <option value="Jeans">Jeans</option>
@@ -196,7 +202,7 @@ export default class Products extends React.Component {
                     </div>
                     <div class="select" onChange={this.onChangeSort}>
                         <select name="slct" id="slct">
-                            <option selected disabled>Sort</option>
+                            <option  disabled>Sort</option>
                             <option value={0}>Relevance</option>
                             <option value={1}>Price Low to High</option>
                             <option value={2}>Price High to Low</option>

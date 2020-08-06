@@ -10,6 +10,12 @@ class Admin extends React.Component{
     takeToPath=(path)=>{
         this.props.history.push(path)
     }
+    componentWillMount(){
+        if(this.props.loggedIn && this.props.userInfo.email!="thissiteadmin753654@admin.com")
+        {
+            this.props.history.push("/");
+        }
+    }
     render(){
         return(
             <section className="Admin">

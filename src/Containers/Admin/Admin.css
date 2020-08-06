@@ -1,5 +1,6 @@
 .Admin{
-    margin-top:90px;
+    margin-top:10rem;
+    min-height:100vh;
 }
 .Admin-btn-holder{
     display:flex;

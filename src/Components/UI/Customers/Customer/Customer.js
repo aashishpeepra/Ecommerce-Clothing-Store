@@ -10,7 +10,7 @@ export default (props)=>{
             </div>
             <div className="review-right">
                 <span id="review-head">
-                    Aashish Peepra
+                    userName
                 </span>
                 <div className="review-right-content">
                     <p>

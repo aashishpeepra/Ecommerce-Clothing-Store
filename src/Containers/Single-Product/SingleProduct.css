@@ -122,6 +122,7 @@
   flex-direction: column;
   border: 1px solid white;
   width: 80%;
+  font-weight:BOLD;
   margin: 0 auto;
 }
 

@@ -17,7 +17,7 @@
 
 .Sections {
   display: flex;
-  padding: 0 3px;
+  padding: 0 10px;
 }
 
 .Footer__Spacer {
@@ -42,10 +42,14 @@
 .Section__2 {
   text-align: left;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
   padding-right: 3rem;
+  padding-bottom:20px;
+}
+.Section__2 h2{
+  margin-bottom:20px;
 }
 
 .Section__2 ul {
@@ -83,4 +87,25 @@
     margin-right: 0;
     padding-left: 0;
   }
+}
+.Footer_holder{
+  display:inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Footer_holder_image{
+  height:25px;
+  width:25px;
+  margin-right:10px;
+}
+.Footer_holder_image img{
+  height:100%;
+  width:100%;
+}
+.Footer_holder a{
+  color:inherit;
+  text-decoration: none;
+}
+.Footer_holder a:hover, .Footer_holder a:active{
+  font-weight: bold;
 }
