@@ -31,8 +31,10 @@ class LogIn extends React.Component{
         return false;
     }
     loginUserThis=()=>{
-        console.log("Called")
-        loginUser(this.state.userData.email,this.state.userData.password);
+        loginUser(this.state.userData.email,this.state.userData.password,this.takeToInfo);
+    }
+    takeToInfo=()=>{
+        this.props.history.push("/");
     }
     render(){
         return (

@@ -1,4 +1,4 @@
-import React, {Component,Suspense} from "react";
+import React, {Component} from "react";
 import {Switch, Route} from 'react-router-dom';
 import Home   from "./Containers/Home/Home";
 import Cart   from "./Containers/Cart/Cart"
@@ -15,6 +15,7 @@ import AdminProducts   from "./Containers/Admin/AdminProducts/AdminProducts";
 import AdminProductEach   from "./Containers/Admin/AdminProducts/CreateProduct/CreateProduct";
 import  EachOrder   from "./Containers/UserDetails/EachOrder/EachOrder"
 import EachOrderAdmin   from "./Containers/Admin/AdminOrders/EachOrder/EachOrder";
+import Adminslider from "./Containers/Admin/AdminFront/adminSlider";
 export default class Router extends Component{
     state={
 
@@ -24,6 +25,7 @@ export default class Router extends Component{
         return(
             
             <Switch>
+                <Route path="/admin/slider" component={Adminslider}/>
                 <Route path="/admin/products/:id" component={AdminProductEach}/>
                 <Route path="/admin/orders/:id" component={EachOrderAdmin}/>
                 <Route path="/admin/orders" component={AdminOrders}/>

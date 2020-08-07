@@ -71,4 +71,24 @@
   .Prds-wrapper .select:hover::after {
     color: #0080ff;
   }
+  .select2{
+    min-width:200px;
+    background-color: #fff;
+    height:30px;
+    margin-left:20px;
+    padding-top:5px;
+    margin-top:10px;
+    color:#add3b2
+  }
+  .select2 span{
+    margin: 0px 10px;
+  }
   
+  /* @media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 80px;
+      -webkit-appearance: none;
+      background-color: #add3b2
+    }
+  } */

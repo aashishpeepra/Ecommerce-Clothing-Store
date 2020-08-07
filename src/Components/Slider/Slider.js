@@ -17,7 +17,7 @@ const Slide = (props) => {
           <p>{props.para}</p>
         </div>
         <button type="button" className="Slider__Button">
-          <NavLink to="/shop" className="Slider__More">Show More</NavLink>
+          <NavLink to={props.to==undefined?"/":props.to} className="Slider__More">Show More</NavLink>
         </button>
       </div>
     </div>
@@ -90,7 +90,7 @@ class Slider extends React.Component {
             transition: "transform ease-out 0.45s",
           }}
         >
-          {this.state.data.map((each, i) => (
+          {this.props.images.map((each, i) => (
             <Slide
               key={i}
               image={each.image}

@@ -4,18 +4,26 @@ import Customers from "../../Components/UI/Customers/Customers";
 import Category from "../../Components/UI/Categorize/Categorize";
 import Carousel from "../../Components/Slider/Slider";
 import {connect} from 'react-redux';
-import { bindActionCreators } from "redux";
 import "./Home.css";
 import {db} from "../../firebase";
 
 class Home extends Component {
     state={
-        data:[]
+        data:[],
+        images:[]
     }
     componentDidMount(){
         db.collection("Clothes").get().then(querySnapshot=>{
             const data=querySnapshot.docs.map(doc=>doc.data());
             this.setState({data:data});
+        })
+        db.collection("Home").doc("Slider").get()
+        .then(data=>{
+            this.setState({images:data.data().images})
+        })
+        .catch(err=>{
+            console.log(err)
+            alert('Check Internet Connection');
         })
         // this.props.getAllData();
     }
@@ -30,8 +38,8 @@ class Home extends Component {
             <main className="Home">
                
                 
-                {/* <h1>Home</h1> */}
-                <Carousel/>
+                
+                <Carousel images={this.state.images}/>
                 <section className="Home-Trending">
                     <h3 style={{color:"#5b6b6a"}}>Deals</h3>
                 <Products nav={this.navigator} type="listed" data={this.state.data.slice(0,4)} />

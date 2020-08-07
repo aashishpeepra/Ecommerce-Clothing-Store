@@ -1,0 +1,48 @@
+.Admin-Slider
+{
+    min-height: 75vh;
+    padding-top:90px;
+}
+.CreateProducts-images{
+    margin:20px;
+}
+.CreateProducts-images-holder{
+    height:20vh;
+    width:30vw;
+    
+}
+.CreateProducts-images-holder img{
+    height:100%;
+    width:100%;
+}
+.Admin-allImage{
+    margin-top:40px;
+    display:flex;
+}
+.Admin-Slider form{
+    max-width: 500px;
+    margin:40px auto;
+    
+}
+.special3{
+    padding:20px;
+}
+.special3 progress{
+    margin:10px;
+    width:100%;
+}
+.special3 button{
+    margin-top:10px;
+    font-size:100%;
+}
+.Admin-Info-deep{
+    margin:20px;
+    display: flex;
+    flex-direction: column;
+}
+.Admin-Info-deep input{
+    margin:20px 0px;
+}
+.Admin-Info-deep input, .Admin-Info-deep textarea{
+    padding:5px;
+}

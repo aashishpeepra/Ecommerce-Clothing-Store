@@ -1,5 +1,5 @@
 import * as firebase from 'firebase';
-import {store} from "./index";
+import { store } from "./index";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDincVmK_2eK_cCYcvk1IMXOfFbNqyXY_k",
@@ -14,26 +14,28 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
-export { db };    
+export { db };
 
 
-function loginUser(email, password) {
+function loginUser(email, password,cb) {
   const auth = firebase.auth();
   auth.signInWithEmailAndPassword(email, password)
     .then(res => {
+      cb();
       console.log("Logged -> ", res);
-
+      console.log(cb)
+      
     })
     .catch(err => {
+      alert('Check your email/ Password');
       console.log(err.message);
     })
 }
-let checkIfSignup=false;
-let dataStorage={}
-const workItOut=(res,data)=>{
+
+const workItOut = (res, data) => {
   db.collection("Users").doc(res.user.uid).set({ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: data["phone"] })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+    .then(res => console.log(res))
+    .catch(err => { alert("check your network!"); console.log(err) })
 }
 function signupUser(email, password, data) {
   const auth = firebase.auth();
@@ -45,34 +47,41 @@ function signupUser(email, password, data) {
       // dataStorage={ name: data["name"], email: data["email"], location: data["location"], orders: [], phone: "" }
       // alert("Signed Up");
       // checkIfSignup=true;
-      workItOut(res,data);
+      workItOut(res, data);
     })
-    .catch(err => {
-      console.log(err);
+    .catch(error => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode === 'auth/weak-password') {
+        alert('The password is too weak.');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
     })
 }
-function logout(){
-  firebase.auth().signOut().then(res=>{
-    store.dispatch({type:"AUTH_OUT"})
+function logout() {
+  firebase.auth().signOut().then(res => {
+    store.dispatch({ type: "AUTH_OUT" })
   })
 }
 
-function submitOrder(data,previousOrders){
-  if(firebase.auth().currentUser!==null)
-  {
-    console.log("Data->",data)
-    console.log("Previous ",previousOrders)
-    console.log("Attached",[...previousOrders,data.order]);
+function submitOrder(data, previousOrders) {
+  if (firebase.auth().currentUser !== null) {
+    console.log("Data->", data)
+    console.log("Previous ", previousOrders)
+    console.log("Attached", [...previousOrders, data.order]);
     db.collection("Orders").doc(firebase.auth().currentUser.uid).set(data)
-    .then(res=>{
-      console.log(res);
-    })
-    .catch(err=>{
-      console.log(err.message);
-    })
-    db.collection("Users").doc(firebase.auth().currentUser.uid).update({orders:data.orders});
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        alert("some Error Occured! Try again");
+        console.log(err.message);
+      })
+    db.collection("Users").doc(firebase.auth().currentUser.uid).update({ orders: data.orders });
   }
-  
+
 }
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -80,13 +89,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     // db.collection("Users").doc(firebaseUser.uid).set({ name: "Admin", email:"thissiteadmin753654@admin.com" , location: {city:"Pak",address:"Unknown",pincode:"205874"}, orders: [], phone: "" })
     //   .then(res => console.log(res))
     //   .catch(err => console.log(err))
-    console.log("From Auth",firebaseUser.uid);
+    console.log("From Auth", firebaseUser.uid);
     db.collection("Users").doc(firebaseUser.uid).get().then(querySnapshot => {
-      console.log("Got Data",querySnapshot.data());
+      console.log("Got Data", querySnapshot.data());
       // initialState.loggedIn = true;
       // initialState.userInfo = { ...querySnapshot.data() }
       // if(querySnapshot.data()!==undefined)
-        store.dispatch({type:"AUTH_IN",obj:querySnapshot.data()})
+      store.dispatch({ type: "AUTH_IN", obj: querySnapshot.data() })
       // else if(checkIfSignup)
       //   store.dispatch({type:"AUTH_IN",obj:dataStorage});
       // else
@@ -99,16 +108,16 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
   }
   else {
-    store.dispatch({type:"AUTH_OUT"})
+    store.dispatch({ type: "AUTH_OUT" })
   }
 })
 
-const storage=firebase.storage();
-export {storage};
+const storage = firebase.storage();
+export { storage };
 export { loginUser };
 export { signupUser };
-export {logout};
-export {submitOrder};
+export { logout };
+export { submitOrder };
 // const databaseRef=firebase.database().ref();
 // export const cloths=databaseRef.child("clothes");
 // thissitesecretid85923@site.com

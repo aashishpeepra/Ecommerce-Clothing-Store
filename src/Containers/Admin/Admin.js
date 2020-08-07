@@ -27,6 +27,7 @@ class Admin extends React.Component{
                 <div className="Admin-btn-holder">
                     <Button text={"Go to Products Section"} big={true} click={()=>this.takeToPath("/admin/products")}/>
                     <Button text={"Go to Orders Section"} big={true} click={()=>this.takeToPath("/admin/orders")}/>
+                    <Button text={"Go to Home Editing"} big={true} click={()=>this.takeToPath("/admin/slider")}/>
                 </div>
                 
             </section>
