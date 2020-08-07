@@ -7,6 +7,13 @@ import * as actionTypes from "../../../store/actions";
 
 const cartEach = (props) => {
   let temp=props.qty;
+  const database={
+    s:"9/12 Months",
+    m:"12/18 Months",
+    l:"18/24 Months",
+    x:"2/3 Years",
+    xl:"3/4 Years"
+  }
   const checkVal = (e,index) => {
     let a = e.target.value;
     if(props.fixed)
@@ -41,7 +48,7 @@ const cartEach = (props) => {
               props.fixed?<p>{props.defSize}</p>:(
                 <select onChange={(e)=>props.onChangeSize(e.target.value,props.index)} defaultValue={props.defSize}>
               {props.variants.map((each) => (
-                <option value={each}>{each}</option>
+                <option value={each}>{database[each.toLowerCase()]}</option>
               ))}
             </select>
               )
