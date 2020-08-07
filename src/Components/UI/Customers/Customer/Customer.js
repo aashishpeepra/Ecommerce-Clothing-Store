@@ -10,11 +10,11 @@ export default (props)=>{
             </div>
             <div className="review-right">
                 <span id="review-head">
-                    userName
+                    {props.name}
                 </span>
                 <div className="review-right-content">
                     <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    {props.message}
                     </p>
                 </div>
             </div>

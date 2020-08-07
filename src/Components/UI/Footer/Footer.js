@@ -8,7 +8,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="Footer">
-        <div className="Company__Name">NAME OF COMPANY</div>
+        <div className="Company__Name">Sukainah Mart</div>
         <div className="Sections">
           <div className="Section__1">
             <h2>Visit our Store at</h2>
@@ -25,7 +25,7 @@ class Footer extends Component {
                   <div className="Footer_holder_image">
                     <img src={call} alt="Whatsapp Icon" />
                   </div>
-                  <a href="tel:">Call Us</a>
+                  <a href="tel:03106186002">03106186002</a>
                 </div>
               </li>
               <li>
@@ -33,7 +33,7 @@ class Footer extends Component {
                   <div className="Footer_holder_image">
                     <img src={whatsapp} alt="Whatsapp Icon" />
                   </div>
-                  <a href="https://wa.me/8318530887?text=I'm%20Interested%20In%20Your%20Website ">Whatsapp Us</a>
+                  <a href="https://wa.me/03106186002?text=I'm%20Interested%20In%20Your%20Website ">03106186002</a>
                 </div>
               </li>
               <li>
@@ -41,7 +41,7 @@ class Footer extends Component {
                   <div className="Footer_holder_image">
                     <img src={email} alt="Whatsapp Icon" />
                   </div>
-                  <a href="mailto:">Email Us</a>
+                  <a href="mailto:Sukainahmart@gmail.com">Sukainahmart@gmail.com</a>
                 </div>
               </li>
             </ul>

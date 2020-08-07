@@ -65,7 +65,8 @@
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 3rem;
+  margin: 0 0.5rem;
   transition: transform ease-in 0.1s;
   transform: scale(1.5);
 }
@@ -75,7 +76,7 @@
   top: 50%;
   right: 10px;
   z-index: 999;
-  color: #fff;
+  color: #008cba;
 }
 
 .backArrow {
@@ -83,7 +84,7 @@
   top: 50%;
   left: 10px;
   z-index: 999;
-  color: #fff;
+  color: #008cba;
 }
 
 .Slider__More {
