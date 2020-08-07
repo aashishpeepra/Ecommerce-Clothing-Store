@@ -33,15 +33,15 @@ class Home extends Component {
                 {/* <h1>Home</h1> */}
                 <Carousel/>
                 <section className="Home-Trending">
-                    <h3 style={{color:"#5b6b6a"}}>Trending Products</h3>
-                <Products nav={this.navigator} type="listed" data={this.state.data} />
+                    <h3 style={{color:"#5b6b6a"}}>Deals</h3>
+                <Products nav={this.navigator} type="listed" data={this.state.data.slice(0,4)} />
                 </section>
                 
                 
                  <Category/>
                  <section className="Home-Trending">
                      <h3  style={{color:"#5b6a6b"}}>Top Picks For you</h3>
-                <Products nav={this.navigator} type="listed" data={this.state.data} />
+                <Products nav={this.navigator} type="listed" data={this.state.data.slice(0,4)} />
                  </section>
                 
                  <Customers/>

@@ -144,7 +144,6 @@ class CreateProduct extends React.Component {
             price: this.state.price,
             offer: this.state.offer,
             images: this.state.images,
-            offer: this.state.offer,
             desc: {
                 material: this.state.material,
                 age: this.state.age,
@@ -170,7 +169,6 @@ class CreateProduct extends React.Component {
             price: this.state.price,
             offer: this.state.offer,
             images: this.state.images,
-            offer: this.state.offer,
             desc: {
                 material: this.state.material,
                 age: this.state.age,
