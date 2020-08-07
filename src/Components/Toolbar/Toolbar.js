@@ -28,7 +28,7 @@ const toolbar = (props) => (
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          <li className="Toolbar__dropdown--1">
+          {/* <li className="Toolbar__dropdown--1">
             <button className="Toolbar__dropbtn--1">
               <NavLink to={{pathname:"/clothings",state:{gender:"m",category:"",age:-1}}}>Infants</NavLink>
             </button>
@@ -43,6 +43,17 @@ const toolbar = (props) => (
                   <NavLink to="/clothings">Girls</NavLink>
                 </button>
               </NavLink>
+            </div>
+          </li> */}
+          <li>
+            <div className="Toolbar__dropdown">
+              <button className="Toolbar__dropbtn">
+                <NavLink to="/FORINFANTS">Infants</NavLink>
+              </button>
+              <div className="Toolbar__dropdown-content">
+                <NavLink to="/FORBOYS">Boys</NavLink>
+                <NavLink to="/FORGIRLS">Girls</NavLink>
+              </div>
             </div>
           </li>
           {/* <li>
@@ -67,7 +78,7 @@ const toolbar = (props) => (
             <div className="Toolbar__dropdown-content--1">
               <NavLink to="\" className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
-                  <NavLink to="/clothings">Tops</NavLink>
+                  <NavLink to="/FORBOYSTOPS">Tops</NavLink>
                 </button>
                 <div className="Toolbar__dropdown-content--2">
                   <NavLink to={{pathname:"/clothings/mshirts",state:{gender:"m",category:"shirts",age:-1}}}>Shirts</NavLink>
@@ -126,7 +137,7 @@ const toolbar = (props) => (
                   <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"kurti",age:-1}}}>Kurtis</NavLink>
                   <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"tshirts",age:-1}}}>T Shirts</NavLink>
                   <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"2pc",age:-1}}}>Tunics/Blouses</NavLink>
-                  <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"2pc",age:-1}}}>Daungree</NavLink>
+                  <NavLink to="/FORWOMENDAUNGREE">Daungree</NavLink>
                 </div>
               </NavLink>
               <NavLink to="\" className="Toolbar__dropdown--2">
@@ -137,13 +148,44 @@ const toolbar = (props) => (
                   <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"jeans",age:-1}}}>Pants/Jeans</NavLink>
                   <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"tights",age:-1}}}>Tights</NavLink>
                   <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"frocks",age:-1}}}>Shorts/Skirts</NavLink>
-                  <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"jeans",age:-1}}}>Trouser/PJ</NavLink>
-                  <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"jeans",age:-1}}}>Eastern Wear</NavLink>
-                  <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"jeans",age:-1}}}>Sets</NavLink>
-                  <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"jeans",age:-1}}}>Sleepware</NavLink>
+                  <NavLink to="/FORWOMENTROUSERS">Trouser/PJ</NavLink>
+                  <NavLink to="/FORWOMENEASTERNWEAR">Eastern Wear</NavLink>
+                  <NavLink to="/FORWOMENSETS">Sets</NavLink>
+                  <NavLink to="/FORWOMENSLEEPWARE">Sleepware</NavLink>
                 </div>
               </NavLink>
             </div>
+          </li>
+          {/* <li className="Toolbar__dropdown--1">
+            <button className="Toolbar__dropbtn--1">
+              <NavLink to="/FORACCESSORIES">Accessories</NavLink>
+            </button>
+            <div className="Toolbar__dropdown-content--1">
+              <NavLink to="/FORACCESSUNDERGARMENTS">Undergarment/Socks</NavLink>
+              <NavLink to="/FORACCESSCAPS">Caps</NavLink>
+              <NavLink to="/FORACCESSBIBS">Bibs</NavLink>
+              <NavLink to="/FORACCESSBAGS">Bags</NavLink>
+              <NavLink to="/FORACCESSBABYNEST">Baby nest</NavLink>
+              <NavLink to="/FORACCESSBABYBEDDIN">Baby beddin</NavLink>
+            </div>
+          </li> */}
+          <li>
+            <div className="Toolbar__dropdown">
+              <button className="Toolbar__dropbtn">
+                <NavLink to="/FORACCESORIES">Accessories</NavLink>
+              </button>
+              <div className="Toolbar__dropdown-content">
+                <NavLink to="/FORACCESSUNDERGARMENTS">Undergarment/Socks</NavLink>
+                <NavLink to="/FORACCESSCAPS">Caps</NavLink>
+                <NavLink to="/FORACCESSBIBS">Bibs</NavLink>
+                <NavLink to="/FORACCESSBAGS">Bags</NavLink>
+                <NavLink to="/FORACCESSBABYNEST">Baby nest</NavLink>
+                <NavLink to="/FORACCESSBABYBEDDIN">Baby beddin</NavLink>
+              </div>
+            </div>
+          </li>
+          <li>
+            <NavLink to="/FORSALES">Sale</NavLink>
           </li>
           {/* <li>
             <div className="Toolbar__dropdown">
