@@ -7,7 +7,7 @@ export default class Products extends React.Component {
 
     state = {
         gender:"",
-        age:-1,
+        size:-1,
         sort:0,
         category:"",
         data:[]
@@ -104,7 +104,7 @@ export default class Products extends React.Component {
     }
     filter=(data)=>{
         let gender=data.desc.gender.toLowerCase()===this.state.gender.toLowerCase() || this.state.gender==="";
-        let age=data.desc.age==this.state.age || this.state.age==-1;
+        let age=data.desc.sizes.includes(this.state.age) || this.state.age==-1;
         // UnComment when you change category to list
         // let temp=false;
         // for(let i=0;i<data.desc.category.length;i++)
@@ -175,10 +175,12 @@ export default class Products extends React.Component {
 
                     <div class="select">
                         <select name="slct" onChange={this.onChangeAge} id="slct">
-                            <option disabled>Age</option>
-                            <option value="0">Infants</option>
-                            <option value="1">0-6 years</option>
-                            <option value="2">6-12 years</option>
+                            <option disabled>Sizes</option>
+                            <option value="S">9/12 Months</option>
+                            <option value="M">12/18 Months</option>
+                            <option value="L">18/24 Months</option>
+                            <option value="X">2/3 Years</option>
+                            <option value="XL">3/4 Years</option>
                             <option value="-1">All</option>
                         </select>
                     </div>

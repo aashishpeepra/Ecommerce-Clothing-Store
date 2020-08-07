@@ -57,6 +57,13 @@ class SingleProduct extends React.Component {
   };
 
   renderCircles = (arr) => {
+    const database={
+      s:"9/12 Months",
+      m:"12/18 Months",
+      l:"18/24 Months",
+      x:"2/3 Years",
+      xl:"3/4 Years"
+    }
     return (
       <div className="SizeSelection__Helper">
         {this.state.variants.map((each, i) => (
@@ -66,7 +73,7 @@ class SingleProduct extends React.Component {
             key={i}
             tabmydex={i + 1}
           >
-            <span>{each}</span>
+            <span>{database[each.toLowerCase()]}</span>
           </div>
         ))}
       </div>

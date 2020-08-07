@@ -10,7 +10,6 @@ class CreateProduct extends React.Component {
         sizes: [],
         gender: "m",
         category: "",
-        age: "1",
         images: [
             "https://images.unsplash.com/photo-1576250263863-11f6bfa98823?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
             "https://images.unsplash.com/photo-1517116389657-26ab3000c026?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
@@ -35,7 +34,6 @@ class CreateProduct extends React.Component {
                 offer: temp.offer,
                 id: temp.id,
                 images: temp.images,
-                age: temp.desc.age,
                 sizes: temp.desc.sizes,
                 gender: temp.desc.gender,
                 category: temp.desc.category,
@@ -146,7 +144,6 @@ class CreateProduct extends React.Component {
             images: this.state.images,
             desc: {
                 material: this.state.material,
-                age: this.state.age,
                 category: this.state.category,
                 gender: this.state.gender,
                 sizes: this.state.sizes,
@@ -171,7 +168,6 @@ class CreateProduct extends React.Component {
             images: this.state.images,
             desc: {
                 material: this.state.material,
-                age: this.state.age,
                 category: this.state.category,
                 gender: this.state.gender,
                 sizes: this.state.sizes,
@@ -219,16 +215,17 @@ class CreateProduct extends React.Component {
                             <input onChange={this.onOffer} value={this.state.offer} type="text" name="offer" id="offer" placeholder="30% Off" />
                         </fieldset>
                         <fieldset className="special">
-                            <h5>Select Available Sizes</h5>
-                            <label htmlFor="S">S</label>
+                            <h5 style={{marginBottom:"20px"}}>Select Available Sizes</h5>
+                            <label htmlFor="S">9/12 Months</label>
                             <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('S') || this.state.sizes.includes('s')} type="checkbox" name="S" id="S" />
-                            <label htmlFor="S">M</label>
+                            <label htmlFor="S">12/18 Months</label>
                             <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('M') || this.state.sizes.includes('m')} type="checkbox" name="M" id="M" />
-                            <label htmlFor="S">L</label>
+                            <label htmlFor="S">18/24 Months</label>
                             <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('L') || this.state.sizes.includes('l')} type="checkbox" name="L" id="L" />
-                            <label htmlFor="S">X</label>
-                            <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('X') || this.state.sizes.includes('X')} type="checkbox" name="X" id="X" />
-
+                            <label htmlFor="S">2/3 Years</label>
+                            <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('X') || this.state.sizes.includes('x')} type="checkbox" name="X" id="X" />
+                            <label htmlFor="S">3/4 Years</label>
+                            <input onChange={this.onCheckBoxChange} defaultChecked={this.state.sizes.includes('XL') || this.state.sizes.includes('xl')} type="checkbox" name="XL" id="XL" />
                         </fieldset>
                     </form>
                 </div>
@@ -264,16 +261,7 @@ class CreateProduct extends React.Component {
                                 <option value="frocks">Frocks</option>
                             </select>
                         </fieldset>
-                        <fieldset className="special2">
-                            <label htmlFor="age">Age</label>
-                            <select onChange={this.onSelectChange2} id="age">
-                                <option value="0">Infants</option>
-                                <option value="1">Age 0-6</option>
-                                <option value="2">Age 6-12</option>
-                                <option value="3">Age 12-18</option>
-
-                            </select>
-                        </fieldset>
+                        
                     </form>
                     <form>
                         <h4>Product Images</h4>
