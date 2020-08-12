@@ -4,7 +4,7 @@ import Button from "../../Components/Navigation/Buttons/Button";
 import OrderTile from "../../Components/UI/OrderTile/orderTile";
 
 import {connect} from 'react-redux';
-import * as actionTypes from "../../store/actions";
+
 import {logout} from "../../firebase";
 
  class UserDetails extends React.Component {
@@ -14,7 +14,9 @@ import {logout} from "../../firebase";
     
     componentWillMount(){
         console.log(this.props.loggedIn)
-        const val=this.props.loggedIn?null:this.props.history.push("/login-signup");
+        if(!this.props.loggedIn)
+        this.props.history.push("/login-signup");
+        //const val=this.props.loggedIn?null:this.props.history.push("/login-signup");
         
     }
     navToEachOrder=(data)=>{

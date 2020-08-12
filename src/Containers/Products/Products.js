@@ -6,88 +6,79 @@ import { db } from "../../firebase";
 export default class Products extends React.Component {
 
     state = {
+        blockAge: false,
         gender: "",
         size: -1,
         sort: 0,
         category: "",
+        checkCategory: [],
         data: [],
-        price: 5000
+        price: 5000,
+        age: "1",
+        checkAge: []
     }
     componentWillMount() {
-        if (this.props.location.state) {
-            const data = this.props.location.state;
-            this.setState(data);
-        }
-        else {
-            this.setState({ gender: "", category: "", age: -1 })
-        }
-        console.log(this.props)
-    }
-    shouldComponentUpdate(nextProps, nextState) {
 
-        let st = (
-            this.state.price!== nextState.price ||  this.state.age != nextState.age || this.state.category != nextState.category || this.state.gender != nextState.gender || this.state.data != nextState.data || this.state.sort != nextState.sort
-        )
-        if (st)
-            return st;
-        if (nextProps.location.state) {
-            let data = nextProps.location.state;
-            let temp = Object.keys(data);
-            let check = false;
-            for (let i = 0; i < temp.length; i++) {
-                if (nextState[temp[i]] != data[temp[i]]) {
-                    check = true;
-                    break;
-                }
-            }
-            console.log(check, data, nextState)
-            return !check;
-        }
-        return true;
-    }
-    componentWillReceiveProps() {
-        if (this.props.location.state) {
-            const data = this.props.location.state;
-            this.setState(data);
-        }
-    }
-    // componentWillMount(){
-    //     if(this.props.location.state)
-    //     {
-    //         let data=this.props.location.state;
-    //         let temp=Object.keys(data);
-    //         let check=true;
-    //         for(let i=0;i<temp.length;i++)
-    //         {
-    //             if(this.state[temp[i]]!=data[temp[i]])
-    //             {
-    //                 check=false;
-    //                 break;
-    //             }
-    //         }
-    //         console.log(check,data)
-    //         // if(!check)
-    //         this.setState(data);
-    //         console.log("Will")
-    //     }
-    //     else{
-    //         this.setState({age:-1,category:"",gender:""});
-    //     }
+        let search = this.props.location.search;
+        if (search !== "")
+            search = search.substring(search.indexOf("=") + 1)
+        console.log(this.props.location.search.indexOf("="))
 
-    // }
-    // componentWillReceiveProps(){
-    //     console.log("props")
-    //     if(this.props.location.state)
-    //     {
-    //         let data=this.props.location.state;
-    //         console.log("SetState Props",data)
-    //         this.setState({gender:data.gender,category:data['category'],age:data.age});
-    //     }
-    //     else{
-    //         this.setState({age:-1,category:"",gender:""});
-    //     }
+        const pathname = this.props.location.pathname;
+        console.log(pathname);
+        let temp = [];
+        let catGirls = [
+            { name: "Frock & Jumpsuit", value: "frock" },
+            { name: "kurti", value: "kurti" },
+            { name: "T-shirts", value: "tshirts" },
+            { name: "Tunics & blouses", value: "blouse" },
+            { name: "Doungree", value: "doungree" },
+            { name: "Pants & Jeans", value: "pants" },
+            { name: "Tights", value: "tights" },
+            { name: "Shorts & skirts", value: "short" },
+            { name: "Trouser", value: "trouser" },
+            { name: "Sets", value: "sets" },
+            { name: "Sleepwear", value: "sleepwear" }
+        ];
+        let catBoys = [
+            { name: "Shirts", value: "shirts" },
+            { name: "T-shirts", value: "tshirts" },
+            { name: "Doungree", value: "doungree" },
+            { name: "Trousers", value: "trousers" },
+            { name: "Shorts", value: "shorts" },
+            { name: "Sets", value: "sets" },
+            { name: "Sleepwear", value: "sleepwear" }
+        ]
+        if (pathname.endsWith("boys")) {
+            temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" }]
 
-    // }
+            this.setState({ gender: "M", checkAge: temp, checkCategory: catBoys, category: search });
+            return;
+        }
+
+        if (pathname.endsWith("girls")) {
+            temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" }]
+            this.setState({ gender: "F", checkAge: temp, checkCategory: catGirls, category: search });
+            return;
+        }
+        if (pathname.endsWith("babyboy")) {
+            temp = [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }]
+            this.setState({ gender: "M", checkAge: temp, checkCategory: catBoys, category: search });
+            return;
+        }
+
+        if (pathname.endsWith("babygirls")) {
+            temp = [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }]
+            this.setState({ gender: "F", checkAge: temp, checkCategory: catGirls, category: search });
+            return;
+        }
+        if (pathname.endsWith("accessories")) {
+            this.setState({ blockAge: true })
+        }
+
+
+    }
+
     componentDidMount() {
         db.collection("Clothes").get().then(querySnapshot => {
             const data = querySnapshot.docs.map(doc => doc.data());
@@ -100,15 +91,17 @@ export default class Products extends React.Component {
     }
     filter = (data) => {
         let gender = data.desc.gender.toLowerCase() === this.state.gender.toLowerCase() || this.state.gender === "";
-        let age = data.desc.sizes.includes(this.state.age) || this.state.age == -1;
+        console.log(this.state.age)
+        let age = data.desc.sizes.includes(this.state.age.toUpperCase()) || this.state.age === "1";
         // UnComment when you change category to list
         // let temp=false;
         // for(let i=0;i<data.desc.category.length;i++)
         //     if(data.desc.category[i].toLowerCase()==this.state.category.toLowerCase())
         //         temp=true;
-        let category = data.desc.category.toLowerCase() === this.state.category.toLowerCase() || this.state.category === "";
-        let price= data.price<=this.state.price;
-        return gender && age && category &&price;
+        let category = data.desc.category.toLowerCase().includes(this.state.category.toLowerCase()) || this.state.category === "";
+        let price = data.price <= this.state.price;
+        let accessory =this.state.blockAge? data.desc.category.toLowerCase().includes("accessories") :true;
+        return gender && age && category && price &&accessory;
     }
     onChangeAge = (e) => {
         this.setState({ age: e.target.value });
@@ -158,46 +151,44 @@ export default class Products extends React.Component {
                 return data;
         }
     }
-    changeRange=(e)=>{
-        this.setState({price:parseInt(e.target.value)})
+    changeRange = (e) => {
+        this.setState({ price: parseInt(e.target.value) })
     }
     render() {
-        console.log(this.props.location);
+        console.log(this.state);
         return (
             <div className="Prds-wrapper">
                 <main className="Prd-input-holder">
+                    {this.state.blockAge ? null : (
+                        <React.Fragment>
+                        <div className="select">
+                            <select value={this.state.age} name="slct" onChange={this.onChangeAge} id="age">
+                                <option disabled>Sizes</option>
+                                {this.state.checkAge.map(each => <option value={each.value} key={each.value} >{each.name}</option>)}
 
-                    <div className="select">
-                        <select name="slct" onChange={this.onChangeAge} id="slct">
-                            <option disabled>Sizes</option>
-                            <option value="S">9/12 Months</option>
-                            <option value="M">12/18 Months</option>
-                            <option value="L">18/24 Months</option>
-                            <option value="X">2/3 Years</option>
-                            <option value="XL">3/4 Years</option>
-                            <option value="-1">All</option>
-                        </select>
-                    </div>
-                    <div className="select" onChange={this.onChangeGender}>
-                        <select name="slct" id="slct">
+                                <option value="1">All</option>
+                            </select>
+                        </div>
+                        <div className="select" >
+                        <select value={this.state.gender} onChange={this.onChangeGender} name="slct" id="gender">
                             <option disabled>Gender</option>
                             <option value="M">Boys</option>
                             <option value="F">Girls</option>
                             <option value="">Both</option>
                         </select>
                     </div>
-                    <div className="select" onChange={this.onChangeCategory}>
-                        <select name="slct" id="slct">
+                    <div className="select" >
+                        <select value={this.state.category} onChange={this.onChangeCategory} name="slct" id="category">
                             <option disabled>Category</option>
-                            <option value="Tshirt">Tshirts</option>
-                            <option value="Shirt">Shirts</option>
-                            <option value="Jeans">Jeans</option>
-                            <option value="shorts">Shorts</option>
+                            {this.state.checkCategory.map(each => <option value={each.value} key={each.value}>{each.name}</option>)}
                             <option value="">All</option>
                         </select>
                     </div>
+                    </React.Fragment>
+                    )}
+                    
                     <div className="select" onChange={this.onChangeSort}>
-                        <select name="slct" id="slct">
+                        <select name="slct" id="relevance">
                             <option disabled>Sort</option>
                             <option value={0}>Relevance</option>
                             <option value={1}>Price Low to High</option>
