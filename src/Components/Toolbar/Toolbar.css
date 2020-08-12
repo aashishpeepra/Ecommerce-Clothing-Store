@@ -156,8 +156,8 @@
   outline: none;
 }
 .Toolbar_icon {
-  height: 25px;
-  width: 25px;
+  height: 33px;
+  width: 33px;
 }
 .Toolbar_icon img {
   height: 100%;
@@ -375,4 +375,7 @@ li a {
 
 .Toolbar__dropdown--2 button a{
   color: rgb(0, 0, 0);
+}
+.Toolbar__dropbtn a{
+  color:#fff;
 }

@@ -11,21 +11,22 @@
   width: 60%;
   border: none;
   font-size: 14px;
-  color:#5b6b6a;
+  color:#fff;
   outline: none;
   background-color: inherit;
   height: 100%;
   box-sizing: border-box;
   padding:2px 0px;
-  border-bottom: 2px solid #5b6b6a;
+  border-bottom: 2px solid #fff;
   transition: all ease 0.2s;
   text-transform: capitalize;
 }
 .SearchList input::placeholder{
-  color:#5b6b6a;
+  color:#fff;
 }
 .SearchList input:active , .SearchList input:hover, .SearchList input:focus{
   width:100%;
+  color: #fff;
 }
 
 .SearchList ul {

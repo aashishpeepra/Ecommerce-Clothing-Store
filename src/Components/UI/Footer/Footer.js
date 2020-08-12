@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import './Footer.css';
 import whatsapp from "../../../assets/Icons/whatsapp.png";
 import email from "../../../assets/Icons/email.png";
+import facebook from "../../../assets/Icons/facebook.png";
+import instagram from "../../../assets/Icons/instagram.png";
 import call from "../../../assets/Icons/call.png";
 import { NavLink } from "react-router-dom";
 
@@ -46,7 +48,7 @@ class Footer extends Component {
               <li>
                 <div className="Footer_holder">
                   <div className="Footer_holder_image">
-                    <img src={email} alt="Whatsapp Icon" />
+                    <img src={facebook} alt="Facebook Icon" />
                   </div>
                   <a href="https://facebook.com/babysukainahmart">Facebook</a>
                 </div>
@@ -54,7 +56,7 @@ class Footer extends Component {
               <li>
                 <div className="Footer_holder">
                   <div className="Footer_holder_image">
-                    <img src={email} alt="Whatsapp Icon" />
+                    <img src={instagram} alt="Instagram Icon" />
                   </div>
                   <a href="https://instagram.com/SukainahMart">Instagram</a>
                 </div>

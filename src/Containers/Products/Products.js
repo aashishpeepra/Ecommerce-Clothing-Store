@@ -49,6 +49,18 @@ export default class Products extends React.Component {
             { name: "Sets", value: "sets" },
             { name: "Sleepwear", value: "sleepwear" }
         ]
+        
+        if (pathname.endsWith("babyboys")) {
+            temp = [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }]
+            this.setState({ gender: "M", checkAge: temp, checkCategory: catBoys, category: search });
+            return;
+        }
+
+        if (pathname.endsWith("babygirls")) {
+            temp = [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }]
+            this.setState({ gender: "F", checkAge: temp, checkCategory: catGirls, category: search });
+            return;
+        }
         if (pathname.endsWith("boys")) {
             temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" }]
 
@@ -58,17 +70,6 @@ export default class Products extends React.Component {
 
         if (pathname.endsWith("girls")) {
             temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" }]
-            this.setState({ gender: "F", checkAge: temp, checkCategory: catGirls, category: search });
-            return;
-        }
-        if (pathname.endsWith("babyboy")) {
-            temp = [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }]
-            this.setState({ gender: "M", checkAge: temp, checkCategory: catBoys, category: search });
-            return;
-        }
-
-        if (pathname.endsWith("babygirls")) {
-            temp = [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }]
             this.setState({ gender: "F", checkAge: temp, checkCategory: catGirls, category: search });
             return;
         }
