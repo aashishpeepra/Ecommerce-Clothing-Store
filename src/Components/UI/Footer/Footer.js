@@ -3,6 +3,7 @@ import './Footer.css';
 import whatsapp from "../../../assets/Icons/whatsapp.png";
 import email from "../../../assets/Icons/email.png";
 import call from "../../../assets/Icons/call.png";
+import { NavLink } from "react-router-dom";
 
 class Footer extends Component {
   render() {
@@ -11,10 +12,8 @@ class Footer extends Component {
         <div className="Company__Name">Baby Sukainah Mart</div>
         <div className="Sections">
           <div className="Section__1">
-            <h2>Delivery Information</h2>
-            <p>
-              Cash On Delivery available. Free devliery on order above Rupees.2500.
-            </p>
+            <NavLink to="/delivery">Delivery Information</NavLink>
+            <NavLink to="/user">User Information</NavLink>
           </div>
           <div className="Footer__Spacer"></div>
           <div className="Section__2">

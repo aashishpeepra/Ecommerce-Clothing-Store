@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fff;
+  background-color: #f9c449;
   height: 60px;
   color: #5b6b6a;
   z-index: 20;
@@ -64,7 +64,6 @@
 }
 
 .Searchbar__Component {
-  background-color: #fff;
   outline: none;
   border: none;
   margin-right: 1rem;
@@ -270,8 +269,6 @@ li a {
 }
 
 .Toolbar-img-container{
-  /* height:60px;
-  width:60px; */
   font-size: 80%;
   color:#da003a;
 }
@@ -282,15 +279,100 @@ li a {
 .redSale a{
   color:Red;
 }
-/* @media screen  only(max-width:900px)
-{
-  .Toolbar-img-container{
-    font-size:70%;
-  }
-} */
 .yellow a{
   color:rgb(0, 255, 76);
 }
 .blue a{
   color:rgb(70, 70, 230);
+}
+
+.Toolbar__dropbtn--1 {
+  background-color: inherit;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.Toolbar__dropdown--1 {
+  position: relative;
+  display: inline-block;
+}
+
+.Toolbar__dropdown-content--1 {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.Toolbar__dropdown-content--1 > div {
+  color: black;
+  padding: 6px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.Toolbar__dropdown-content--1 > div:hover {
+  background-color: #5b6b6a;
+}
+
+.Toolbar__dropdown--1:hover .Toolbar__dropdown-content--1 {
+  display: block;
+}
+
+.Toolbar__dropdown--1:hover .Toolbar__dropbtn--1 {
+  outline: none;
+}
+
+.Toolbar__dropbtn--2 {
+  background-color: inherit;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.Toolbar__dropdown--2 {
+  position: relative;
+  display: inline-block;
+}
+
+.Toolbar__dropdown-content--2 {
+  display: none;
+  position: absolute;
+  background-color: #5b6b6a;
+  color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transform: translate(144px, -20px);
+}
+
+.Toolbar__dropdown-content--2 a {
+  background-color: #fff;
+  color: #5b6b6a;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.Toolbar__dropdown-content--2 a:hover {
+  background-color: #5b6b6a;
+}
+
+.Toolbar__dropdown--2:hover .Toolbar__dropdown-content--2 {
+  display: block;
+}
+
+.Toolbar__dropdown--2:hover .Toolbar__dropbtn--2 {
+  outline: none;
+}
+
+.Toolbar__dropdown--2 button a{
+  color: rgb(0, 0, 0);
 }

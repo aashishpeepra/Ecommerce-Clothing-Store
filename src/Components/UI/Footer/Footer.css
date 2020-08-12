@@ -1,5 +1,5 @@
 .Footer {
-  background-color: #c5e5e6;
+  background-color: #e8a49c;
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -33,10 +33,19 @@
 }
 
 .Section__1 h2,
-.Section__1 p,
+.Section__1 a,
 .Section__2 h2 {
   text-align: left;
   color: white;
+}
+
+.Section__1 a {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.Section__1 a:hover {
+  font-weight: bold;
 }
 
 .Section__2 {
@@ -70,6 +79,7 @@
     font-size: 12px !important;
   }
   .Section__1 h2,
+  .Section__1 a,
   .Section__2 h2 {
     font-size: 16px;
   }

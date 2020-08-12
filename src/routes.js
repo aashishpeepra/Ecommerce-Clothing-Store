@@ -16,6 +16,7 @@ import AdminProductEach   from "./Containers/Admin/AdminProducts/CreateProduct/C
 import  EachOrder   from "./Containers/UserDetails/EachOrder/EachOrder"
 import EachOrderAdmin   from "./Containers/Admin/AdminOrders/EachOrder/EachOrder";
 import Adminslider from "./Containers/Admin/AdminFront/adminSlider";
+import Delivery from "./Components/UI/Footer/delivery/delivery";
 export default class Router extends Component{
     state={
 
@@ -42,7 +43,7 @@ export default class Router extends Component{
                 <Route exact path="/clothings/:id" component={Products}/>
                 <Route exact path="/clothings" component={Products}/>
                 <Route exact path="/" component={Home}/>
-                
+                <Route exact path="/delivery" component={Delivery} />
             </Switch>
            
         );

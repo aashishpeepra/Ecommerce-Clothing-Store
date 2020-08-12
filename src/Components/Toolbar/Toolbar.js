@@ -80,17 +80,17 @@ const toolbar = (props) => (
               <NavLink to={{pathname:"/clothings",state:{gender:"m",category:"",age:-1}}}>Boys</NavLink>
             </button>
             <div className="Toolbar__dropdown-content--1">
-              <NavLink to="\" className="Toolbar__dropdown--2">
+              <div className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
-                  <NavLink to="/FORBOYSTOPS">Tops</NavLink>
+                  <NavLink to="/clothings">Tops</NavLink>
                 </button>
                 <div className="Toolbar__dropdown-content--2">
                   <NavLink to={{pathname:"/clothings/mshirts",state:{gender:"m",category:"shirts",age:-1}}}>Shirts</NavLink>
                   <NavLink to={{pathname:"/clothings/mtshirts",state:{gender:"m",category:"tshirts",age:-1}}}>T Shirts and polos</NavLink>
                   <NavLink  to={{pathname:"/clothings/mdungarees",state:{gender:"m",category:"dungarees",age:-1}}}>Daungree</NavLink>
                 </div>
-              </NavLink>
-              <NavLink to="\" className="Toolbar__dropdown--2">
+              </div>
+              <div className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
                   <NavLink to="/clothings">Bottoms</NavLink>
                 </button>
@@ -98,17 +98,17 @@ const toolbar = (props) => (
                   <NavLink to={{pathname:"/clothings/mjeans",state:{gender:"m",category:"jeans",age:-1}}}>Trousers/PJ/Jeans</NavLink>
                   <NavLink to={{pathname:"/clothings/mshorts",state:{gender:"m",category:"shorts",age:-1}}}>Shorts</NavLink>
                 </div>
-              </NavLink>
-              <NavLink to="\" className="Toolbar__dropdown--2">
+              </div>
+              <div className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
                   <NavLink to="/">Sets</NavLink>
                 </button>
-              </NavLink>
-              <NavLink to="\" className="Toolbar__dropdown--2">
+              </div>
+              <div className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
                   <NavLink to="/">Sleepwares</NavLink>
                 </button>
-              </NavLink>
+              </div>
             </div>
           </li>
           {/* <li>
@@ -132,7 +132,7 @@ const toolbar = (props) => (
               <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"",age:-1}}}>Girls</NavLink>
             </button>
             <div className="Toolbar__dropdown-content--1">
-              <NavLink to="\" className="Toolbar__dropdown--2">
+              <div className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
                   <NavLink to="/">Tops</NavLink>
                 </button>
@@ -143,8 +143,8 @@ const toolbar = (props) => (
                   <NavLink to={{pathname:"/clothings",state:{gender:"f",category:"2pc",age:-1}}}>Tunics/Blouses</NavLink>
                   <NavLink to="/FORWOMENDAUNGREE">Daungree</NavLink>
                 </div>
-              </NavLink>
-              <NavLink to="\" className="Toolbar__dropdown--2">
+              </div>
+              <div className="Toolbar__dropdown--2">
                 <button className="Toolbar__dropbtn--2">
                   <NavLink to="/">Bottoms</NavLink>
                 </button>
@@ -157,7 +157,7 @@ const toolbar = (props) => (
                   <NavLink to="/FORWOMENSETS">Sets</NavLink>
                   <NavLink to="/FORWOMENSLEEPWARE">Sleepware</NavLink>
                 </div>
-              </NavLink>
+              </div>
             </div>
           </li>
           {/* <li className="Toolbar__dropdown--1">
