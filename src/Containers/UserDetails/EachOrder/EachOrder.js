@@ -88,7 +88,7 @@ class Cart extends React.Component {
                     Total
                   </th>
                   <th style={{ fontWeight: "bold", fontSize: "100%" }}>
-                    &#8377;{this.state.orderInfo.total}
+                    Rs.{this.state.orderInfo.total}
                   </th>
                 </tr>
               </tbody>

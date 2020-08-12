@@ -33,7 +33,7 @@ export default class Aux extends React.Component {
         {backdrop}
         {this.props.children}
         <div className="sticky-whatsapp">
-          <a href="https://wa.me/8318530887?text=I'm%20Interested%20In%20Your%20Website ">
+          <a href="https://wa.me/+923106186002?text=I'm%20Interested%20In%20Your%20Website ">
           <div className="Wrapper_holder">
             <img src={whatsapp} alt="Whatsapp Icon"/>
           </div>

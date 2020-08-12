@@ -44,19 +44,19 @@ class Cart extends React.Component {
               <tbody>
                 <tr>
                   <th className="lefter">Bag value</th>
-            <th>&#8377;{this.calcSum(this.props.cart)}</th>
+            <th>Rs.{this.calcSum(this.props.cart)}</th>
                 </tr>
                 <tr>
                   <th className="lefter">Shipping</th>
-                  <th>&#8377;{this.props.cart.length==0?0:25}</th>
+                  <th>Rs.{this.props.cart.length==0?0:25}</th>
                 </tr>
                 <tr>
                   <th className="lefter">Packing</th>
-                  <th>&#8377;{this.props.cart.length==0?0:25}</th>
+                  <th>Rs.{this.props.cart.length==0?0:25}</th>
                 </tr>
                 <tr>
                   <th className="lefter">Tax</th>
-                  <th>&#8377;{this.props.cart.length==0?0:25}</th>
+                  <th>Rs.{this.props.cart.length==0?0:25}</th>
                 </tr>
                 <hr />
                 <tr className="tota2">
@@ -67,7 +67,7 @@ class Cart extends React.Component {
                     Total
                   </th>
                   <th style={{ fontWeight: "bold", fontSize: "100%" }}>
-                    &#8377;{this.props.cart.length==0?0:this.calcSum(this.props.cart)+25+25+25}
+                    Rs.{this.props.cart.length==0?0:this.calcSum(this.props.cart)+25+25+25}
                   </th>
                 </tr>
               </tbody>

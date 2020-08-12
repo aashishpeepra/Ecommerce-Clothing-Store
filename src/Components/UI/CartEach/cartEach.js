@@ -39,7 +39,7 @@ const cartEach = (props) => {
             <h3>{props.title}</h3>
           </div>
           <div className="CartEach-right">
-            <span className="CartEach-price">$ {props.price}</span>
+            <span className="CartEach-price">Rs. {props.price}</span>
           </div>
         </div>
         <div className="CartEach-G">

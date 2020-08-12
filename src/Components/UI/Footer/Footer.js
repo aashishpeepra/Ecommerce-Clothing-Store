@@ -8,12 +8,12 @@ class Footer extends Component {
   render() {
     return (
       <div className="Footer">
-        <div className="Company__Name">Sukainah Mart</div>
+        <div className="Company__Name">Baby Sukainah Mart</div>
         <div className="Sections">
           <div className="Section__1">
-            <h2>Visit our Store at</h2>
+            <h2>Delivery Information</h2>
             <p>
-              Address Of The Store
+              Cash On Delivery available. Free devliery on order above Rupees.2500.
             </p>
           </div>
           <div className="Footer__Spacer"></div>
@@ -25,7 +25,7 @@ class Footer extends Component {
                   <div className="Footer_holder_image">
                     <img src={call} alt="Whatsapp Icon" />
                   </div>
-                  <a href="tel:03106186002">03106186002</a>
+                  <a href="tel:+923106186002">+92 3106186002</a>
                 </div>
               </li>
               <li>
@@ -33,7 +33,7 @@ class Footer extends Component {
                   <div className="Footer_holder_image">
                     <img src={whatsapp} alt="Whatsapp Icon" />
                   </div>
-                  <a href="https://wa.me/03106186002?text=I'm%20Interested%20In%20Your%20Website ">03106186002</a>
+                  <a href="https://wa.me/03106186002?text=I'm%20Interested%20In%20Your%20Website ">+92 3106186002</a>
                 </div>
               </li>
               <li>
@@ -42,6 +42,22 @@ class Footer extends Component {
                     <img src={email} alt="Whatsapp Icon" />
                   </div>
                   <a href="mailto:Sukainahmart@gmail.com">Sukainahmart@gmail.com</a>
+                </div>
+              </li>
+              <li>
+                <div className="Footer_holder">
+                  <div className="Footer_holder_image">
+                    <img src={email} alt="Whatsapp Icon" />
+                  </div>
+                  <a href="https://facebook.com/babysukainahmart">Facebook</a>
+                </div>
+              </li>
+              <li>
+                <div className="Footer_holder">
+                  <div className="Footer_holder_image">
+                    <img src={email} alt="Whatsapp Icon" />
+                  </div>
+                  <a href="https://instagram.com/SukainahMart">Instagram</a>
                 </div>
               </li>
             </ul>

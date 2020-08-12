@@ -270,10 +270,27 @@ li a {
 }
 
 .Toolbar-img-container{
-  height:60px;
-  width:60px;
+  /* height:60px;
+  width:60px; */
+  font-size: 80%;
+  color:#da003a;
 }
 .Toolbar-img-container img{
   height:100%;
   width:100%;
+}
+.redSale a{
+  color:Red;
+}
+/* @media screen  only(max-width:900px)
+{
+  .Toolbar-img-container{
+    font-size:70%;
+  }
+} */
+.yellow a{
+  color:rgb(0, 255, 76);
+}
+.blue a{
+  color:rgb(70, 70, 230);
 }

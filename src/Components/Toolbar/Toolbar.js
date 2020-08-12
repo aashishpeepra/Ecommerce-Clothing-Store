@@ -18,7 +18,7 @@ const toolbar = (props) => (
       <div className="Toolbar__Logo">
         <NavLink to="/">
           <div className="Toolbar-img-container">
-            <img src={sukainah} alt="Sukainah Mart Lofo"/>
+            <h3>Baby sukainah mart</h3>
           </div>
         </NavLink>
       </div>
@@ -27,6 +27,9 @@ const toolbar = (props) => (
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>
+          </li>
+          <li className="redSale">
+          <NavLink to="/clothings">New Arrivals</NavLink>
           </li>
           {/* <li className="Toolbar__dropdown--1">
             <button className="Toolbar__dropbtn--1">
@@ -47,11 +50,12 @@ const toolbar = (props) => (
           </li> */}
           <li>
             <div className="Toolbar__dropdown">
-              <button className="Toolbar__dropbtn">
+              <button className="Toolbar__dropbtn yellow">
                 <NavLink to="/FORINFANTS">Infants</NavLink>
               </button>
-              <div className="Toolbar__dropdown-content">
-                <NavLink to="/FORBOYS">Boys</NavLink>
+              <div className="Toolbar__dropdown-content blue">
+              
+                <NavLink  to="/FORBOYS">Boys</NavLink>
                 <NavLink to="/FORGIRLS">Girls</NavLink>
               </div>
             </div>
@@ -184,7 +188,7 @@ const toolbar = (props) => (
               </div>
             </div>
           </li>
-          <li>
+          <li className="redSale">
             <NavLink to="/FORSALES">Sale</NavLink>
           </li>
           {/* <li>
