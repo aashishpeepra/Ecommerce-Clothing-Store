@@ -14,6 +14,10 @@ const cartEach = (props) => {
     x:"2/3 Years",
     xl:"3/4 Years"
   }
+  const agesSelect= [
+    {  s:"0/3M" ,m: "3/6M" , l:"6/9M" , x: "9/12M",  xl: "12/18M" ,xxl:  "18/24M"  , xxxl: "2/3Y"   },
+    { s:"3/4Y"  ,m:  "5/6Y"  ,l:  "7/8Y" ,x:  "9/10Y" ,xl:  "11/12Y" , xxl: "13/14Y" }
+]
   const checkVal = (e,index) => {
     let a = e.target.value;
     if(props.fixed)
@@ -48,7 +52,7 @@ const cartEach = (props) => {
               props.fixed?<p>{props.defSize}</p>:(
                 <select onChange={(e)=>props.onChangeSize(e.target.value,props.index)} defaultValue={props.defSize}>
               {props.variants.map((each) => (
-                <option value={each}>{database[each.toLowerCase()]}</option>
+                <option value={each}>{agesSelect[props.baby][each.toLowerCase()]}</option>
               ))}
             </select>
               )

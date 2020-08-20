@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #f9c449;
+  background-color: #e8a49c;
   height: 60px;
   color: #5b6b6a;
   z-index: 20;
@@ -270,6 +270,8 @@ li a {
 
 .Toolbar-img-container{
   font-size: 80%;
+  height:40px;
+  width:80px;
   color:#da003a;
 }
 .Toolbar-img-container img{

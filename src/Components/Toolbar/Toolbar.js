@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { logout } from "../../firebase";
 import shoppingCart from "../../assets/Icons/shopping-cart.png";
 import sukainah from "../../assets/logo/sukainah-mart.png";
+import sukainahLogo from "../../assets/Icons/baby-sukaina-mart.png"
 
 const toolbar = (props) => (
   <header className="Toolbar">
@@ -17,7 +18,7 @@ const toolbar = (props) => (
       <div className="Toolbar__Logo">
         <NavLink to="/">
           <div className="Toolbar-img-container">
-            <h3>Baby sukainah mart</h3>
+            <img src={sukainahLogo} alt="Sukainah Mart Logo"/>
           </div>
         </NavLink>
       </div>

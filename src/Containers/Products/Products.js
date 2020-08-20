@@ -15,7 +15,8 @@ export default class Products extends React.Component {
         data: [],
         price: 5000,
         age: "1",
-        checkAge: []
+        checkAge: [],
+        baby:false,
     }
     componentWillMount() {
 
@@ -52,25 +53,25 @@ export default class Products extends React.Component {
         
         if (pathname.endsWith("babyboys")) {
             temp = [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }]
-            this.setState({ gender: "M", checkAge: temp, checkCategory: catBoys, category: search });
+            this.setState({ gender: "M",baby:true, checkAge: temp, checkCategory: catBoys, category: search });
             return;
         }
 
         if (pathname.endsWith("babygirls")) {
             temp = [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }]
-            this.setState({ gender: "F", checkAge: temp, checkCategory: catGirls, category: search });
+            this.setState({ gender: "F",baby:true, checkAge: temp, checkCategory: catGirls, category: search });
             return;
         }
         if (pathname.endsWith("boys")) {
             temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" }]
 
-            this.setState({ gender: "M", checkAge: temp, checkCategory: catBoys, category: search });
+            this.setState({ gender: "M",baby:false, checkAge: temp, checkCategory: catBoys, category: search });
             return;
         }
 
         if (pathname.endsWith("girls")) {
             temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" }]
-            this.setState({ gender: "F", checkAge: temp, checkCategory: catGirls, category: search });
+            this.setState({ gender: "F",baby:false, checkAge: temp, checkCategory: catGirls, category: search });
             return;
         }
         if (pathname.endsWith("accessories")) {
@@ -101,8 +102,9 @@ export default class Products extends React.Component {
         //         temp=true;
         let category = data.desc.category.toLowerCase().includes(this.state.category.toLowerCase()) || this.state.category === "";
         let price = data.price <= this.state.price;
+        let baby=this.state.baby?data.desc.baby:true;
         let accessory =this.state.blockAge? data.desc.category.toLowerCase().includes("accessories") :true;
-        return gender && age && category && price &&accessory;
+        return gender && age && category && price &&accessory &&baby;
     }
     onChangeAge = (e) => {
         this.setState({ age: e.target.value });
