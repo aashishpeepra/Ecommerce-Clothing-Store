@@ -14,6 +14,10 @@ class Checkout extends React.Component{
         logged:this.props.loggedIn,
         userInfo:this.props.userInfo
     }
+    componentWillMount(){
+        if(this.props.cart.length===0)
+        this.props.history.push("/")
+    }
     onChanger1=(e)=>{
         let value=e.target.value;
         let name=e.target.name;
@@ -93,6 +97,7 @@ class Checkout extends React.Component{
             </div>
         )
         return (
+            <div style={{minHeight:"70vh"}}>
             <section className="Checkout">
                 {
                     this.state.logged ? (
@@ -125,6 +130,7 @@ class Checkout extends React.Component{
                     ): ifNotLogged
                 }
             </section>
+            </div>
         )
     }
 }

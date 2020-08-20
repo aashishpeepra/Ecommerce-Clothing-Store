@@ -1,0 +1,45 @@
+.Payment-Details{
+    margin-top: 90px;
+    min-height: 65vh;
+}
+.Payment-Details h1{
+    margin:30px 0px;
+}
+.Payment-Details-Holder{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Payment-Details-Each{
+    border:1px solid #ccc;
+    padding:10px 20px;
+    min-height: 300px;
+    min-width:300px;
+    margin:0px 50px;
+    margin-top: 40px;
+}
+.Payment-Details-Each h2{
+    margin-bottom: 50px;
+}
+.Payment-Details-Each ul li{
+    margin:10px 0px
+}
+.Payment-Details-Each ul{
+    list-style: none;
+}
+.Payment-Details-Each button{
+    margin-top: 40px;;
+    background-color: #e8a49c;
+    border:0px;
+    padding: 10px 20px;
+    color:#fff;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-weight: 600;
+
+}
+.Payment-Details-Each button:focus{
+    outline: none;
+}

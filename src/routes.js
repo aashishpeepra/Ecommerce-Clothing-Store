@@ -17,6 +17,7 @@ import  EachOrder   from "./Containers/UserDetails/EachOrder/EachOrder"
 import EachOrderAdmin   from "./Containers/Admin/AdminOrders/EachOrder/EachOrder";
 import Adminslider from "./Containers/Admin/AdminFront/adminSlider";
 import Delivery from "./Components/UI/Footer/delivery/delivery";
+import Payment from "./Containers/Payment/Payment";
 export default class Router extends Component{
     state={
 
@@ -26,6 +27,7 @@ export default class Router extends Component{
         return(
             
             <Switch>
+                <Route path="/payment" component={Payment}/>
                 <Route path="/admin/slider" component={Adminslider}/>
                 <Route path="/admin/products/:id" component={AdminProductEach}/>
                 <Route path="/admin/orders/:id" component={EachOrderAdmin}/>

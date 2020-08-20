@@ -16,7 +16,7 @@ class Cart extends React.Component {
     return sum;
   }
   moveToCheckout = () => {
-    this.props.history.push("/checkout");
+    this.props.history.push("/payment");
     console.log("Pushed");
   };
   render() {
@@ -77,7 +77,7 @@ class Cart extends React.Component {
               <Button
                 click={this.moveToCheckout.bind(this)}
                 history={this.props.history}
-                link="/checkout"
+                link="/payment"
                 text={this.props.cart.length==0?"Add Something":"Place Order"}
                 big={true}
                 disable={!this.props.cart.length>0}
