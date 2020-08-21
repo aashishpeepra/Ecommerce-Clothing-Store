@@ -28,6 +28,7 @@
 }
 .Payment-Details-Each ul{
     list-style: none;
+    text-align: left;
 }
 .Payment-Details-Each button{
     margin-top: 40px;;

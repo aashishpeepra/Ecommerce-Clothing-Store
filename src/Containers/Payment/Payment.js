@@ -4,7 +4,7 @@ class Payment extends React.Component {
     state = {
 
     }
-    takeToCheckOut=()=>{
+    takeToCheckOut = () => {
         this.props.history.push("/checkout");
     }
     render() {
@@ -26,9 +26,13 @@ class Payment extends React.Component {
                         <h2>Advance Pay</h2>
                         <ul>
                             <li>350 Rupees delivery charge.</li>
+                            <li>Leopard courier services (LCS)</li>
+                            <li>Easy Paisa Mobile Account no 0092318-2003004 Farhan Ahmed</li>
+                            <li>Jazz cash Mobile Account no 00923219005837</li>
+                            <li>Meezan Bank Farhan Ahmed A/c  0708. 0103064376</li>
                         </ul>
                         <button type="button" onClick={this.takeToCheckOut}>
-                            Continue
+                            Pay and Continue
                         </button>
                     </div>
                 </div>
