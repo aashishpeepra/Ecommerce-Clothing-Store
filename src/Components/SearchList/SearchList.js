@@ -1,36 +1,31 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
 import "./SearchList.css";
 
 export default class SearchList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.items = [
-      "shirts",
-      "t shirts",
-      "half shirts",
-      "jeans",
-      "sasdad1",
-      "s2asda",
-      "s3asdas",
-      "hfh",
-      "s2acvncvsda",
-      "s3cvncasdas",
-      "half jeans",
-      "shorts",
-      "half shorts",
-      "full shirts",
-      "infant shirts",
-      "infant half shirts",
-      "frocks",
-      "pink frocks",
-      "trousers",
-    ];
-    this.state = {
-      suggestions: [],
-      text: "",
-    };
-  }
 
+  state={
+    open:false,
+    search:"",
+    data:[
+      {name:"boys",value:"tshirts",show:"T shirt"},
+      {name:"boys",value:"shirts",show:"Shirts"},
+      {name:"girls",value:"skirts",show:"Skirts"},
+      {name:"boys",value:"jeans",show:"Jeans"},
+      {name:"boys",value:"jacket",show:"Jacket"},
+      {name:"boys",value:"shorts",show:"Shorts"},
+      {name:"girls",value:"2pc",show:"2 PC"},
+      {name:"girls",value:"3pc",show:"3 PC"},
+      {name:"boys",value:"dungaree",show:"Dungarees"},
+      {name:"boys",value:"denim",show:"Denim"},
+      {name:"girls",value:"tights",show:"Tights"},
+      {name:"girls",value:"frocks",show:"Frocks"},
+  
+    ]
+  }
+  renderSelected=()=>{
+    return this.state.data.filter(data=>{return data.value.includes(this.state.search.toLowerCase()) && this.state.search!==""});
+  }
   onTextChanged = (e) => {
     const value = e.target.value;
 
@@ -72,17 +67,32 @@ export default class SearchList extends React.Component {
   }
 
   render() {
-    const { text } = this.state;
     return (
       <div className="SearchList">
-        {/* <i class="fa fa-search" aria-hidden="true"></i> */}
-        <input
-          placeholder="Search"
-          value={text}
-          type="text"
-          onChange={this.onTextChanged}
-        />
-        {this.renderSuggestions()}
+        <i onClick={()=>this.setState({open:true})} class="fa fa-search" style={{fontSize:"25px",color:"#fff",transform:"rotate(5deg"}} aria-hidden="true"></i>
+        {
+          this.state.open?(
+            <div className="search_box">
+              <div className="search_box_form_holder">
+                <div>
+
+                <label htmlFor="search">Search</label>
+                <input type="text" id="search" name="search" value={this.state.search} onChange={(e)=>this.setState({search:e.target.value})}/>
+                </div>
+                <div className="search_box_close" onClick={()=>this.setState({open:false})}>
+                  <p>X</p>
+                </div>
+              </div>
+              <div className="search_box_result">
+                <ul>
+                  {this.renderSelected().map(each=>{
+                    return <li onClick={()=>this.setState({open:false})} key={each.value}> <NavLink  to={`/clothings/${each.name}?q=${each.value}`}>{each.show}</NavLink></li>
+                  })}
+                  </ul>
+              </div>
+            </div>
+          ):null
+        }
       </div>
     );
   }

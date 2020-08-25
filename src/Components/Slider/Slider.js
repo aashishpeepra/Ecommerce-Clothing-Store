@@ -79,7 +79,11 @@ class Slider extends React.Component {
   slideWidth = () => {
     return document.querySelector(".slide").clientWidth;
   };
-
+componentDidMount(){
+  setInterval(()=>{
+    this.goToNextSlide();
+  },3000);
+}
   render() {
     return (
       <div className="slider">

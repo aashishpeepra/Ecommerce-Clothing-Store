@@ -1,12 +1,12 @@
-.SearchList {
+/* .SearchList {
   width: 100%;
-  /* box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px 1px rgba(0, 0, 0, 0.18); */
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px 1px rgba(0, 0, 0, 0.18);
   font-size: 14px;
   color: rgba(0,0,0,0.73);
   background-color: #e8a49c !important;
   z-index: 21;
-}
-
+} */
+/* 
 .SearchList input {
   width: 60%;
   border: none;
@@ -27,9 +27,9 @@
 .SearchList input:active , .SearchList input:hover, .SearchList input:focus{
   width:100%;
   color: #fff;
-}
+} */
 
-.SearchList ul {
+/* .SearchList ul {
     display: flex;
     list-style-type: none;
     text-align: left;
@@ -44,7 +44,7 @@
 }
 .SearchList ul::before {
   content: "";
-}
+} */
 /* .SearchList ul{
   display: none;
 }
@@ -58,7 +58,7 @@
   display: flex;
 } */
 
-
+/* 
 .SearchList li {
     width: 100%;
     padding: 10px 30px;
@@ -78,9 +78,9 @@
 .SearchList li:hover {
     /* text-decoration: underline; */
     
-    background-color: #0080ff;
+    /* background-color: #0080ff;
     color:#fff;
-}
+} */ 
 /* .input-icons i { 
   position: absolute; 
 } 
@@ -105,3 +105,75 @@
   padding: 10px; 
   text-align: center; 
 } */
+.SearchList{
+  height:40px;
+  width:40px;
+  position: absolute;
+  top:10px;
+  font-weight: 0;
+}
+.search_box{
+  height:100vh;
+  width: 100vw;
+  background-color:#fff;
+
+  
+}
+.search_box_form_holder{
+  top:0;
+  width:100%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.search_box_form_holder input{
+  border:0;
+  width:100vw;
+  height: 30px;
+  font-size: 105%;
+  border-bottom:1px solid #e8a49c;
+  padding-left:50px;
+}
+
+.search_box_close:hover{
+  cursor: pointer;
+}
+.search_box_close{
+  margin-top:-26px;
+  margin-left:10px;
+  display: inline;
+}
+.search_box_close p{
+  font-size: 20px;
+}
+.search_box_form_holder input:focus{
+  outline:none;
+  border-bottom:2px solid #e8a49c;
+}
+.search_box_form_holder label{
+  display: none;
+}
+.SearchList i{
+  cursor: pointer;
+}
+.search_box_result{
+  position: absolute;
+  top:50px;
+}
+.search_box_result ul{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.search_box_result ul li{
+margin-top:10px;
+  padding-left:4%;
+  width:100vw;
+}
+
+.search_box_result a{
+  color:inherit;
+  text-decoration: none;
+}
