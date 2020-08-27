@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 class SingleProduct extends React.Component {
   state = {
-    babe:this.props.location.state.desc.baby,
+    babe: this.props.location.state.desc.baby,
     variants: this.props.location.state.desc.sizes,
     size: this.props.location.state.desc.sizes[0],
     images: [
@@ -48,7 +48,7 @@ class SingleProduct extends React.Component {
         ).style.backgroundColor = "white";
         document.querySelector(`.SizeSelection__Size${i + 1}`).style.color =
           "#fff";
-          document.querySelector(`.SizeSelection__Size${i + 1}`).style.backgroundColor =
+        document.querySelector(`.SizeSelection__Size${i + 1}`).style.backgroundColor =
           "#7f7f7f";
       }
     }
@@ -58,18 +58,18 @@ class SingleProduct extends React.Component {
   };
 
   renderCircles = (arr) => {
-    const database={
-      s:"9/12 Months",
-      m:"12/18 Months",
-      l:"18/24 Months",
-      x:"2/3 Years",
-      xl:"3/4 Years"
+    const database = {
+      s: "9/12 Months",
+      m: "12/18 Months",
+      l: "18/24 Months",
+      x: "2/3 Years",
+      xl: "3/4 Years"
     }
-    const agesSelect= [
-      {  s:"0/3M" ,m: "3/6M" , l:"6/9M" , x: "9/12M",  xl: "12/18M" ,xxl:  "18/24M"  , xxxl: "2/3Y"   },
-      { s:"3/4Y"  ,m:  "5/6Y"  ,l:  "7/8Y" ,x:  "9/10Y" ,xl:  "11/12Y" , xxl: "13/14Y" }
-  ]
-  
+    const agesSelect = [
+      { s: "0/3M", m: "3/6M", l: "6/9M", x: "9/12M", xl: "12/18M", xxl: "18/24M", xxxl: "2/3Y" },
+      { s: "3/4Y", m: "5/6Y", l: "7/8Y", x: "9/10Y", xl: "11/12Y", xxl: "13/14Y" }
+    ]
+
     return (
       <div className="SizeSelection__Helper">
         {this.state.variants.map((each, i) => (
@@ -79,7 +79,7 @@ class SingleProduct extends React.Component {
             key={i}
             tabmydex={i + 1}
           >
-            <span>{agesSelect[this.state.baby===undefined?this.state.baby?1:0:1][each.toLowerCase()]}</span>
+            <span>{agesSelect[this.state.baby === undefined ? this.state.baby ? 1 : 0 : 1][each.toLowerCase()]}</span>
           </div>
         ))}
       </div>
@@ -95,8 +95,8 @@ class SingleProduct extends React.Component {
         <div className="Gallery__Container">
 
           <ImageGallery
-            items={data.images.map(each=>{
-              return {original:each,thumbnail:each}
+            items={data.images.map(each => {
+              return { original: each, thumbnail: each }
             })}
             defaultImage={defaultImage}
             showBullets={true}
@@ -111,9 +111,16 @@ class SingleProduct extends React.Component {
           <div className="SizeSelection__Container">
             <h1 className="SizeSelection__H1">{data.title}</h1>
             <div className="SizeSelection__P">{"Rs." + data.price}</div>
-            <div className="SizeSelection__P">Select Size</div>
-            {this.renderCircles(data.desc.sizes)}
-            <button type="button" onClick={()=>{this.props.onAddToCart({qty:1,data,size:this.state.size});this.props.history.push("/cart")}} className="SizeSelection__Button">
+            {
+              data.desc.sizes.length === 0?null:(
+                <React.Fragment>
+              <div className="SizeSelection__P">Select Size</div>
+              {this.renderCircles(data.desc.sizes)}
+            </React.Fragment>
+              )
+            }
+
+            <button type="button" onClick={() => { this.props.onAddToCart({ qty: 1, data, size: this.state.size }); this.props.history.push("/cart") }} className="SizeSelection__Button">
               ADD TO CART
             </button>
           </div>
@@ -121,20 +128,9 @@ class SingleProduct extends React.Component {
         <div className="ProductDescription">
           <h1 className="ProductDescription__Heading">Product Description</h1>
           <p className="ProductDescription__Para">
-
+            {data.desc.para}
           </p>
-          <div className="ProductDescription__Table">
-            <div className="ProductDescription__Fixed">
-              <div>Material</div>
-              <div>Mfg. Date</div>
-              <div>Gender</div>
-            </div>
-            <div className="ProductDescription__Dynamic">
-              <div>{data.desc.material}</div>
-              <div>2020</div>
-              <div>{data.desc.gender.toUpperCase()}</div>
-            </div>
-          </div>
+          
         </div>
       </React.Fragment>
 

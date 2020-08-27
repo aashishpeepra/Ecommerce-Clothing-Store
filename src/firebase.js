@@ -66,7 +66,7 @@ function logout() {
   })
 }
 
-function submitOrder(data, previousOrders) {
+function submitOrder(data, previousOrders,cb) {
   if (firebase.auth().currentUser !== null) {
     console.log("Data->", data)
     console.log("Previous ", previousOrders)
@@ -74,6 +74,7 @@ function submitOrder(data, previousOrders) {
     db.collection("Orders").doc(firebase.auth().currentUser.uid).set(data)
       .then(res => {
         console.log(res);
+        cb();
       })
       .catch(err => {
         alert("some Error Occured! Try again");

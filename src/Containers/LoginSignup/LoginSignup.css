@@ -1,5 +1,5 @@
 .login-signup-holder{
-    padding-top:20rem;
+    padding-top:15rem;
     min-height:100vh;
 }
 .logValues{
@@ -11,7 +11,7 @@
     align-content: center;
 }
 .logDiv{
-    background-color:#95c9e2;
+    background-color:#e8a49c;
     transition: all ease 0.2s;
     color:#fff;
     width:250px;

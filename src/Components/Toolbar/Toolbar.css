@@ -381,3 +381,8 @@ li a {
 .Toolbar__dropbtn a{
   color:#fff;
 }
+@media (max-width: 768px){
+  .Toolbar__Logo{
+    display: none;
+  }
+}

@@ -12,12 +12,12 @@ const sideDrawer = (props) => {
   }
   return (
     <nav className={classes.join(" ")}>
-      <div className="Info__Box">
-        <div className="Name__Box">
-          {!props.loggedIn ? "" : props.userInfo.name}
+      <div className="Info__Box" onClick={props.off}>
+        <div className="Name__Box" >
+          <NavLink to="/user">{!props.loggedIn ? "" : props.userInfo.name}</NavLink>
         </div>
         <div className="Email__Box">
-          {!props.loggedIn ? "" : props.userInfo.email}
+        <NavLink to="/user">{!props.loggedIn ? "" : props.userInfo.email}</NavLink>
         </div>
       </div>
       <div className="Options">

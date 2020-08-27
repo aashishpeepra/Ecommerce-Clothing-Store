@@ -11,9 +11,13 @@
     box-sizing: border-box;
     align-items: center;
     background-color:#fff;
-    box-shadow: 10px 12px 14px #ebb9b9;
+    box-shadow: 10px 12px 14px #e5978e;
+    
+
+
     
 }
+
 
 .review-left{
     /* width:20%; */

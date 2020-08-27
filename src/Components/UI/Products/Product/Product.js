@@ -20,7 +20,7 @@ export default (props) => {
             <div className="Product-content">
             <span className="title" itemProp="name">{data["title"]}</span>
             <div style={{fontWeight:"bold"}} className="rate" itemProp="offers" itemScope itemType="http://schema.org/Offer">
-                <span  itemProp="priceCurrency" content="PKR">&#8377;</span>
+                <span  itemProp="priceCurrency" content="PKR">Rs. </span>
     <span itemProp="price" content="230.00"> {data["price"]}</span>
     <span className="Product-offer">{props.data.offer}</span>
             </div>

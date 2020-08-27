@@ -79,12 +79,11 @@
   padding: 1rem 2rem;
   border:0;
   color: #fff;
-  border-radius: 2rem;
   display: flex;
   justify-content: flex-start;
   outline: none;
   cursor: pointer;
-  background-color:  #95c9e2;
+  background-color:  #e8a49c;
 }
 
 /* .SizeSelection__Button:hover,
@@ -118,8 +117,13 @@
 
 .ProductDescription {
   padding: 2rem 0;
-  background-color: #f6e0e0;
+  background-color: #e8a49c;
   color: #fff;
+}
+.ProductDescription p{
+  width: 50%;;
+  line-height: 145%;
+  letter-spacing: 1px;;
 }
 
 .ProductDescription__Heading {

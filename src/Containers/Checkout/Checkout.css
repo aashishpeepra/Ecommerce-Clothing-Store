@@ -1,6 +1,14 @@
 .Checkout{
     margin-top:90px;
 }
+.checkout-stopper{
+    height:100vh;
+    width:100vw;
+    opacity: 0.5;
+    top:0;
+    padding-top:100px;
+    left:0;
+}
 .logValues{
     display:flex;
     flex-wrap: wrap;

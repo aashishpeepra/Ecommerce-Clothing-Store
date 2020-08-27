@@ -10,10 +10,10 @@ class Admin extends React.Component{
     takeToPath=(path)=>{
         this.props.history.push(path)
     }
-    componentWillMount(){
-        if(this.props.loggedIn && this.props.userInfo.email!="thissiteadmin753654@admin.com")
+    componentDidMount(){
+        if(this.props.loggedIn && this.props.userInfo.email!=="thissiteadmin753654@admin.com")
         {
-            this.props.history.push("/");
+            this.props.history.push("/login-signup");
         }
     }
     render(){

@@ -29,7 +29,7 @@ const toolbar = (props) => (
             <NavLink style={{color:"#fff"}} to="/">Home</NavLink>
           </li>
           <li className="redSale">
-          <NavLink to="/clothings">New Arrivals</NavLink>
+          <NavLink to="/clothings/newarrival">New Arrivals</NavLink>
           </li>
           {/* <li className="Toolbar__dropdown--1">
             <button className="Toolbar__dropbtn--1">
@@ -51,7 +51,7 @@ const toolbar = (props) => (
           <li>
             <div className="Toolbar__dropdown">
               <button className="Toolbar__dropbtn ">
-                <NavLink to="/clothings">Infants</NavLink>
+                <NavLink to="/clothings/infants">Infants</NavLink>
               </button>
               <div className="Toolbar__dropdown-content blue">
               
@@ -189,7 +189,7 @@ const toolbar = (props) => (
             </div>
           </li>
           <li className="redSale">
-            <NavLink to="/clothings">Sale</NavLink>
+            <NavLink to="/clothings/sale">Sale</NavLink>
           </li>
           {/* <li>
             <div className="Toolbar__dropdown">

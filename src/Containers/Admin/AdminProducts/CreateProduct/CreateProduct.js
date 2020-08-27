@@ -10,11 +10,7 @@ class CreateProduct extends React.Component {
         sizes: [],
         gender: "m",
         category: "",
-        images: [
-            "https://images.unsplash.com/photo-1576250263863-11f6bfa98823?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
-            "https://images.unsplash.com/photo-1517116389657-26ab3000c026?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
-            "https://images.unsplash.com/photo-1544455655-08ede5c4d415?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-        ],
+        images: [],
         file: undefined,
         progress: 0,
         uploadImage: "",
@@ -27,7 +23,10 @@ class CreateProduct extends React.Component {
         agesSelect: [
             [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }],
             [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" }]
-        ]
+        ],
+        isaccessory:false,
+        forsale:false,
+        newarrival:false
     }
     UNSAFE_componentWillMount() {
         console.log(this.props.location);
@@ -43,6 +42,9 @@ class CreateProduct extends React.Component {
                 gender: temp.desc.gender,
                 category: temp.desc.category,
                 material: temp.desc.material,
+                isaccessory:temp.desc.isaccessory === undefined ? false: temp.desc.isaccessory,
+                forsale:temp.desc.forsale===undefined?false:temp.desc.forsale,
+                newarrival:temp.desc.newarrival===undefined?false:temp.desc.newarrival,
                 baby: temp.desc.baby === undefined ? false : temp.desc.baby,
                 old: true,
                 oldTitle: temp.title
@@ -153,6 +155,10 @@ class CreateProduct extends React.Component {
                 category: this.state.category,
                 gender: this.state.gender,
                 sizes: this.state.sizes,
+                baby:this.state.baby,
+                newarrival:this.state.newarrival,
+                forsale:this.state.forsale,
+                isaccessory:this.state.isaccessory
             },
             id: this.state.id
         }
@@ -177,7 +183,10 @@ class CreateProduct extends React.Component {
                 category: this.state.category,
                 gender: this.state.gender,
                 sizes: this.state.sizes,
-                baby: this.state.baby
+                baby: this.state.baby,
+                newarrival:this.state.newarrival,
+                forsale:this.state.forsale,
+                isaccessory:this.state.isaccessory
             },
             id: Math.floor(Math.random() * 100000 + 100)
         }
@@ -239,6 +248,33 @@ class CreateProduct extends React.Component {
                             <input onChange={this.onOffer} value={this.state.offer} type="text" name="offer" id="offer" placeholder="30% Off" />
                         </fieldset>
                         <fieldset className="special">
+                            <h5>Is this for new Arrival?</h5>
+                            <label htmlFor="arrival1">Yes</label>
+                            <input onChange={()=>this.setState({newarrival:true})} id="arrival1" checked={this.state.newarrival} value="yes" type="radio"  />
+
+                            <label htmlFor="arrival2">No   </label>
+                            <input onChange={()=>this.setState({newarrival:false})} value="no" checked={!this.state.newarrival} id="arrival2" type="radio"  />
+                        </fieldset>
+                        <fieldset className="special">
+                            <h5>Is this for sale?</h5>
+                            <label htmlFor="sale1">Yes</label>
+                            <input onChange={()=>this.setState({forsale:true})} id="sale1" checked={this.state.forsale} value="yes" type="radio"  />
+
+                            <label htmlFor="sale2">No   </label>
+                            <input onChange={()=>this.setState({forsale:false})} value="no" checked={!this.state.forsale} id="sale2" type="radio"  />
+                        </fieldset>
+                        <fieldset className="special">
+                            <h5>Is this an accessory?</h5>
+                            <label htmlFor="accessory1">Yes</label>
+                            <input onChange={()=>this.setState({isaccessory:true})} id="accessory1" checked={this.state.isaccessory} value="yes" type="radio"  />
+
+                            <label htmlFor="accessory2">No   </label>
+                            <input onChange={()=>this.setState({isaccessory:false})} value="no" checked={!this.state.isaccessory} id="accessory2" type="radio"  />
+                        </fieldset>
+                        {
+                            this.state.isaccessory?null:(
+                                <React.Fragment>
+                                        <fieldset className="special">
                             <h5 style={{ margin: "20px 0px" }}>Is it a baby product?</h5>
                             <label htmlFor="babyornot1">Yes</label>
                             <input onChange={this.onbaby} id="babyornot1" checked={this.state.baby} value="yes" type="radio" name="babyornot" />
@@ -253,6 +289,10 @@ class CreateProduct extends React.Component {
                             }
 
                         </fieldset>
+                                </React.Fragment>
+                            )
+                        }
+                        
                     </form>
                 </div>
                 <div className="User-info-container">
@@ -262,18 +302,21 @@ class CreateProduct extends React.Component {
                             <label htmlFor="city">Material</label>
                             <input onChange={this.onMaterial} value={this.state.material} type="text" name="material" id="material" placeholder="Material" />
                         </fieldset>
-                        <fieldset className="special">
+                        {
+                            this.state.isaccessory?null:(
+                                 <fieldset className="special">
                             <h5>Select Gender</h5>
                             <label htmlFor="m">Male </label>
                             <input onChange={this.onRadioChange} checked={this.state.gender.toUpperCase() === "M"} type="radio" name="Male" value="m" id="m" />
                             <label htmlFor="f">Female</label>
                             <input onChange={this.onRadioChange} checked={this.state.gender.toUpperCase() === "F"} type="radio" name="Female" value="f" id="f" />
                         </fieldset>
+                            )
+                        }
+                       
                         <fieldset className="special2" style={{marginBottom:"40px"}}>
                             <h5 htmlFor="category">Cetegory</h5>
                             <select value={this.state.category} onChange={this.onSelectChange} id="category">
-
-                                <option value="accessories">Accessories</option>
                                 <option value="tshirts">T shirt</option>
                                 <option value="shirts">Shirt</option>
                                 <option value="skirts">Skirts</option>
@@ -287,6 +330,12 @@ class CreateProduct extends React.Component {
                                 <option value="tights">Tights</option>
                                 <option value="kurtis">Kurtis</option>
                                 <option value="frocks">Frocks</option>
+                                <option value="undergarments">Undergrarments/Socks</option>
+                                <option value="caps">Caps</option>
+                                <option value="bibs">Bibs</option>
+                                <option value="bags">Bags</option>
+                                <option value="babynest">Baby Nest</option>
+                                <option value="babyleddin">Baby Leddin</option>
                             </select>
                         </fieldset>
 
@@ -306,7 +355,7 @@ class CreateProduct extends React.Component {
                             return (
                                 <div className="CreateProducts-images">
                                     <div className="CreateProducts-images-holder">
-                                        <img src={each} alt="Product" />
+                                        <img style={{height:"100px", width:"100px"}} src={each} alt="Product" />
                                     </div>
                                     <Button text="Remove" click={() => this.removeImage(index)} color="red" />
                                 </div>

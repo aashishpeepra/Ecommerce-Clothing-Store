@@ -14,7 +14,7 @@ class LoginSignup extends React.Component{
     render(){
         return (
             <div className="login-signup-holder">
-                <h1>Choose one to continue</h1>
+                <h1 style={{fontSize:"120%"}}>Choose one to continue</h1>
             <div className="logValues">
                 <div className="logDiv" onClick={()=>this.props.history.push("/login")} >
                     

@@ -7,8 +7,8 @@ export default (props) => {
     <React.Fragment>
       <h3 className="Category__Heading">Categories</h3>
       <div className="Categorize">
-        <Link to={{pathname:"/clothings",state:{gender:"m"}}}>
-        <div style={{backgroundColor:"#95c9e2"}} className="Categorize__Card" >
+        <Link to={{pathname:"/clothings/boys",state:{gender:"m"}}}>
+        <div style={{backgroundColor:"#e8a49c"}} className="Categorize__Card" >
           <div className="Categorize__Card--Image">
             
             <img
@@ -21,8 +21,8 @@ export default (props) => {
           <div className="Categorize__Card--Heading">BOYS</div>
         </div>
         </Link>
-        <Link to={{pathname:"/clothings",state:{gender:"f"}}}>
-        <div style={{backgroundColor:"#f6a9be"}} className="Categorize__Card">
+        <Link to={{pathname:"/clothings/girls",state:{gender:"f"}}}>
+        <div style={{backgroundColor:"#e8a49c"}} className="Categorize__Card">
           <div className="Categorize__Card--Image">
             <img
               className="Categorize__Image"
@@ -33,8 +33,8 @@ export default (props) => {
           <div className="Categorize__Card--Heading">GIRLS</div>
         </div>
         </Link>
-        <Link to="/clothings">
-        <div style={{backgroundColor:"#95c9e2"}} className="Categorize__Card">
+        <Link to="/clothings/accessories">
+        <div style={{backgroundColor:"#e8a49c"}} className="Categorize__Card">
           <div className="Categorize__Card--Image">
             <img
               className="Categorize__Image"

@@ -3,6 +3,7 @@ import Products from "../../Components/UI/Products/Products";
 import Customers from "../../Components/UI/Customers/Customers";
 import Category from "../../Components/UI/Categorize/Categorize";
 import Carousel from "../../Components/Slider/Slider";
+import logo from "../../assets/logo/sukainah-mart.png";
 import {connect} from 'react-redux';
 import "./Home.css";
 import {db} from "../../firebase";
@@ -38,17 +39,19 @@ class Home extends Component {
             <main className="Home">
                
                 
-                
+                <div className="Icon-Holder">
+                    <img src={logo} alt="baby Sukainah mart"/>
+                </div>
                 <Carousel images={this.state.images}/>
                 <section className="Home-Trending">
-                    <h3 style={{color:"#fff"}}>Deals</h3>
+                    <h3 style={{color:"#e8a49c"}}>Deals</h3>
                 <Products nav={this.navigator} type="listed" data={this.state.data.slice(0,4)} />
                 </section>
                 
                 
                  <Category/>
                  <section className="Home-Trending">
-                     <h3  style={{color:"#fff"}}>Top Picks For you</h3>
+                     <h3  style={{color:"#e8a49c"}}>Top Picks For you</h3>
                 <Products nav={this.navigator} type="listed" data={this.state.data.slice(0,4)} />
                  </section>
                 

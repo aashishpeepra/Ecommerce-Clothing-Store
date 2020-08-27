@@ -13,7 +13,7 @@ class Checkout extends React.Component{
     state={
         logged:this.props.loggedIn,
         userInfo:this.props.userInfo,
-        extra:0
+        extra:0,
     }
     componentWillMount(){
         if(this.props.cart.length===0)
@@ -72,7 +72,11 @@ class Checkout extends React.Component{
             userData:userBasic,
             orders:totalOrders
         };
-        submitOrder(OrderData,previousOrders);
+        this.setState({stopper:true});
+        submitOrder(OrderData,previousOrders,()=>{
+            this.setState({stopper:false});
+            this.props.history.push("/user");
+        });
 
         
 
@@ -105,6 +109,10 @@ class Checkout extends React.Component{
         )
         return (
             <div style={{minHeight:"70vh"}}>
+                {this.state.stopper?
+                <div className="checkout-stopper">
+                    <h1>Your order is being placed...</h1>
+                </div>:
             <section className="Checkout">
                 {
                     this.state.logged ? (
@@ -137,6 +145,7 @@ class Checkout extends React.Component{
                     ): ifNotLogged
                 }
             </section>
+    }
             </div>
         )
     }

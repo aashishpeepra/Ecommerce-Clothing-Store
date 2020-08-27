@@ -49,7 +49,7 @@ const cartEach = (props) => {
         <div className="CartEach-G">
           <div className="CartEach-left">
             {
-              props.fixed?<p>{props.defSize}</p>:(
+              props.fixed ?<p>{props.defSize}</p>:(
                 <select onChange={(e)=>props.onChangeSize(e.target.value,props.index)} defaultValue={props.defSize}>
               {props.variants.map((each) => (
                 <option value={each}>{agesSelect[props.baby][each.toLowerCase()]}</option>

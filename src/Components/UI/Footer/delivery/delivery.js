@@ -23,20 +23,7 @@ Mobile Account no 00923219005837</li>
             <li>Meezan Bank         Farhan Ahmed
 A/c  0708. 0103064376</li>
           </ul>
-          <h5>More Information</h5>
-          <p>
-            Delivery timing 3-5 working days for all Major cities of Pakistan
-          </p>
-          <p>3-7 days for Remote areas of Pakistan</p>
-          <p>
-            Delivery couriers: leopard courier Pakistan and Call courier
-            Pakistan, TCS Pakistan
-          </p>
-          <p>Currently we are just delivering with in Pakistan</p>
-          <p>
-            Delivery charges depends upon order's items weight, Starting from
-            Rs.199
-          </p>
+          
         </div>
       </div>
     );

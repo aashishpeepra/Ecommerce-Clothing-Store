@@ -20,12 +20,17 @@
 .Info__Box {
   height: 15%;
   padding: 1.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #5b6b6a;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+.Info__Box a{
+text-decoration: none;
+color:inherit
+
 }
 
 .Options {
@@ -40,7 +45,7 @@
 
 .Options > * {
   /* color: white; */
-  font-size: 1.2rem;
+  font-size: 1.0rem;
 }
 .Options a{
   display: inline-block;
