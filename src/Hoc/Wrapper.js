@@ -29,7 +29,7 @@ export default class Aux extends React.Component {
     return (
       <main>
         <Toolbar clicked={this.drawerToggleClickHandler} />
-        <SideDrawer show={this.state.sideDrawerOpen} />
+        <SideDrawer off={()=>this.setState({sideDrawerOpen:false})} show={this.state.sideDrawerOpen} />
         {backdrop}
         {this.props.children}
         <div className="sticky-whatsapp">

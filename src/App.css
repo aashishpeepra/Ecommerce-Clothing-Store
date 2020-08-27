@@ -14,7 +14,11 @@ body{
   /* background-color:#d6e8d9; */
   /* background:url("https://img.ltwebstatic.com/images3_pi/2020/03/04/15833061265aed4ce96d5a3639d175d1b61bab8637.webp") */
 }
-
+/* @media only screen and (max-width: 900px) {
+  body {
+    font:6px;
+  }
+} */
 
 
 

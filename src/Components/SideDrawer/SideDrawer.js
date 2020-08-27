@@ -21,34 +21,34 @@ const sideDrawer = (props) => {
         </div>
       </div>
       <div className="Options">
-        <div className="Options__Home">
+        <div className="Options__Home" onClick={props.off}>
           <NavLink to="/">Home</NavLink>
         </div>
-        <div className="Options__Cart">
+        <div className="Options__Cart" onClick={props.off}>
           <NavLink to="/clothings">New Arrival</NavLink>
         </div>
-        <div className="Options__Home">
-          <NavLink to="/">Boys</NavLink>
+        <div className="Options__Home" onClick={props.off}>
+          <NavLink to="/clothings/boys">Boys</NavLink>
         </div>
-        <div className="Options__Home">
-          <NavLink to="/">Girls</NavLink>
+        <div className="Options__Home" onClick={props.off}>
+          <NavLink to="/clothings/girls">Girls</NavLink>
         </div>
-        <div className="Options__Home">
-          <NavLink to="/">Baby Boys</NavLink>
+        <div className="Options__Home" onClick={props.off}>
+          <NavLink to="/clothings/babyboys">Baby Boys</NavLink>
         </div>
-        <div className="Options__Home">
-          <NavLink to="/">Baby Girls</NavLink>
+        <div className="Options__Home" onClick={props.off}>
+          <NavLink to="/clothings/bbygirls">Baby Girls</NavLink>
         </div>
-        <div className="Options__Cart">
+        <div className="Options__Cart" onClick={props.off}>
           <NavLink to="/cart">Cart</NavLink>
         </div>
         {
           props.loggedIn ? (
             <React.Fragment>
-              <div className="Options__Orders">
+              <div className="Options__Orders" onClick={props.off}>
                 <NavLink to="/user">My Orders</NavLink>
               </div>
-              <div className="Options__Account">
+              <div className="Options__Account" onClick={props.off}>
                 <NavLink to="/user">My Account</NavLink>
               </div>
             </React.Fragment>
@@ -56,7 +56,7 @@ const sideDrawer = (props) => {
           ) : null
         }
 
-        <div className="Options__Log">
+        <div className="Options__Log" onClick={props.off}>
           <NavLink
             onClick={props.loggedIn ? logout : () => { }}
             to={props.loggedIn ? "logout" : "login"}

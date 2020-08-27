@@ -12,11 +12,17 @@ import {submitOrder} from "../../firebase";
 class Checkout extends React.Component{
     state={
         logged:this.props.loggedIn,
-        userInfo:this.props.userInfo
+        userInfo:this.props.userInfo,
+        extra:0
     }
     componentWillMount(){
         if(this.props.cart.length===0)
-        this.props.history.push("/")
+        {
+            this.props.history.push("/")
+        }
+        if(this.props.location.data)
+        this.setState({extra:this.props.location.data});
+        
     }
     onChanger1=(e)=>{
         let value=e.target.value;
@@ -55,7 +61,8 @@ class Checkout extends React.Component{
         let currentOrder={
             time:(new Date()).getTime(),
             img:image,
-            total:sum,
+            total:sum+this.state.extra,
+            mathod:this.state.extra===250?"cod":"online",
             items:cartData,
             location:location.location,
             orderId:Math.floor(Math.random()*1000000+100)
@@ -119,7 +126,7 @@ class Checkout extends React.Component{
                             </form>
                             <div style={{marginTop:"30px"}}>
                                 <h3>
-                                    Total : Rs {this.calcSum()}
+                                    Total : Rs {this.calcSum() + this.state.extra}
                                 </h3>
                             </div>
                             <div style={{marginTop:"20px"}}>

@@ -87,6 +87,7 @@ export default class Products extends React.Component {
             this.setState({ data: data });
         })
     }
+    
     navigator = (obj) => {
         console.log(this.props)
         this.props.history.push({ pathname: `/clothing/` + obj.title, state: obj });

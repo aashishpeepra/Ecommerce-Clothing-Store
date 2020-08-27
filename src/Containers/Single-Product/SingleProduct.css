@@ -28,17 +28,20 @@
 }
 
 .SizeSelection__Size1,
+.SizeSelection__Size,
 .SizeSelection__Size2,
 .SizeSelection__Size3,
 .SizeSelection__Size4 {
   background-color: transparent;
   height: 3rem;
-  width: 5rem;
+  width: 5rem !important;
   cursor: pointer;
   text-align: center;
-  position: relative;
+  position: relative;;
   font-weight: bold;
   color: #fff;
+  
+  margin:0px 2px;
   margin-bottom: 1.5rem;
   background-color: #95c9e2;
 }
@@ -46,6 +49,7 @@
 .SizeSelection__Size1:hover,
 .SizeSelection__Size2:hover,
 .SizeSelection__Size3:hover,
+.SizeSelection__Size:hover,
 .SizeSelection__Size4:hover {
   background-color: #94d5f3;
 }
@@ -53,10 +57,12 @@
 .SizeSelection__Size1 span,
 .SizeSelection__Size2 span,
 .SizeSelection__Size3 span,
+.SizeSelection__Size span,
 .SizeSelection__Size4 span {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 45%;
+  font-size: 12px;
   transform: translate(-50%, -50%);
 }
 
@@ -95,6 +101,18 @@
 @media (max-width: 968px) {
   .SizeSelection__Helper {
     width: 80%;
+  }
+  .SizeSelection__Div{
+    font-size: 16px;;
+  }
+  .SizeSelection__H1{
+    font-size: 18px;
+  }
+  .SizeSelection__P{
+    font-size: 16px;;
+  }
+  .ProductDescription__Heading{
+    font-size: 22px;;
   }
 }
 

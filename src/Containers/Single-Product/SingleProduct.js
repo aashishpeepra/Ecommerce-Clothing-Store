@@ -69,11 +69,12 @@ class SingleProduct extends React.Component {
       {  s:"0/3M" ,m: "3/6M" , l:"6/9M" , x: "9/12M",  xl: "12/18M" ,xxl:  "18/24M"  , xxxl: "2/3Y"   },
       { s:"3/4Y"  ,m:  "5/6Y"  ,l:  "7/8Y" ,x:  "9/10Y" ,xl:  "11/12Y" , xxl: "13/14Y" }
   ]
+  
     return (
       <div className="SizeSelection__Helper">
         {this.state.variants.map((each, i) => (
           <div
-            className={`SizeSelection__Size${i + 1}`}
+            className={`SizeSelection__Size${i + 1} SizeSelection__Size`}
             onClick={() => this.setSize(each, i + 1)}
             key={i}
             tabmydex={i + 1}
@@ -87,7 +88,6 @@ class SingleProduct extends React.Component {
 
   render() {
     const data = this.props.location.state;
-    console.log(data,this.state.size)
     return (
 
       <React.Fragment>

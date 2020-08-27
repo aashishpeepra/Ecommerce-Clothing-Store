@@ -4,8 +4,8 @@ class Payment extends React.Component {
     state = {
 
     }
-    takeToCheckOut = () => {
-        this.props.history.push("/checkout");
+    takeToCheckOut = (value) => {
+        this.props.history.push({pathname:"/checkout",data:value});
     }
     render() {
         return (
@@ -18,7 +18,7 @@ class Payment extends React.Component {
                             <li>200 Rupees delivery charge below orders Rs. 2,500</li>
                             <li>Free Delivery on orders above Rs. 2,500</li>
                         </ul>
-                        <button type="button" onClick={this.takeToCheckOut}>
+                        <button type="button" onClick={()=>this.takeToCheckOut(250)}>
                             Continue
                         </button>
                     </div>
@@ -31,7 +31,7 @@ class Payment extends React.Component {
                             <li>Jazz cash Mobile Account no 00923219005837</li>
                             <li>Meezan Bank Farhan Ahmed A/c  0708. 0103064376</li>
                         </ul>
-                        <button type="button" onClick={this.takeToCheckOut}>
+                        <button type="button" onClick={()=>this.takeToCheckOut(350)}>
                             Pay and Continue
                         </button>
                     </div>

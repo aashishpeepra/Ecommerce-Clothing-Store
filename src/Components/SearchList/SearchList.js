@@ -79,9 +79,9 @@ export default class SearchList extends React.Component {
                 <label htmlFor="search">Search</label>
                 <input type="text" id="search" name="search" value={this.state.search} onChange={(e)=>this.setState({search:e.target.value})}/>
                 </div>
-                <div className="search_box_close" onClick={()=>this.setState({open:false})}>
+                {/* <div className="search_box_close" onClick={()=>this.setState({open:false})}>
                   <p>X</p>
-                </div>
+                </div> */}
               </div>
               <div className="search_box_result">
                 <ul>
