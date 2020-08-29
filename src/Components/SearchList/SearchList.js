@@ -24,7 +24,7 @@ export default class SearchList extends React.Component {
     ]
   }
   renderSelected=()=>{
-    return this.state.data.filter(data=>{return data.value.includes(this.state.search.toLowerCase()) && this.state.search!==""});
+    return this.state.data.filter(data=>{return data.value.includes(this.state.search.toLowerCase()) || this.state.search===""});
   }
   onTextChanged = (e) => {
     const value = e.target.value;
@@ -77,11 +77,11 @@ export default class SearchList extends React.Component {
                 <div>
 
                 <label htmlFor="search">Search</label>
-                <input type="text" id="search" name="search" value={this.state.search} onChange={(e)=>this.setState({search:e.target.value})}/>
+                <input type="text" id="search" name="search" value={this.state.search} placeholder="Search Here" onChange={(e)=>this.setState({search:e.target.value})}/>
                 </div>
-                {/* <div className="search_box_close" onClick={()=>this.setState({open:false})}>
+                <div className="search_box_close" onClick={()=>this.setState({open:false})}>
                   <p>X</p>
-                </div> */}
+                </div>
               </div>
               <div className="search_box_result">
                 <ul>

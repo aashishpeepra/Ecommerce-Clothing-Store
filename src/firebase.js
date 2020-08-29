@@ -39,6 +39,9 @@ const workItOut = (res, data) => {
 }
 function signupUser(email, password, data) {
   const auth = firebase.auth();
+ 
+    // Other config options...
+
   auth.createUserWithEmailAndPassword(email, password)
     .then(res => {
       // console.log(res);
@@ -65,7 +68,16 @@ function logout() {
     store.dispatch({ type: "AUTH_OUT" })
   })
 }
-
+function resetPass(email,cb,fails){
+  firebase.auth().sendPasswordResetEmail(email)
+  .then((data)=>{
+    console.log(data);
+    cb();
+  })
+  .catch(err=>{
+    fails();
+  })
+}
 function submitOrder(data, previousOrders,cb) {
   if (firebase.auth().currentUser !== null) {
     console.log("Data->", data)
@@ -119,6 +131,7 @@ export { loginUser };
 export { signupUser };
 export { logout };
 export { submitOrder };
+export {resetPass}
 // const databaseRef=firebase.database().ref();
 // export const cloths=databaseRef.child("clothes");
 // thissitesecretid85923@site.com

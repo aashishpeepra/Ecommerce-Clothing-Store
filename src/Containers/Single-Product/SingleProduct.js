@@ -79,7 +79,7 @@ class SingleProduct extends React.Component {
             key={i}
             tabmydex={i + 1}
           >
-            <span>{agesSelect[this.state.baby === undefined ? this.state.baby ? 1 : 0 : 1][each.toLowerCase()]}</span>
+            <span>{agesSelect[this.state.baby !== undefined ? this.state.baby ? 1 : 0 : 1][each.toLowerCase()]}</span>
           </div>
         ))}
       </div>

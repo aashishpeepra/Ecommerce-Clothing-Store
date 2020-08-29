@@ -232,3 +232,9 @@
     height:100px;
     width:75px;
 }
+.text-area-create{
+    height:80px;
+    width:600px;
+    padding:5px 5px;
+    border:1px solid #cfcfcf
+}

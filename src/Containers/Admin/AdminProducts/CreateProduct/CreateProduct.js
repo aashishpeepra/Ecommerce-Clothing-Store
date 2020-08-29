@@ -26,7 +26,8 @@ class CreateProduct extends React.Component {
         ],
         isaccessory:false,
         forsale:false,
-        newarrival:false
+        newarrival:false,
+        para:""
     }
     UNSAFE_componentWillMount() {
         console.log(this.props.location);
@@ -46,6 +47,7 @@ class CreateProduct extends React.Component {
                 forsale:temp.desc.forsale===undefined?false:temp.desc.forsale,
                 newarrival:temp.desc.newarrival===undefined?false:temp.desc.newarrival,
                 baby: temp.desc.baby === undefined ? false : temp.desc.baby,
+                para:temp.desc.para === undefined ?"":temp.desc.para,
                 old: true,
                 oldTitle: temp.title
             })
@@ -158,7 +160,8 @@ class CreateProduct extends React.Component {
                 baby:this.state.baby,
                 newarrival:this.state.newarrival,
                 forsale:this.state.forsale,
-                isaccessory:this.state.isaccessory
+                isaccessory:this.state.isaccessory,
+                para:this.state.para 
             },
             id: this.state.id
         }
@@ -186,7 +189,8 @@ class CreateProduct extends React.Component {
                 baby: this.state.baby,
                 newarrival:this.state.newarrival,
                 forsale:this.state.forsale,
-                isaccessory:this.state.isaccessory
+                isaccessory:this.state.isaccessory,
+                para:this.state.para ,
             },
             id: Math.floor(Math.random() * 100000 + 100)
         }
@@ -201,11 +205,11 @@ class CreateProduct extends React.Component {
     rednderAges = () => {
         let whichGroup = this.state.baby ? 0 : 1;
         return (
-            this.state.agesSelect[whichGroup].map(each => {
+            this.state.agesSelect[whichGroup].map((each,index) => {
                 return (
                     <React.Fragment>
                         <label key={each.name + Math.random()}>{each.name}</label>
-                        <input type="checkbox" onChange={this.onCheckBoxChange} name={each.value} value={each.value} key={each.value} />
+                        <input type="checkbox" onChange={this.onCheckBoxChange} name={each.value} value={each.value}  key={each.value} checked={this.state.sizes.includes(each.value)} />
 
                     </React.Fragment>
                 )
@@ -302,6 +306,10 @@ class CreateProduct extends React.Component {
                             <label htmlFor="city">Material</label>
                             <input onChange={this.onMaterial} value={this.state.material} type="text" name="material" id="material" placeholder="Material" />
                         </fieldset>
+                        <fieldset>
+                            <label htmlFor="para">Description</label>
+                            <textarea onChange={(e)=>this.setState({para:e.target.value})} id="para" name="para" placeholder="Enter Product Description" className="text-area-create"></textarea>
+                        </fieldset>
                         {
                             this.state.isaccessory?null:(
                                  <fieldset className="special">
@@ -317,25 +325,31 @@ class CreateProduct extends React.Component {
                         <fieldset className="special2" style={{marginBottom:"40px"}}>
                             <h5 htmlFor="category">Cetegory</h5>
                             <select value={this.state.category} onChange={this.onSelectChange} id="category">
-                                <option value="tshirts">T shirt</option>
+                                <option value="tshirts">T shirts and Polos</option>
                                 <option value="shirts">Shirt</option>
-                                <option value="skirts">Skirts</option>
-                                <option value="jeans">Jeans</option>
+                                <option value="skirts">Shorts / Skirts</option>
+                                <option value="jeans">Trousers / PJ/ Jeans</option>
+                                <option value="trousers">Trousers only</option>
                                 <option value="jacket">Jackets</option>
                                 <option value="shorts">Shorts</option>
+                                <option value="sets">Sets</option>
                                 <option value="2pc">2 PC</option>
                                 <option value="3pc">3 PC</option>
                                 <option value="dungaree">Dungarees</option>
                                 <option value="denim">Denim</option>
                                 <option value="tights">Tights</option>
                                 <option value="kurtis">Kurtis</option>
-                                <option value="frocks">Frocks</option>
+                                <option value="frocks">Frocks & Jump Suits</option>
+                                <option value="sleepwear">SleepWear</option>
+                                <option value="blouses">Tunics/ Blouses</option>
+                                <option value="eastern">Eastern Wear</option>
                                 <option value="undergarments">Undergrarments/Socks</option>
                                 <option value="caps">Caps</option>
                                 <option value="bibs">Bibs</option>
                                 <option value="bags">Bags</option>
                                 <option value="babynest">Baby Nest</option>
-                                <option value="babyleddin">Baby Leddin</option>
+                                <option value="babybedding">Baby Bedding</option>
+                                <option value="socks">Socks</option>
                             </select>
                         </fieldset>
 

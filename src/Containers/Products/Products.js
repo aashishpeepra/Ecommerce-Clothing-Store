@@ -2,7 +2,7 @@ import React from "react";
 import "./Products.css";
 import Prds from "../../Components/UI/Products/Products";
 import { db } from "../../firebase";
-
+import {Slider} from "@material-ui/core";
 export default class Products extends React.Component {
 
     state = {
@@ -29,22 +29,23 @@ export default class Products extends React.Component {
         console.log(pathname);
         let temp = [];
         let catGirls = [
-            { name: "Frock & Jumpsuit", value: "frock" },
-            { name: "kurti", value: "kurti" },
+            { name: "Frock & Jumpsuit", value: "frocks" },
+            { name: "kurti", value: "kurtis" },
             { name: "T-shirts", value: "tshirts" },
-            { name: "Tunics & blouses", value: "blouse" },
-            { name: "Doungree", value: "doungree" },
-            { name: "Pants & Jeans", value: "pants" },
+            { name: "Tunics & blouses", value: "blouses" },
+            { name: "Doungree", value: "dungaree" },
+            { name: "Pants & Jeans", value: "jeans" },
             { name: "Tights", value: "tights" },
-            { name: "Shorts & skirts", value: "short" },
-            { name: "Trouser", value: "trouser" },
+            { name: "Shorts & skirts", value: "skirts" },
+            { name: "Trouser", value: "trousers" },
             { name: "Sets", value: "sets" },
-            { name: "Sleepwear", value: "sleepwear" }
+            { name: "Sleepwear", value: "sleepwear" },
+            {name:"Eastern Wear",value:"eastern"}
         ];
         let catBoys = [
             { name: "Shirts", value: "shirts" },
             { name: "T-shirts", value: "tshirts" },
-            { name: "Doungree", value: "doungree" },
+            { name: "Doungree", value: "dungaree" },
             { name: "Trousers", value: "trousers" },
             { name: "Shorts", value: "shorts" },
             { name: "Sets", value: "sets" },

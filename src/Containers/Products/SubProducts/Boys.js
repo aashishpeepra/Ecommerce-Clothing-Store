@@ -22,7 +22,7 @@ export default class Products extends React.Component {
         let catBoys = [
             { name: "Shirts", value: "shirts" },
             { name: "T-shirts", value: "tshirts" },
-            { name: "Doungree", value: "doungree" },
+            { name: "Doungree", value: "dungaree" },
             { name: "Trousers", value: "trousers" },
             { name: "Shorts", value: "shorts" },
             { name: "Sets", value: "sets" },

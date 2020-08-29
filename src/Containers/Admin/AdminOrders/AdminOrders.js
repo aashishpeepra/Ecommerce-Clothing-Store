@@ -25,14 +25,23 @@ class AdminOrders extends React.Component{
             console.log(this.state.data.map(each=>each.orders.map((e)=>console.log(e))))
         })
     }
+    returnTimeSortedData(data){
+        let dt=[];
+        data.forEach(arr => {
+            arr.orders.forEach(order=>{
+                dt.push({userData:arr.userData,data:order})
+            })
+        });
+        return dt.sort((a,b)=>b.data.time-a.data.time);
+    }
     render(){
         return (
             <section className="AdminOrders">
                 <h1>AdminOrders</h1>
                 <div className="AdminOrders-data">
                     {
-                        this.state.data.length>0? this.state.data.map(arr=>arr.orders.map(each=><OrderTile complete={true} func={()=>this.navToEachOrder(each,arr.userData)} data={each}/>)) :null   
-                }
+                        this.state.data.length>0? this.returnTimeSortedData(this.state.data).map(each=><OrderTile complete={true} func={()=>this.navToEachOrder(each.data,each.userData)} data={each.data}/>)  :null   
+                    }
                 </div>
             </section>
             

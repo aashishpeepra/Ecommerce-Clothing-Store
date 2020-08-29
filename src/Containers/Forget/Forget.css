@@ -1,0 +1,28 @@
+.Forget-Password{
+    margin-top:20vh;
+    min-height: 60vh;
+}
+.Forget-Password h3{
+    margin-bottom:20px;
+}
+.Forget-Password form label{
+    display: none;
+}
+.Forget-Password form input{
+    height:30px;
+    width:300px;
+    font-size: 100%;
+    padding:0px 5px;
+}
+.Forget-Password form input:focus{
+    outline:none
+}
+.Forget-Password form{
+    margin-bottom:20px;
+}
+.Forget-Password-Message{
+    color:#111;
+}
+.Forget-Password-Message h2{
+    margin-bottom:30px;
+}

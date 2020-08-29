@@ -23,6 +23,7 @@ import Infants from "./Containers/Products/SubProducts/Infants";
 import Accessories from "./Containers/Products/SubProducts/accessory";
 import NewArrival from "./Containers/Products/SubProducts/newarrival";
 import ForSale from "./Containers/Products/SubProducts/sale";
+import Forget from "./Containers/Forget/Forget";
 export default class Router extends Component{
     state={
 
@@ -32,6 +33,7 @@ export default class Router extends Component{
         return(
             
             <Switch>
+                <Route path="/forgot-password" component={Forget}/>
                 <Route exact path="/clothings/boys" component={Boys}/>
                 <Route exact path="/clothings/infants" component={Infants}/>
                 <Route exact path="/clothings/accessories" component={Accessories}/>

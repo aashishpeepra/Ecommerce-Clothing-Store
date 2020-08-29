@@ -57,7 +57,9 @@ class Checkout extends React.Component{
         
         delete userBasic.orders;
         console.log(cartData,previousOrders);
-        let image=totalOrders.length==0?cartData[0].data.images[0]:totalOrders[0].items[0].data.images[0];
+        // let image=totalOrders.length==0?cartData[0].data.images[0]:totalOrders[0].items[0].data.images[0];
+        let image=cartData[0].data.images[0];
+        console.log("=====-->",image,totalOrders)
         let currentOrder={
             time:(new Date()).getTime(),
             img:image,

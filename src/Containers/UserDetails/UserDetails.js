@@ -75,7 +75,7 @@ import {logout} from "../../firebase";
                 </h3>
                 <div className="User-info-container">
                     {
-                        this.props.userInfo.orders? this.props.userInfo.orders.map(each=><OrderTile func={this.navToEachOrder} data={each}/>) :null   
+                        this.props.userInfo.orders? this.props.userInfo.orders.sort((a,b)=>b.time-a.time).map(each=><OrderTile func={this.navToEachOrder} data={each}/>) :null   
                     }
                     
                 </div>

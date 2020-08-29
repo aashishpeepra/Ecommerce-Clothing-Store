@@ -34,7 +34,7 @@ class Cart extends React.Component {
                 defSize={each.data.desc.sizes[0]}
                 variants={each.data.desc.sizes}
                 qty={each.qty}
-                baby={each.data.desc.baby===undefined?1:each.data.desc.baby?1:0}
+                baby={each.data.desc.baby===undefined?1:each.data.desc.baby?0:1}
                 index={i}
               />
             ))}

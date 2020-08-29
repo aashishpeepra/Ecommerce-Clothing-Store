@@ -184,7 +184,8 @@ const toolbar = (props) => (
                 <NavLink to="/clothings/accessories?q=bibs">Bibs</NavLink>
                 <NavLink to="/clothings/accessories?q=bags">Bags</NavLink>
                 <NavLink to="/clothings/accessories?q=nest">Baby nest</NavLink>
-                <NavLink to="/clothings/accessories?q=beddin">Baby beddin</NavLink>
+                <NavLink to="/clothings/accessories?q=beddin">Baby bedding</NavLink>
+                <NavLink to="/clothings/accessories?q=socks">Socks</NavLink>
               </div>
             </div>
           </li>
@@ -219,9 +220,9 @@ const toolbar = (props) => (
               </div>
             </div>
           </li> */}
-          {/* <div className="Searchbar__Component">
+          <div className="Searchbar__Component">
             <SearchBar />
-          </div> */}
+          </div>
           <li>
             <NavLink to="/cart">
               <div className="Toolbar_cart">
@@ -240,9 +241,9 @@ const toolbar = (props) => (
         </ul>
       </div>
       <div className="Toolbar__Mobile">
-        {/* <div className="Searchbar__Component">
+        <div className="Searchbar__Component">
           <SearchBar />
-        </div> */}
+        </div>
         <div className="Toolbar__Mobile--Cart">
           <NavLink to="/cart">
           <div className="Toolbar_cart">
