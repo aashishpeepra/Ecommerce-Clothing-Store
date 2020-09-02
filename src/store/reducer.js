@@ -56,6 +56,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 cart:[...temp]
             }
+        case actionTypes.EMPTY_CART:
+            return {
+                ...state,
+                cart:[]
+            }
         case actionTypes.EDIT_SIZE:
             let temp2=[...state.cart];
             temp2[action.obj.index].size=action.obj.size;

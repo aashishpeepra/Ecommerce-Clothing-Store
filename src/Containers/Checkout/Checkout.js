@@ -32,11 +32,13 @@ class Checkout extends React.Component{
         this.setState({userInfo:temp});
     }
     calcSum=()=>{
+        
         let cartData=this.props.cart;
         let sum=0;
         for(let i=0;i<cartData.length;i++)
             sum+=cartData[i].data.price * cartData[i].qty;
-        return sum;
+        let charge=sum<2500?this.state.extra:parseInt(this.state.extra)===200?0:parseInt(this.state.extra);
+        return sum+charge;
 
     }
     submitOrder=()=>{
@@ -56,15 +58,13 @@ class Checkout extends React.Component{
         let totalOrders=userBasic["orders"];
         
         delete userBasic.orders;
-        console.log(cartData,previousOrders);
         // let image=totalOrders.length==0?cartData[0].data.images[0]:totalOrders[0].items[0].data.images[0];
         let image=cartData[0].data.images[0];
-        console.log("=====-->",image,totalOrders)
         let currentOrder={
             time:(new Date()).getTime(),
             img:image,
-            total:sum+this.state.extra,
-            mathod:this.state.extra===250?"cod":"online",
+            total:this.calcSum(),
+            method:this.state.extra===200?"cod":"online",
             items:cartData,
             location:location.location,
             orderId:Math.floor(Math.random()*1000000+100)
@@ -77,6 +77,7 @@ class Checkout extends React.Component{
         this.setState({stopper:true});
         submitOrder(OrderData,previousOrders,()=>{
             this.setState({stopper:false});
+            this.props.emptyCart();
             this.props.history.push("/user");
         });
 
@@ -136,7 +137,7 @@ class Checkout extends React.Component{
                             </form>
                             <div style={{marginTop:"30px"}}>
                                 <h3>
-                                    Total : Rs {this.calcSum() + this.state.extra}
+                                    Total : Rs {this.calcSum() }
                                 </h3>
                             </div>
                             <div style={{marginTop:"20px"}}>
@@ -159,6 +160,12 @@ const mapStateToProps = (state) => {
       cart:state.cart
     };
   };
+  const mapDispatchToProps = (dispatch) => {
+    return {
+        emptyCart:()=>
+        dispatch({type:actionTypes.EMPTY_CART})
+    };
+  };
   
-  export default connect(mapStateToProps)(Checkout);
+  export default connect(mapStateToProps, mapDispatchToProps)(Checkout);
   

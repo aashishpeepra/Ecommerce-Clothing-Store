@@ -18,7 +18,7 @@ class Payment extends React.Component {
                             <li>200 Rupees delivery charge below orders Rs. 2,500</li>
                             <li>Free Delivery on orders above Rs. 2,500</li>
                         </ul>
-                        <button type="button" onClick={()=>this.takeToCheckOut(250)}>
+                        <button type="button" onClick={()=>this.takeToCheckOut(200)}>
                             Continue
                         </button>
                     </div>

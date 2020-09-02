@@ -136,7 +136,9 @@
   margin: 0 auto;
   text-align: center;
   margin-bottom: 1.5rem;
+  font-size: 80% !important;
 }
+
 
 .ProductDescription__Table {
   display: flex;

@@ -22,7 +22,7 @@ class CreateProduct extends React.Component {
         clicked: false,
         agesSelect: [
             [{ name: "0/3M", value: "s" }, { name: "3/6M", value: "m" }, { name: "6/9M", value: "l" }, { name: "9/12M", value: "x" }, { name: "12/18M", value: "xl" }, { name: "18/24M", value: "xxl" }, { name: "2/3Y", value: "xxxl" }],
-            [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" }]
+            [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" },{name:"15/16Y",value:"xxxl"},{name:"17/18Y",value:"xxxxl"}]
         ],
         isaccessory:false,
         forsale:false,
@@ -149,7 +149,7 @@ class CreateProduct extends React.Component {
     editProduct = () => {
         const data = {
             title: this.state.title,
-            price: this.state.price,
+            price: parseInt(this.state.price),
             offer: this.state.offer,
             images: this.state.images,
             desc: {
@@ -178,7 +178,7 @@ class CreateProduct extends React.Component {
     uploadProductToFirebase = () => {
         const data = {
             title: this.state.title,
-            price: this.state.price,
+            price: parseInt(this.state.price),
             offer: this.state.offer,
             images: this.state.images,
             desc: {
@@ -196,8 +196,9 @@ class CreateProduct extends React.Component {
         }
         this.setState({ clicked: true });
         db.collection("Clothes").doc(data.title).set(data)
-            .then(res => this.setState({ clicked: false }))
-            .catch(err => console.log(err));
+        .then(res => this.setState({ clicked: false }))
+        .catch(err => console.log(err));
+       
     }
     onbaby = (e) => {
         this.setState({ baby: e.target.value === "yes" ? true : false });
@@ -387,7 +388,7 @@ class CreateProduct extends React.Component {
                         this.state.old ? (
                             <React.Fragment>
                                 <div style={{ display: "inline-block", marginLeft: "20px" }}>
-                                    <Button click={this.uploadProductToFirebase} text="Save Changes" big={true} />
+                                    <Button click={this.editProduct} text="Save Changes" big={true} />
                                 </div>
                                 <div style={{ display: "inline-block", marginLeft: "20px" }}>
                                     <Button click={this.deleteProduct} text="Delete Product" big={true} />

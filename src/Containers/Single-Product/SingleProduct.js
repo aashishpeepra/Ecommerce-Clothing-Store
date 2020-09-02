@@ -67,7 +67,7 @@ class SingleProduct extends React.Component {
     }
     const agesSelect = [
       { s: "0/3M", m: "3/6M", l: "6/9M", x: "9/12M", xl: "12/18M", xxl: "18/24M", xxxl: "2/3Y" },
-      { s: "3/4Y", m: "5/6Y", l: "7/8Y", x: "9/10Y", xl: "11/12Y", xxl: "13/14Y" }
+      { s: "3/4Y", m: "5/6Y", l: "7/8Y", x: "9/10Y", xl: "11/12Y", xxl: "13/14Y",xxxl:"15/16Y",xxxxl:"17/18Y" }
     ]
 
     return (
@@ -79,7 +79,7 @@ class SingleProduct extends React.Component {
             key={i}
             tabmydex={i + 1}
           >
-            <span>{agesSelect[this.state.baby !== undefined ? this.state.baby ? 1 : 0 : 1][each.toLowerCase()]}</span>
+            <span>{agesSelect[this.state.babe !== undefined ? !this.state.babe ? 1 : 0 : 1][each.toLowerCase()]}</span>
           </div>
         ))}
       </div>
@@ -88,6 +88,8 @@ class SingleProduct extends React.Component {
 
   render() {
     const data = this.props.location.state;
+    
+    console.log("====----->",this.state);
     return (
 
       <React.Fragment>

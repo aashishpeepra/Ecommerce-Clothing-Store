@@ -44,7 +44,7 @@ class Cart extends React.Component {
       this.props.history.push("/");
   }
   render() {
-    console.log(this.props.locatio)
+    console.log(this.props.location)
     return (
       <section className="Cart">
         <h1>Order {this.state.orderInfo.orderId}</h1>
@@ -78,6 +78,10 @@ class Cart extends React.Component {
                 <tr>
                   <th className="lefter">Address</th>
                   <th>{this.state.orderInfo.location.address}</th>
+                </tr>
+                <tr>
+                  <th className="lefter">Payment Method</th>
+            <th>{this.state.orderInfo.method===undefined?"Not known":this.state.orderInfo.method}</th>
                 </tr>
 
                 <tr>
@@ -114,7 +118,7 @@ class Cart extends React.Component {
                     Total
                   </th>
                   <th style={{ fontWeight: "bold", fontSize: "100%" }}>
-                    &#8377;{this.state.orderInfo.total}
+                   Rs.{this.state.orderInfo.total}
                   </th>
                 </tr>
               </tbody>

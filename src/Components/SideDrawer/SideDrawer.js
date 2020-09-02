@@ -27,6 +27,9 @@ const sideDrawer = (props) => {
         <div className="Options__Cart" onClick={props.off}>
           <NavLink to="/clothings">New Arrival</NavLink>
         </div>
+        <div className="Options__Cart" onClick={props.off}>
+          <NavLink to="/clothings/sale">Sales</NavLink>
+        </div>
         <div className="Options__Home" onClick={props.off}>
           <NavLink to="/clothings/boys">Boys</NavLink>
         </div>

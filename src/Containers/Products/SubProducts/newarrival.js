@@ -28,7 +28,7 @@ export default class Products extends React.Component {
             { name: "Sets", value: "sets" },
             { name: "Sleepwear", value: "sleepwear" }
         ]
-        let temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" }]
+        let temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" },{name:"15/16Y",value:"xxxl"},{name:"17/18Y",value:"xxxxl"}]
         db.collection("Clothes").get().then(querySnapshot => {
             const data = querySnapshot.docs.map(doc => doc.data());
             this.setState({ data: data,checkCategory:catBoys,checkAge:temp });
