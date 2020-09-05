@@ -19,12 +19,13 @@ const cartEach = (props) => {
     { s: "3/4Y", m: "5/6Y", l: "7/8Y", x: "9/10Y", xl: "11/12Y", xxl: "13/14Y",xxxl:"15/16Y",xxxxl:"17/18Y"} 
   ]
   const checkVal = (e, index) => {
+  console.log("-4987",props.quantity)
     let a = e.target.value;
     if (props.fixed)
       return null
     if (a == "")
       temp = "";
-    if (a > 0 && a < 100) {
+    if (a > 0 && a <= props.quantity) {
       props.onChangeQty(a, index);
       temp = a;
     }

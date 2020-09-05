@@ -31,6 +31,7 @@ class Cart extends React.Component {
                 image={each.data.images[0]}
                 title={each.data.title}
                 price={each.data.price}
+                quantity={each.data.quantity}
                 defSize={each.data.desc.sizes[0]}
                 variants={each.data.desc.sizes}
                 qty={each.qty}
