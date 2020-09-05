@@ -27,7 +27,10 @@ class CreateProduct extends React.Component {
         isaccessory:false,
         forsale:false,
         newarrival:false,
-        para:""
+        para:"",
+        quantity:"",
+        unisex:false,
+        oldPrice:""
     }
     UNSAFE_componentWillMount() {
         console.log(this.props.location);
@@ -49,7 +52,10 @@ class CreateProduct extends React.Component {
                 baby: temp.desc.baby === undefined ? false : temp.desc.baby,
                 para:temp.desc.para === undefined ?"":temp.desc.para,
                 old: true,
-                oldTitle: temp.title
+                oldTitle: temp.title,
+                quantity:temp.quantity===undefined?0:temp.quantity,
+                unisex:temp.unisex===undefined?false:temp.unisex,
+                oldPrice:temp.oldPrice===undefined?temp.price:temp.oldPrice
             })
         }
     }
@@ -163,7 +169,10 @@ class CreateProduct extends React.Component {
                 isaccessory:this.state.isaccessory,
                 para:this.state.para 
             },
-            id: this.state.id
+            id: this.state.id,
+            quantity:this.state.quantity,
+            unisex:this.state.unisex,
+            oldPrice:this.state.oldPrice
         }
         this.setState({ clicked: true });
         if (this.state.title === this.state.oldTitle) {
@@ -192,7 +201,10 @@ class CreateProduct extends React.Component {
                 isaccessory:this.state.isaccessory,
                 para:this.state.para ,
             },
-            id: Math.floor(Math.random() * 100000 + 100)
+            id: Math.floor(Math.random() * 100000 + 100),
+            quantity:this.state.quantity,
+            unisex:this.state.unisex,
+            oldPrice:this.state.oldPrice
         }
         this.setState({ clicked: true });
         db.collection("Clothes").doc(data.title).set(data)
@@ -242,15 +254,19 @@ class CreateProduct extends React.Component {
 
                         <fieldset>
                             <label htmlFor="number">Title</label>
-                            <input onChange={this.onTitleChange} value={this.state.title} type="text" name="title" id="text" placeholder="Black Cotton Tshirt" />
+                            <input onChange={this.onTitleChange} value={this.state.title} type="text" name="title" id="text" placeholder="Enter Title" />
                         </fieldset>
                         <fieldset>
                             <label htmlFor="email">Price</label>
-                            <input onChange={this.onPrice} value={this.state.price} type="number" name="price" id="phone" placeholder="250" />
+                            <input onChange={this.onPrice} value={this.state.price} type="number" name="price" id="phone" placeholder="enter Price" />
+                        </fieldset>
+                        <fieldset>
+                            <label htmlFor="old-price">Old Price</label>
+                            <input onChange={(e)=>this.setState({oldPrice:e.target.value})} value={this.state.oldPrice} type="text" name="old-price" id="old-price" placeholder="Enter old Price" />
                         </fieldset>
                         <fieldset>
                             <label htmlFor="email">Offer</label>
-                            <input onChange={this.onOffer} value={this.state.offer} type="text" name="offer" id="offer" placeholder="30% Off" />
+                            <input onChange={this.onOffer} value={this.state.offer} type="text" name="offer" id="offer" placeholder="Enter Percentage Off" />
                         </fieldset>
                         <fieldset className="special">
                             <h5>Is this for new Arrival?</h5>
@@ -268,6 +284,13 @@ class CreateProduct extends React.Component {
                             <label htmlFor="sale2">No   </label>
                             <input onChange={()=>this.setState({forsale:false})} value="no" checked={!this.state.forsale} id="sale2" type="radio"  />
                         </fieldset>
+                        <fieldset className="special">
+                            <h5>Is this an unisex product?</h5>
+                           <label htmlFor="Unisex-true">Yes</label>
+                           <input type="radio" checked={this.state.unisex} onChange={(e)=>this.setState({unisex:true})} value={this.state.unisex} name="unisex-true" id="unisex-true"/>
+                           <label htmlFor="Unisex-false">No</label>
+                           <input type="radio" checked={!this.state.unisex} onChange={(e)=>this.setState({unisex:false})} value={this.state.unisex} name="unisex-false" id="unisex-false"/>
+                       </fieldset>
                         <fieldset className="special">
                             <h5>Is this an accessory?</h5>
                             <label htmlFor="accessory1">Yes</label>
@@ -304,11 +327,16 @@ class CreateProduct extends React.Component {
                     <h4>Product Descriptionss</h4>
                     <form>
                         <fieldset>
-                            <label htmlFor="city">Material</label>
+                            <label htmlFor="quantity" style={{display:"block",margin:"10px"}}>Quantity</label>
+                            <input type="text" onChange={(e)=>this.setState({quantity:e.target.value})} value={this.state.quantity} placeholder="Enter Quantity" id="quantity" name="quantity"/>
+                        </fieldset>
+                       
+                        <fieldset>
+                            <label htmlFor="city" style={{display:"block",margin:"10px"}}>Material</label>
                             <input onChange={this.onMaterial} value={this.state.material} type="text" name="material" id="material" placeholder="Material" />
                         </fieldset>
                         <fieldset>
-                            <label htmlFor="para">Description</label>
+                            <label htmlFor="para" style={{display:"block",margin:"10px"}}>Description</label>
                             <textarea onChange={(e)=>this.setState({para:e.target.value})} id="para" name="para" placeholder="Enter Product Description" className="text-area-create"></textarea>
                         </fieldset>
                         {

@@ -5,7 +5,6 @@ import * as actionTypes from "../../../store/actions";
 import { connect } from "react-redux";
 
 class Products extends React.Component {
-
   render() {
     const temp = [];
     // console.log(props.data)
@@ -25,7 +24,35 @@ class Products extends React.Component {
             data={each}
             btn={this.props.btn}
             key={each.id}
-            clicker={() => this.props.onAddToCart({qty:1,data:each,size:each.desc.sizes[0]})}
+            clicker={() => {
+              if (each.quantity !== undefined) {
+                if (each.quantity > 0) {
+                  return this.props.onAddToCart({
+                    qty: 1,
+                    data: each,
+                    size: each.desc.sizes[0],
+                  });
+                }
+                else{
+                  return ()=>{};
+                }
+              }
+              else
+              {
+                return ()=>{}
+              }
+            }}
+            text={()=>{
+              if(each.quantity!==undefined)
+              {
+                if(each.quantity>0)
+                return "Add to Cart";
+                else
+                return "Out of Stock";
+              }
+              else
+              return "Out of Stock";
+            }}
           />
         ))}
       </div>

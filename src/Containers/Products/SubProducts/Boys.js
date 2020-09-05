@@ -40,7 +40,8 @@ export default class Products extends React.Component {
         this.props.history.push({ pathname: `/clothing/` + obj.title, state: obj });
     }
     filter = (data) => {
-        let gender = data.desc.gender.toLowerCase() === this.state.gender.toLowerCase() || this.state.gender === "";
+        let unisex=data.unisex===undefined?false:data.unisex;
+        let gender = data.desc.gender.toLowerCase() === this.state.gender.toLowerCase() || this.state.gender === "" || unisex;
         console.log(this.state.age)
         let age = data.desc.sizes.includes(this.state.age.toUpperCase()) || this.state.age === "1";
         // UnComment when you change category to list

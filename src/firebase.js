@@ -86,6 +86,22 @@ function submitOrder(data, previousOrders,cb) {
     db.collection("Orders").doc(firebase.auth().currentUser.uid).set(data)
       .then(res => {
         console.log(res);
+        let length=data.orders.length;
+        let latest=data.orders[length-1].items.map(eachItem=>{return {title:eachItem.data.title,qty:eachItem.qty}});
+        let extraCheck=true;
+        latest.forEach(element => {
+          db.collection("Clothes").doc(element.title).get().then(data=>{
+            let magicQty=0;
+            const responseData=data.data();
+            if(responseData.quantity!==undefined)
+            magicQty=responseData.quantity;
+            if(parseInt(magicQty)-parseInt(element.qty)<0)
+            extraCheck=false;
+            db.collection("Clothes").doc(element.title).update({quantity:magicQty-element.qty});
+          })
+          
+        });
+
         cb();
       })
       .catch(err => {
