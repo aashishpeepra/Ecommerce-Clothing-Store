@@ -238,3 +238,17 @@
     padding:5px 5px;
     border:1px solid #cfcfcf
 }
+.age-info-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.age-info-holder input[type=text]{
+    width:100px;
+    color:#888888;
+    
+    font-size:100%;
+}
+.age-info-holder label{
+    width:30px;
+}

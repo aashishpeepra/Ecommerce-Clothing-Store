@@ -43,7 +43,7 @@ export default (props) => {
             {data["price"]}
           </span>
           <span className="Product-offer" style={{textDecoration:"line-through",marginRight:"0"}}>
-              Rs. {props.data.oldPrice}
+               {props.data.oldPrice}
           </span>
           <span className="Product-offer" >{props.data.offer}</span>
         </div>

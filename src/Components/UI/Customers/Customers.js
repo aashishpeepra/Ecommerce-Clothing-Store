@@ -1,23 +1,29 @@
 import React from "react";
 import Customer from "./Customer/Customer.js";
 import "./Customers.css";
-import { database } from "firebase";
+import first from "../../../assets/Customers/kids-top.jpeg";
+import second from "../../../assets/Customers/kids-cloth.jpeg";
+import third from "../../../assets/Customers/kids-full-shirt.jpeg";
+import fourth from "../../../assets/Customers/kids-shirt.jpeg";
 
 export default class Customers extends React.Component  {
     state={ data:[
-        {
+        {   image:first,
             name:"Rabia Noreen",
             message:"Received my parcel and satisfying quality. Want to buy more dresses."
         },
         {
+            image:second,
             name:"Rahila",
             message:"Got my parcel. Sari and shirts bhut aache hai. My 2nd order and worth it."
         },
         {
+            image:third,
             name:"Zainab",
             message:"Just got my parcel amazing fabric"
         },
         {
+            image:fourth,
             name:"Nazish",
             message:"Aaj mera order mil gya mah shah allah zabardust."
         }
@@ -37,7 +43,7 @@ componentDidMount(){
         <div className="reviews-wrapper">
             <h3>Our Happy customers</h3>
             <div className="reviews">
-                    <Customer name={this.state.data[this.state.val].name} message={this.state.data[this.state.val].message}/>
+                    <Customer image={this.state.data[this.state.val].image}/>
             </div>
         </div>
 

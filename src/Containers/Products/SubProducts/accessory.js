@@ -104,7 +104,7 @@ export default class Products extends React.Component {
                         <div className="select">
                             <select value={this.state.age} name="slct" onChange={this.onChangeAge} id="age">
                                 <option disabled>Sizes</option>
-                                {this.state.checkAge.map(each => <option value={each.value} key={each.value} >{each.name}</option>)}
+                                {this.state.checkAge.map(each => <option value={each.name} key={each.value} >{each.name}</option>)}
 
                                 <option value="1">All</option>
                             </select>

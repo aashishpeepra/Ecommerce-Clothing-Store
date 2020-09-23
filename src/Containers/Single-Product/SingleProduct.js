@@ -90,7 +90,7 @@ class SingleProduct extends React.Component {
 
     return (
       <div className="SizeSelection__Helper">
-        {this.state.variants.map((each, i) => (
+        {arr.map((each, i) => (
           <div
             className={`SizeSelection__Size${i + 1} SizeSelection__Size`}
             onClick={() => this.setSize(each, i + 1)}
@@ -99,9 +99,7 @@ class SingleProduct extends React.Component {
           >
             <span>
               {
-                agesSelect[
-                  this.state.babe !== undefined ? (!this.state.babe ? 1 : 0) : 1
-                ][each.toLowerCase()]
+                each
               }
             </span>
           </div>
@@ -113,7 +111,6 @@ class SingleProduct extends React.Component {
   render() {
     const data = this.props.location.state;
 
-    console.log("====----->", this.state);
     return (
       <React.Fragment>
         <div className="Gallery__Container">

@@ -39,6 +39,15 @@ export default class Products extends React.Component {
         console.log(this.props)
         this.props.history.push({ pathname: `/clothing/` + obj.title, state: obj });
     }
+    checkIsBaby=(product)=>{
+        let isPresent=false;
+        let data=[  "0/3M" , "3/6M" ,"6/9M" ,"9/12M" ,"12/18M" ,"18/24M" ,]
+        product.desc.sizes.forEach(element => {
+            if(data.includes(element.toUpperCase()))
+            isPresent=true;
+        });
+        return isPresent;
+    }
     filter = (data) => {
         let unisex=data.unisex===undefined?false:data.unisex;
         let gender = data.desc.gender.toLowerCase() === this.state.gender.toLowerCase() || this.state.gender === "" || unisex;
@@ -51,7 +60,7 @@ export default class Products extends React.Component {
         //         temp=true;
         let category = data.desc.category.toLowerCase().includes(this.state.category.toLowerCase()) || this.state.category === "";
         let price = data.price <= this.state.price;
-        let baby=this.state.baby?data.desc.baby:true;
+        let baby=this.state.baby?this.checkIsBaby(data):true;
         let accessory=data.desc.isaccessory === undefined ?false: !data.desc.isaccessory;
         return gender && age && category && price &&baby && accessory;
     }
@@ -115,7 +124,7 @@ export default class Products extends React.Component {
                         <div className="select">
                             <select value={this.state.age} name="slct" onChange={this.onChangeAge} id="age">
                                 <option disabled>Sizes</option>
-                                {this.state.checkAge.map(each => <option value={each.value} key={each.value} >{each.name}</option>)}
+                                {this.state.checkAge.map(each => <option value={each.name} key={each.value} >{each.name}</option>)}
 
                                 <option value="1">All</option>
                             </select>

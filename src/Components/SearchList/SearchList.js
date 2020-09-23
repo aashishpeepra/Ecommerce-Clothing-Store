@@ -69,7 +69,7 @@ export default class SearchList extends React.Component {
   render() {
     return (
       <div className="SearchList">
-        <i onClick={()=>this.setState({open:true})} class="fa fa-search" style={{fontSize:"25px",color:"#fff",transform:"rotate(5deg"}} aria-hidden="true"></i>
+        <i onClick={()=>this.setState({open:true})} className="fa fa-search" style={{fontSize:"25px",color:"#fff",transform:"rotate(5deg"}} aria-hidden="true"></i>
         {
           this.state.open?(
             <div className="search_box">

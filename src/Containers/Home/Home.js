@@ -51,7 +51,7 @@ class Home extends Component {
                 
                  {/* <Category/> */}
                  <section className="Home-Trending">
-                     <h3  style={{color:"#e8a49c"}}>Top Picks For you</h3>
+                     <h3  style={{color:"#e8a49c"}}>Top Trends</h3>
                 <Products nav={this.navigator} type="listed" data={this.state.data.slice(0,4)} />
                  </section>
                 

@@ -87,17 +87,17 @@ function submitOrder(data, previousOrders,cb) {
       .then(res => {
         console.log(res);
         let length=data.orders.length;
-        let latest=data.orders[length-1].items.map(eachItem=>{return {title:eachItem.data.title,qty:eachItem.qty}});
+        let latest=data.orders[length-1].items.map(eachItem=>{return {title:eachItem.data.title,qty:eachItem.qty,size:eachItem.size}});
         let extraCheck=true;
         latest.forEach(element => {
           db.collection("Clothes").doc(element.title).get().then(data=>{
-            let magicQty=0;
-            const responseData=data.data();
-            if(responseData.quantity!==undefined)
-            magicQty=responseData.quantity;
-            if(parseInt(magicQty)-parseInt(element.qty)<0)
-            extraCheck=false;
-            db.collection("Clothes").doc(element.title).update({quantity:magicQty-element.qty});
+            data=data.data();
+            console.log(data)
+            console.log("Each Item from Order",element);
+            let prevData={...data.stock};
+            prevData=prevData===undefined?{}:prevData;
+            prevData[element.size]=parseInt(prevData[element.size])-parseInt(element.qty);
+            db.collection("Clothes").doc(element.title).update({stock:prevData});
           })
           
         });
