@@ -29,10 +29,14 @@ export default class Products extends React.Component {
         console.log(pathname);
         let temp = [];
         let catGirls = [
-            { name: "Frock & Jumpsuit", value: "frocks" },
-            { name: "kurti", value: "kurtis" },
-            { name: "T-shirts", value: "tshirts" },
+            { name: "Frock/Jumpsuit", value: "frocks" },
+            { name: "kurtis", value: "kurtis" },
+            { name: "T shirts and Polo", value: "tshirts" },
             { name: "Tunics & blouses", value: "blouses" },
+            {name:"2 pc",value:"2pc"},
+            {name:"3 pc",value:"3pc"},
+            {name:"Denim",value:"denim"},
+            {name:"Body suit",value:"suit"},
             { name: "Doungree", value: "dungaree" },
             { name: "Pants & Jeans", value: "jeans" },
             { name: "Tights", value: "tights" },
@@ -44,9 +48,9 @@ export default class Products extends React.Component {
         ];
         let catBoys = [
             { name: "Shirts", value: "shirts" },
-            { name: "T-shirts", value: "tshirts" },
+            { name: "T shirts and Polos", value: "tshirts" },
             { name: "Doungree", value: "dungaree" },
-            { name: "Trousers", value: "trousers" },
+            { name: "Trousers/PJ/Jeans", value: "trousers" },
             { name: "Shorts", value: "shorts" },
             { name: "Sets", value: "sets" },
             { name: "Sleepwear", value: "sleepwear" }

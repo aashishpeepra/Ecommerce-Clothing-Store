@@ -25,8 +25,8 @@ class Products extends React.Component {
             btn={this.props.btn}
             key={each.id}
             clicker={() => {
-              if (each.quantity !== undefined) {
-                if (each.quantity > 0) {
+              if (each.stock !== undefined) {
+                if (Object.values(each.stock).reduce((a,b)=>a+b,0) > 0) {
                   return this.props.onAddToCart({
                     qty: 1,
                     data: each,
@@ -43,9 +43,9 @@ class Products extends React.Component {
               }
             }}
             text={()=>{
-              if(each.quantity!==undefined)
+              if(each.stock!==undefined)
               {
-                if(each.quantity>0)
+                if(Object.values(each.stock).reduce((a,b)=>a+b,0)>0)
                 return "Add to Cart";
                 else
                 return "Out of Stock";

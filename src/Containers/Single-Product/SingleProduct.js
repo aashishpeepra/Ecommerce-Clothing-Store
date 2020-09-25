@@ -141,9 +141,9 @@ class SingleProduct extends React.Component {
             <button
               type="button"
               onClick={() => {
-                if(data.quantity!==undefined)
+                if(data.stock!==undefined)
                 {
-                  if(data.quantity>0)
+                  if(Object.values(data.stock).reduce((a,b)=>a+b,0)>0)
                   {
                     this.props.onAddToCart({ qty: 1, data, size: this.state.size });
                     this.props.history.push("/cart");
@@ -152,7 +152,7 @@ class SingleProduct extends React.Component {
               }}
               className="SizeSelection__Button"
             >
-              {data.quantity!==undefined?data.quantity>0?"Add to Cart":"Out of Stock":"Out of Stock"}
+              {data.stock!==undefined?Object.values(data.stock).reduce((a,b)=>a+b,0)>0?"Add to Cart":"Out of Stock":"Out of Stock"}
             </button>
           </div>
         </div>

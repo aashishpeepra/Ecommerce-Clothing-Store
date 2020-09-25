@@ -1,6 +1,6 @@
 .slider {
   position: relative;
-  width: 100%;
+  width: 50%;
   margin: 0 auto;
   transform: translateY(-1rem);
   height: 50vh;

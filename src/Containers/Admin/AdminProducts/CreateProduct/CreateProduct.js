@@ -490,7 +490,7 @@ class CreateProduct extends React.Component {
                 id="category"
               >
                 <option value="tshirts">T shirts and Polos</option>
-                <option value="shirts">Shirt</option>
+                <option value="shirts">Shirts</option>
                 <option value="skirts">Shorts / Skirts</option>
                 <option value="jeans">Trousers / PJ/ Jeans</option>
                 <option value="trousers">Trousers only</option>
@@ -501,9 +501,10 @@ class CreateProduct extends React.Component {
                 <option value="3pc">3 PC</option>
                 <option value="dungaree">Dungarees</option>
                 <option value="denim">Denim</option>
+                <option value="tshirts">Tshirts</option>
                 <option value="tights">Tights</option>
                 <option value="kurtis">Kurtis</option>
-                <option value="frocks">Frocks & Jump Suits</option>
+                <option value="frocks">Frocks/Jump Suits</option>
                 <option value="sleepwear">SleepWear</option>
                 <option value="blouses">Tunics/ Blouses</option>
                 <option value="eastern">Eastern Wear</option>

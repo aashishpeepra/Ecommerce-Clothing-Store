@@ -1,28 +1,17 @@
-.review{
-  
-
-  
-
- 
-
- 
- 
- 
-    
-    
 
 
-    
+.review-top{
+    display: flex;
+    justify-content: center;
+    margin:30px;
 }
 
-
-
-.review-left{
+.review-left-top{
     height:300px;
     width:300px;
-    box-shadow: 10px 12px 14px #e5978e;
+    box-shadow: 10px 12px 14px #eee;
 }
-.review-left img{
+.review-left-top img{
     height:100%;
     width:100%;
 }
