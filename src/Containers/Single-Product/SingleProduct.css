@@ -1,6 +1,7 @@
 .Gallery__Container {
   transform: translateY(-1rem);
   color:#7f7f7f;
+  margin-top: 80px;
 }
 
 .SizeSelection__Div {
@@ -39,19 +40,23 @@
   text-align: center;
   position: relative;;
   font-weight: bold;
-  color: #fff;
-  
+  color: #94d5f3;
+  border: 2px solid #94d5f3;
   margin:0px 2px;
   margin-bottom: 1.5rem;
-  background-color: #95c9e2;
 }
-
+.selected{
+ background-color: #e8a49c;
+ border:0;
+ color:#fff;
+}
 .SizeSelection__Size1:hover,
 .SizeSelection__Size2:hover,
 .SizeSelection__Size3:hover,
 .SizeSelection__Size:hover,
 .SizeSelection__Size4:hover {
   background-color: #94d5f3;
+  color:#fff;
 }
 
 .SizeSelection__Size1 span,

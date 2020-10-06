@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 
 class SingleProduct extends React.Component {
   state = {
+    counter : -1,
     babe: this.props.location.state.desc.baby,
     variants: this.props.location.state.desc.sizes,
     size: this.props.location.state.desc.sizes[0],
@@ -26,7 +27,10 @@ class SingleProduct extends React.Component {
       },
     ],
   };
-
+  selectMe=(index)=>{
+    console.log(index)
+    this.setState({counter:index});
+  }
   setSize = (val, ind) => {
     for (let i = 0; i < this.state.variants.length; i++) {
       document.querySelector(
@@ -58,7 +62,7 @@ class SingleProduct extends React.Component {
     });
   };
 
-  renderCircles = (arr) => {
+  renderCircles = (arr,stock) => {
     const database = {
       s: "9/12 Months",
       m: "12/18 Months",
@@ -87,23 +91,32 @@ class SingleProduct extends React.Component {
         xxxxl: "17/18Y",
       },
     ];
-
+    let counter=0;
+    let temp=[];
+    for(let j=0;j<arr.length;j++)
+    {
+      if(stock!==undefined && stock[arr[j]]>0 )
+      temp.push((
+        <div
+        className={`${this.state.counter == j  ? 'selected' : ''} SizeSelection__Size`}
+        onClick={() => this.selectMe(j)}
+        key={j}
+        tabmydex={j}
+      >
+        <span>
+          {
+            arr[j]
+          }
+        </span>
+      </div>
+      ))
+    }
     return (
       <div className="SizeSelection__Helper">
-        {arr.map((each, i) => (
-          <div
-            className={`SizeSelection__Size${i + 1} SizeSelection__Size`}
-            onClick={() => this.setSize(each, i + 1)}
-            key={i}
-            tabmydex={i + 1}
-          >
-            <span>
-              {
-                each
-              }
-            </span>
-          </div>
-        ))}
+        {
+          temp
+        }
+       
       </div>
     );
   };
@@ -134,7 +147,7 @@ class SingleProduct extends React.Component {
             {data.desc.sizes.length === 0 ? null : (
               <React.Fragment>
                 <div className="SizeSelection__P">Select Size</div>
-                {this.renderCircles(data.desc.sizes)}
+                {this.renderCircles(data.desc.sizes,data.stock)}
               </React.Fragment>
             )}
 
