@@ -45,14 +45,20 @@ class Home extends Component {
                 <Carousel images={this.state.images}/>
                 <section className="Home-Trending">
                     <h3 style={{color:"#e8a49c"}}>Deals</h3>
-                <Products nav={this.navigator} type="listed" data={this.state.data.slice(0,4)} />
+                    {
+                        this.state.data.length === 0 ? <h3>Loading...</h3> :    <Products nav={this.navigator} type="listed" data={this.state.data.slice(0,4)} />
+                    }
+             
                 </section>
                 
                 
                  {/* <Category/> */}
                  <section className="Home-Trending">
                      <h3  style={{color:"#e8a49c"}}>Top Trends</h3>
-                <Products nav={this.navigator} type="listed" data={this.state.data.slice(0,4)} />
+                     {
+                         this.state.data.length === 0 ? <h3>Loading...</h3> :               <Products nav={this.navigator} type="listed" data={this.state.data.slice(4,8)} />
+                     }
+   
                  </section>
                 
                  <Customers/>

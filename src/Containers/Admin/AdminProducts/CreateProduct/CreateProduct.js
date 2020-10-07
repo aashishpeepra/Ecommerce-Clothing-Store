@@ -501,11 +501,12 @@ class CreateProduct extends React.Component {
                 <option value="3pc">3 PC</option>
                 <option value="dungaree">Dungarees</option>
                 <option value="denim">Denim</option>
-                <option value="tshirts">Tshirts</option>
+                <option value="tshirts">T shirt</option>
                 <option value="tights">Tights</option>
                 <option value="kurtis">Kurtis</option>
                 <option value="frocks">Frocks/Jump Suits</option>
                 <option value="sleepwear">SleepWear</option>
+                <option value="pants">Pants / Jeans</option>
                 <option value="blouses">Tunics/ Blouses</option>
                 <option value="eastern">Eastern Wear</option>
                 <option value="undergarments">Undergrarments/Socks</option>
@@ -514,6 +515,7 @@ class CreateProduct extends React.Component {
                 <option value="bags">Bags</option>
                 <option value="babynest">Baby Nest</option>
                 <option value="babybedding">Baby Bedding</option>
+                <option value="bodysuit">Body suit</option>
                 <option value="socks">Socks</option>
               </select>
             </fieldset>

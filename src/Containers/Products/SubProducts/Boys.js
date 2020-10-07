@@ -21,11 +21,13 @@ export default class Products extends React.Component {
     componentDidMount() {
         let catBoys = [
             { name: "Shirts", value: "shirts" },
-            { name: "T-shirts", value: "tshirts" },
+            { name: "T Shirts and Polos", value: "tshirts" },
             { name: "Doungree", value: "dungaree" },
-            { name: "Trousers", value: "trousers" },
+            { name: "Trousers/PJ/Jeans", value: "trousers" },
             { name: "Shorts", value: "shorts" },
             { name: "Sets", value: "sets" },
+            {name : "Jacket",value:"jacket"},
+            {name:"Denim",value:"denim"},
             { name: "Sleepwear", value: "sleepwear" }
         ]
         let temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" },{name:"15/16Y",value:"xxxl"},{name:"17/18Y",value:"xxxxl"}]

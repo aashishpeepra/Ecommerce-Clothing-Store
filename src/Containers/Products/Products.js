@@ -40,7 +40,7 @@ export default class Products extends React.Component {
             { name: "Doungree", value: "dungaree" },
             { name: "Pants & Jeans", value: "jeans" },
             { name: "Tights", value: "tights" },
-            { name: "Shorts & skirts", value: "skirts" },
+            { name: "Shorts / skirts", value: "skirts" },
             { name: "Trouser", value: "trousers" },
             { name: "Sets", value: "sets" },
             { name: "Sleepwear", value: "sleepwear" },
