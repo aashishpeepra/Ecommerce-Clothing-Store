@@ -28,7 +28,13 @@ export default class Products extends React.Component {
             { name: "Sets", value: "sets" },
             {name : "Jacket",value:"jacket"},
             {name:"Denim",value:"denim"},
-            { name: "Sleepwear", value: "sleepwear" }
+            { name: "Sleepwear", value: "sleepwear" },
+            {name : "2 PC",value:"2pc"},
+            {name:"3 PC", value:"3pc"},
+            {name:"Tights",value:"tights"},
+            {name:"Body Suit",value:"bodysuit"},
+            {name:"Pants / Jeans",value:"pants"},
+            {name:"Eastern Wear",value:"eastern"}
         ]
         let temp = [{ name: "3/4Y", value: "s" }, { name: "5/6Y", value: "m" }, { name: "7/8Y", value: "l" }, { name: "9/10Y", value: "x" }, { name: "11/12Y", value: "xl" }, { name: "13/14Y", value: "xxl" },{name:"15/16Y",value:"xxxl"},{name:"17/18Y",value:"xxxxl"}]
         db.collection("Clothes").get().then(querySnapshot => {

@@ -3,10 +3,10 @@ import "./cartEach.css";
 import Button from "../../Navigation/Buttons/Button";
 import { connect } from "react-redux";
 import * as actionTypes from "../../../store/actions";
-import { render } from "@testing-library/react";
 
 class cartEach extends React.Component {
   temp = this.props.qty;
+  current = 0;
   database = {
     s: "9/12 Months",
     m: "12/18 Months",
@@ -35,16 +35,48 @@ class cartEach extends React.Component {
       xxxxl: "17/18Y",
     },
   ];
+  generateSelect = () => {
+    console.log(this.props.quantity,this.state.current)
+    let data = [];
+    for (let i = 1; i <= this.props.quantity[this.state.current]; i++)
+      data.push(<option value={i}>{i}</option>);
+ 
+    return (
+      <select
+        value={this.temp}
+        onChange={(e) => this.checkVal(e, this.props.index)}
+      >
+        {data}
+      </select>
+    );
+  };
   checkVal = (e, index) => {
     let a = e.target.value;
-    if (this.props.fixed) return null;
-    if (a == "") this.temp = "";
-    if (this.temp == 0) this.temp = 1;
-    if (a > 0 && a <= this.props.quantity[this.state.current]) {
-      this.props.onChangeQty(a, index);
+    // if (this.props.fixed) return null;
+    // if (a == "") this.temp = 0;
+    // if (this.temp == 0) this.temp = 1;
+    // if (a > 0 && a <= this.props.quantity[this.state.current]) {
+    //   this.props.onChangeQty(a, index);
+    //   this.temp = a;
+    // }
+    console.log(
+      a,
+      this.temp,
+      parseInt(a),
+      this.props.quantity[this.state.current]
+    );
+    a = a.trim();
+    if (
+      a === "" ||
+      parseInt(a) <= parseInt(this.props.quantity[this.state.current])
+    ) {
       this.temp = a;
-    }
 
+      this.props.onChangeQty(
+        a === "" || isNaN(parseInt(a)) ? 1 : parseInt(a),
+        index
+      );
+    }
     return 1;
   };
   state = {
@@ -54,6 +86,8 @@ class cartEach extends React.Component {
     console.log(this.props.quantity);
     return (
       <div className="CartEach">
+        
+      
         <div className="CartEach-img-holder">
           <img src={this.props.image} alt="" />
         </div>
@@ -94,14 +128,9 @@ class cartEach extends React.Component {
             ) : (
               <div className="CartEach-in">
                 <label htmlFor="quantity">Quantity</label>
-                <input
-                  onChange={(e) => this.checkVal(e, this.props.index)}
-                  value={this.temp}
-                  type="number"
-                  id="quantity"
-                  placeholder="Quantity"
-                />
+                {this.generateSelect()}
               </div>
+              
             )}
           </div>
           <div className="CartEach-G">

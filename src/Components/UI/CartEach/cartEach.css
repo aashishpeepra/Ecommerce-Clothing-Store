@@ -63,3 +63,6 @@
 .CartEach select{
     width:50px;
 }
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1
+}

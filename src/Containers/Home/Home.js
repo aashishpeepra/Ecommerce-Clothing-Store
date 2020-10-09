@@ -20,7 +20,8 @@ class Home extends Component {
         })
         db.collection("Home").doc("Slider").get()
         .then(data=>{
-            this.setState({images:data.data().images})
+            this.setState({images:data.data().images});
+            console.log(this.state.images)
         })
         .catch(err=>{
             console.log(err)

@@ -41,13 +41,7 @@ class Slider extends React.Component {
             "https://i.pinimg.com/736x/36/89/69/3689696b4c3134364cda98a83be6b395.jpg",
           head: "Slide2",
           para: "Para2",
-        },
-        {
-          image:
-            "https://img.freepik.com/free-vector/woman-touching-add-cart-button-desktop-screen-with-trolley-carry-bags-parcel-boxes-blue-background-online-shopping-concept_1302-22611.jpg?size=626&ext=jpg",
-          head: "Slide3",
-          para: "Para3",
-        },
+        }
       ],
       currentIndex: 0,
       translateValue: 0,
