@@ -422,7 +422,7 @@ class CreateProduct extends React.Component {
             )}
           </form>
         </div>
-        <div className="User-info-container">
+        <div className="product-desc">
           <h4>Product Descriptionss</h4>
           <form>
          
@@ -446,7 +446,7 @@ class CreateProduct extends React.Component {
             <fieldset>
               <label
                 htmlFor="para"
-                style={{ display: "block", margin: "10px" }}
+                style={{ display: "block", marginTop: "30px" }}
               >
                 Description
               </label>
@@ -459,9 +459,9 @@ class CreateProduct extends React.Component {
               ></textarea>
             </fieldset>
             {this.state.isaccessory ? null : (
-              <fieldset className="special">
+              <fieldset className="special" style={{marginTop:"100px"}}>
                 <h5>Select Gender</h5>
-                <label htmlFor="m">Male </label>
+                <label htmlFor="m" htmlFor="f" style={{display:"block"}}>Male </label>
                 <input
                   onChange={this.onRadioChange}
                   checked={this.state.gender.toUpperCase() === "M"}
@@ -469,8 +469,9 @@ class CreateProduct extends React.Component {
                   name="Male"
                   value="m"
                   id="m"
+                  style={{marginTop:"0px"}}
                 />
-                <label htmlFor="f">Female</label>
+                <label htmlFor="f" style={{display:"block"}}>Female</label>
                 <input
                   onChange={this.onRadioChange}
                   checked={this.state.gender.toUpperCase() === "F"}
@@ -482,7 +483,7 @@ class CreateProduct extends React.Component {
               </fieldset>
             )}
 
-            <fieldset className="special2" style={{ marginBottom: "40px" }}>
+            <fieldset className="special2" style={{ marginBottom: "40px" ,marginTop:"50px"}}>
               <h5 htmlFor="category">Cetegory</h5>
               <select
                 value={this.state.category}
