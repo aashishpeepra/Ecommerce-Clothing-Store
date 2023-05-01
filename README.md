@@ -1,6 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# note: The firebase.json have exposed keys. This is an old project and I don't want to go through the effort of rebasing this or anything. I've deleted the corresponding project from firebase so don't try to hack it, it won't work
+## This is a clothing website I created for a customer. The website have following feature
+1. Client site with mobile responsivness. Sales section, filters and bunch of other pages
+2. There's an admin side that let's you upload products, decide which products are trending or new for sales, add original price, add discounted price, check the order details and customer information and much more.
+
+Basically I made this entire app for a real customer, so it's nicely speced out, took care of little authentication and state management. Don't upload a real ecommerce using this, there are some security vulnerabilities. 
+
+### note: The firebase.json have exposed keys. This is an old project and I don't want to go through the effort of rebasing this or anything. I've deleted the corresponding project from firebase so don't try to hack it, it won't work
 
 ## Available Scripts
 
