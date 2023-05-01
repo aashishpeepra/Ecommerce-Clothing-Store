@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# note: The firebase.json have exposed keys. This is an old project and I don't want to go through the effort of rebasing this or anything. I've deleted the corresponding project from firebase so don't try to hack it, it won't work
+
 ## Available Scripts
 
 In the project directory, you can run:
